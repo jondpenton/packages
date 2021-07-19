@@ -2,7 +2,7 @@ import { Promisable, ValueOf } from 'type-fest'
 
 interface Decision<ConditionKeys extends string, ActionKeys extends string> {
   conditions: { [Key in ConditionKeys]?: boolean }
-  actions: { [Key in ActionKeys]: true }
+  actions: { [Key in ActionKeys]?: true }
 }
 
 interface DecisionTableOptions<
