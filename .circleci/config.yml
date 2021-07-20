@@ -39,7 +39,7 @@ jobs:
             - ./common/temp/pnpm-lock-preinstall.yaml
             - ./common/temp/pnpm-lock.yaml
       - run:
-          name: Combine project's build caches:
+          name: Combine project's build caches
           command: |
             node scripts/src/combine-build-caches.js > combined-build-caches.txt
       - restore_cache:
