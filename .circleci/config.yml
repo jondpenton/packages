@@ -36,7 +36,7 @@ jobs:
           paths:
             - /home/circleci/.pnpm-store/v3
             - ./common/temp/pnpm-lock.yaml
-            - ./common/temp/projects/*/package.json
+            - ./common/temp/projects/**/package.json
       - run:
           name: Combine project's build caches
           command: |
