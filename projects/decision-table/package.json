@@ -24,6 +24,7 @@
     "build:clean": "rimraf ./dist/",
     "build:app": "tsc -p ./tsconfig.build.json",
     "build": "run-s build:*",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   }
 }

@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  test-and-build:
+  test:
     docker:
       - image: circleci/node:14.17.3
     steps:
@@ -83,9 +83,9 @@ jobs:
             - v1-deps-{{ checksum "combined-projects-packages.txt" }}
             - v1-deps-
       - run:
-          name: Install Dependencies
+          name: Link Dependencies
           command: |
-            rush update
+            rush link
       - run:
           name: Combine project's build caches
           command: |
@@ -107,12 +107,12 @@ jobs:
 workflows:
   test-and-release:
     jobs:
-      - test-and-build
+      - test
       - release:
           filters:
             branches:
               only: master
           requires:
-            - test-and-build
+            - test
           context:
             - npm-auth
