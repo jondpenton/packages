@@ -34,10 +34,7 @@ jobs:
       - save_cache:
           key: v1-deps-{{ checksum "combined-projects-packages.txt" }}
           paths:
-            - ./common/temp/node_modules/
-            - ./common/temp/package.json
-            - ./common/temp/pnpm-lock-preinstall.yaml
-            - ./common/temp/pnpm-lock.yaml
+            - /home/circleci/.pnpm-store/v3
       - run:
           name: Combine project's build caches
           command: |
