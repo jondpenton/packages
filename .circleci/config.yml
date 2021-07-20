@@ -62,6 +62,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install PNPM
+          command: |
+            sudo npm install --global pnpm
+      - run:
+          name: Install Global Packages
+          command: |
+            sudo pnpm add --global @microsoft/rush
+      - run:
           name: Install scripts packages
           working_directory: ./scripts
           command: |
@@ -93,7 +101,7 @@ jobs:
             rush semantic-release
 
 workflows:
-  test:
+  test-and-release:
     jobs:
       - test-and-build
       - release:
