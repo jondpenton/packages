@@ -49,7 +49,9 @@ export class DecisionTable<
         continue
       }
 
-      const result: boolean = await fnOrBoolean()
+      const fn = fnOrBoolean as Exclude<typeof fnOrBoolean, boolean>
+
+      const result: boolean = await fn()
 
       conditions[key] = result
     }

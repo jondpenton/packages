@@ -2,43 +2,22 @@
   "name": "decision-table",
   "author": "Jon Penton",
   "version": "1.0.0",
-  "license": "ISC",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "module": "dist/decision-table.esm.js",
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^5.0.1",
-    "husky": "^7.0.1",
-    "size-limit": "^5.0.1",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.3.0",
-    "typescript": "^4.3.5",
+    "tslib": "~2.3.0",
+    "typescript": "~4.3.5",
     "prettier": "~2.3.2",
     "type-fest": "~1.2.2",
-    "@types/jest": "~26.0.24"
+    "@types/jest": "~26.0.24",
+    "jest": "~27.0.6",
+    "npm-run-all": "~4.1.5",
+    "rimraf": "~3.0.2"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build --tsconfig ./tsconfig.build.json",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build --tsconfig ./tsconfig.build.json",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "size-limit": [
-    {
-      "path": "dist/decision-table.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/decision-table.esm.js",
-      "limit": "10 KB"
-    }
-  ]
+    "build:clean": "rimraf ./dist/",
+    "build:app": "tsc -p ./tsconfig.build.json",
+    "build": "run-s build:*",
+    "test": "jest"
+  }
 }
