@@ -4,7 +4,7 @@ const stripJsonComments = require('strip-json-comments')
 
 async function main() {
   const rushConfigText = await fs.readFile(
-    path.resolve(__dirname, `../rush.json`),
+    path.resolve(__dirname, `../../rush.json`),
     { encoding: `utf-8` }
   )
   const rushConfig = JSON.parse(stripJsonComments(rushConfigText))
@@ -13,7 +13,7 @@ async function main() {
 
   for (const project of rushConfig.projects) {
     const packageJsonText = await fs.readFile(
-      path.resolve(__dirname, `../`, project.projectFolder, `package.json`),
+      path.resolve(__dirname, `../../`, project.projectFolder, `package.json`),
       {
         encoding: `utf-8`,
       }
