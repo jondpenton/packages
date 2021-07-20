@@ -7,9 +7,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Global Packages
+          name: Install PNPM
           command: |
-            npm install --global pnpm @microsoft/rush
+            npm install --global pnpm
+      - run:
+          name: Install Rush
+          command: |
+            pnpm add --global @microsoft/rush
       - run:
           name: Combine projects' package.json
           command: |
