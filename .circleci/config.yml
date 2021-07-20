@@ -13,11 +13,12 @@ jobs:
       - run:
           name: Install Global Packages
           command: |
-            sudo pnpm add --global @microsoft/rush strip-json-comments
+            sudo pnpm add --global @microsoft/rush
       - run:
-          name: Link `strip-json-comments`
+          name: Install scripts packages
+          working_dir: ./scripts
           command: |
-            sudo pnpm link --global strip-json-comments
+            pnpm install
       - run:
           name: Combine projects' package.json
           command: |

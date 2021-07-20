@@ -1,0 +1,14 @@
+lockfileVersion: 5.3
+
+specifiers:
+  strip-json-comments: ^3.1.1
+
+devDependencies:
+  strip-json-comments: 3.1.1
+
+packages:
+
+  /strip-json-comments/3.1.1:
+    resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
+    engines: {node: '>=8'}
+    dev: true
