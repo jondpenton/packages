@@ -95,12 +95,12 @@ jobs:
 workflows:
   test:
     jobs:
-      - test-and-build:
-          context:
-            - npm-auth
+      - test-and-build
       - release:
           filters:
             branches:
               only: master
           requires:
             - test-and-build
+          context:
+            - npm-auth
