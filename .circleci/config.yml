@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  test:
+  test-and-build:
     docker:
       - image: circleci/node:14.17.3
     steps:
@@ -56,10 +56,51 @@ jobs:
           name: Run tests
           command: |
             rush test
+  release:
+    docker:
+      - image: circleci/node:14.17.3
+    steps:
+      - checkout
+      - run:
+          name: Install scripts packages
+          working_directory: ./scripts
+          command: |
+            pnpm install
+      - run:
+          name: Combine projects' package.json
+          command: |
+            node scripts/src/combine-projects-packages.js > combined-projects-packages.txt
+      - restore_cache:
+          keys:
+            - v1-deps-{{ checksum "combined-projects-packages.txt" }}
+            - v1-deps-
+      - run:
+          name: Combine project's build caches
+          command: |
+            node scripts/src/combine-build-caches.js > combined-build-caches.txt
+      - restore_cache:
+          keys:
+            - v1-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
+            - v1-build-{{ checksum "combined-build-caches.txt" }}
+            - v1-build-
+      - run:
+          name: build
+          command: |
+            rush build
+      - run:
+          name: release
+          command: |
+            rush semantic-release
 
 workflows:
   test:
     jobs:
-      - test:
+      - test-and-build:
           context:
             - npm-auth
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test-and-build
