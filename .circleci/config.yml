@@ -9,11 +9,11 @@ jobs:
       - run:
           name: Install PNPM
           command: |
-            npm install --global pnpm
+            sudo npm install --global pnpm
       - run:
           name: Install Rush
           command: |
-            pnpm add --global @microsoft/rush
+            sudo pnpm add --global @microsoft/rush
       - run:
           name: Combine projects' package.json
           command: |
