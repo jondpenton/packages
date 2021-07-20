@@ -35,8 +35,7 @@ jobs:
           key: v1-deps-{{ checksum "combined-projects-packages.txt" }}-2
           paths:
             - /home/circleci/.pnpm-store/v3
-            - ./common/temp/pnpm-lock.yaml
-            - ./common/temp/projects/**/package.json
+            - ./common/temp
       - run:
           name: Combine project's build caches
           command: |
