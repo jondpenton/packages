@@ -60,4 +60,6 @@ jobs:
 workflows:
   test:
     jobs:
-      - test
+      - test:
+          context:
+            - npm-auth

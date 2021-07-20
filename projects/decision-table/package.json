@@ -1,5 +1,5 @@
 {
-  "name": "decision-table",
+  "name": "@jondpenton/decision-table",
   "author": "Jon Penton",
   "version": "1.0.0",
   "main": "dist/index.js",
