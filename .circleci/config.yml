@@ -15,6 +15,10 @@ jobs:
           command: |
             sudo pnpm add --global @microsoft/rush strip-json-comments
       - run:
+          name: Link `strip-json-comments`
+          command: |
+            sudo pnpm link --global strip-json-comments
+      - run:
           name: Combine projects' package.json
           command: |
             node scripts/combine-projects-packages.js > combined-projects-packages.txt
