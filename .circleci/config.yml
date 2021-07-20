@@ -1,0 +1,44 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:16.5.0
+    steps:
+      - checkout
+      - run:
+          name: Install Global Packages
+          command: |
+            npm install --global pnpm @microsoft/rush
+      - run:
+          name: Combine projects' package.json
+          command: |
+            pnpm add --global strip-json-comments
+            node scripts/combine-projects-packages.js > combined-projects-packages.txt
+      - restore_cache:
+          - v1-deps-{{ checksum "combined-projects-packages.txt" }}
+          - v1-deps-
+      - run:
+          name: Install Dependencies
+          command: |
+            rush update
+      - save_cache:
+          key: v1-deps-{{ checksum "combined-projects-packages.txt" }}
+          paths:
+            - ./common/temp/node_modules/
+            - ./common/temp/package.json
+            - ./common/temp/pnpm-lock-preinstall.yaml
+            - ./common/temp/pnpm-lock.yaml
+      - run:
+          name: Build
+          command: |
+            rush build
+      - run:
+          name: Run tests
+          command: |
+            rush test
+
+workflows:
+  test:
+    jobs:
+      - test
