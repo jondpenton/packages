@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/node:16.5.0
+      - image: circleci/node:14.17.3
     steps:
       - checkout
       - run:
