@@ -32,9 +32,10 @@ jobs:
           command: |
             rush update
       - save_cache:
-          key: v1-deps-{{ checksum "combined-projects-packages.txt" }}
+          key: v1-deps-{{ checksum "combined-projects-packages.txt" }}-1
           paths:
             - /home/circleci/.pnpm-store/v3
+            - ./common/temp/pnpm-lock.yaml
       - run:
           name: Combine project's build caches
           command: |
