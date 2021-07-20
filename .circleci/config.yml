@@ -83,6 +83,10 @@ jobs:
             - v1-deps-{{ checksum "combined-projects-packages.txt" }}
             - v1-deps-
       - run:
+          name: Install Dependencies
+          command: |
+            rush update
+      - run:
           name: Combine project's build caches
           command: |
             node scripts/src/combine-build-caches.js > combined-build-caches.txt
