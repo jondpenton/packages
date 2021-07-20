@@ -32,7 +32,7 @@ jobs:
           command: |
             rush update
       - save_cache:
-          key: v1-deps-{{ checksum "combined-projects-packages.txt" }}-1
+          key: v1-deps-{{ checksum "combined-projects-packages.txt" }}
           paths:
             - /home/circleci/.pnpm-store/v3
       - run:
