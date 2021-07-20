@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Combine projects' package.json
           command: |
-            node scripts/combine-projects-packages.js > combined-projects-packages.txt
+            node scripts/src/combine-projects-packages.js > combined-projects-packages.txt
       - restore_cache:
           keys:
             - v1-deps-{{ checksum "combined-projects-packages.txt" }}
