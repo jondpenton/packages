@@ -16,7 +16,7 @@ jobs:
             sudo pnpm add --global @microsoft/rush
       - run:
           name: Install scripts packages
-          working_dir: ./scripts
+          working_directory: ./scripts
           command: |
             pnpm install
       - run:
