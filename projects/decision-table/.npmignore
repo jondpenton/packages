@@ -1,0 +1,6 @@
+_tmp_*
+.rush/
+config/
+coverage/
+jest.config.js
+*.log
