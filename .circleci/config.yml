@@ -16,8 +16,9 @@ jobs:
             pnpm add --global strip-json-comments
             node scripts/combine-projects-packages.js > combined-projects-packages.txt
       - restore_cache:
-          - v1-deps-{{ checksum "combined-projects-packages.txt" }}
-          - v1-deps-
+          keys:
+            - v1-deps-{{ checksum "combined-projects-packages.txt" }}
+            - v1-deps-
       - run:
           name: Install Dependencies
           command: |
