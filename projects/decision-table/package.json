@@ -25,6 +25,6 @@
     "build:app": "tsc -p ./tsconfig.build.json",
     "build": "run-s build:*",
     "test": "jest",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --tag-format='decision-table-v${version}'"
   }
 }
