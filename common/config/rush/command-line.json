@@ -140,13 +140,13 @@
        * Note that if the "rebuild" command is overridden here, it becomes separated from the "build" command
        * and will call the "rebuild" script instead of the "build" script.
        */
-      "name": "semantic-release",
+      "name": "release",
 
       /**
        * (Required) A short summary of the custom command to be shown when printing command line
        * help, e.g. "rush --help".
        */
-      "summary": "semantic-release",
+      "summary": "Publishes packages to NPM",
 
       /**
        * A detailed description of the command to be shown when printing command line

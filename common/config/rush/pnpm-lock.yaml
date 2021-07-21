@@ -7,6 +7,7 @@ specifiers:
   npm-run-all: ~4.1.5
   prettier: ~2.3.2
   rimraf: ~3.0.2
+  semantic-release: ~17.4.4
   ts-jest: ~27.0.3
   ts-node: ~10.1.0
   tslib: ~2.3.0
@@ -20,6 +21,7 @@ dependencies:
   npm-run-all: 4.1.5
   prettier: 2.3.2
   rimraf: 3.0.2
+  semantic-release: 17.4.4
   ts-jest: 27.0.3_jest@27.0.6+typescript@4.3.5
   ts-node: 10.1.0_typescript@4.3.5
   tslib: 2.3.0
@@ -4079,6 +4081,14 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: false
 
+  /cross-spawn/5.1.0:
+    resolution: {integrity: sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=}
+    dependencies:
+      lru-cache: 4.1.5
+      shebang-command: 1.2.0
+      which: 1.3.1
+    dev: false
+
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
     engines: {node: '>=4.8'}
@@ -5243,6 +5253,19 @@ packages:
     resolution: {integrity: sha512-nQn+hI3yp+oD0huYhKwvYI32+JFeq+XkNcD1GAo3Y/MjxsfVGmrrzrnzjWiNY6f+pUCP440fThsFh5gZrRAU/w==}
     dev: false
 
+  /execa/0.8.0:
+    resolution: {integrity: sha1-2NdrvBtVIX7RkP1t1J08d07PyNo=}
+    engines: {node: '>=4'}
+    dependencies:
+      cross-spawn: 5.1.0
+      get-stream: 3.0.0
+      is-stream: 1.1.0
+      npm-run-path: 2.0.2
+      p-finally: 1.0.0
+      signal-exit: 3.0.3
+      strip-eof: 1.0.0
+    dev: false
+
   /execa/1.0.0:
     resolution: {integrity: sha512-adbxcyWV46qiHyvSp50TKt05tB4tK3HcmF7/nxfAdhnox83seTDbwnaqKO4sXRy7roHAIFqJP/Rw/AuEbX61LA==}
     engines: {node: '>=6'}
@@ -5708,6 +5731,11 @@ packages:
 
   /get-stdin/6.0.0:
     resolution: {integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==}
+    engines: {node: '>=4'}
+    dev: false
+
+  /get-stream/3.0.0:
+    resolution: {integrity: sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=}
     engines: {node: '>=4'}
     dev: false
 
@@ -8009,6 +8037,13 @@ packages:
       tslib: 2.3.0
     dev: false
 
+  /lru-cache/4.1.5:
+    resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
+    dependencies:
+      pseudomap: 1.0.2
+      yallist: 2.1.2
+    dev: false
+
   /lru-cache/5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
     dependencies:
@@ -9527,6 +9562,10 @@ packages:
     resolution: {integrity: sha1-0/wRS6BplaRexok/SEzrHXj19HY=}
     dev: false
 
+  /pseudomap/1.0.2:
+    resolution: {integrity: sha1-8FKijacOYYkX7wqKw0wa5aaChrM=}
+    dev: false
+
   /psl/1.8.0:
     resolution: {integrity: sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==}
     dev: false
@@ -9604,6 +9643,10 @@ packages:
   /quick-lru/4.0.1:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
     engines: {node: '>=8'}
+    dev: false
+
+  /ramda/0.25.0:
+    resolution: {integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==}
     dev: false
 
   /ramda/0.27.1:
@@ -10183,6 +10226,29 @@ packages:
       '@types/json-schema': 7.0.8
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
+    dev: false
+
+  /semantic-release-monorepo/7.0.5_semantic-release@17.4.4:
+    resolution: {integrity: sha512-riOYD8eZ5PIST7o97Ltc01l8VQW7q01NmPDRPOBycaeZczJowyKkzkBfo92kTIWDFWbdO3G8A695JrrYjoTaiw==}
+    peerDependencies:
+      semantic-release: '>=15.11.x'
+    dependencies:
+      debug: 3.2.7
+      execa: 0.8.0
+      p-limit: 1.3.0
+      pkg-up: 2.0.0
+      ramda: 0.25.0
+      read-pkg: 5.2.0
+      semantic-release: 17.4.4
+      semantic-release-plugin-decorators: 3.0.1_semantic-release@17.4.4
+    dev: false
+
+  /semantic-release-plugin-decorators/3.0.1_semantic-release@17.4.4:
+    resolution: {integrity: sha512-f5Qjvv/AJYByvkaj11a+05gQwfPwgQKo5OIhj8YVM2Dhf2rOPEOLD83jGrTdM7Nuf//sZYw77/cGUSVygUG9Kg==}
+    peerDependencies:
+      semantic-release: '>=11'
+    dependencies:
+      semantic-release: 17.4.4
     dev: false
 
   /semantic-release/17.4.4:
@@ -11873,6 +11939,10 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /yallist/2.1.2:
+    resolution: {integrity: sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=}
+    dev: false
+
   /yallist/3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
     dev: false
@@ -11935,7 +12005,7 @@ packages:
     dev: false
 
   file:projects/decision-table.tgz:
-    resolution: {integrity: sha512-f6xcnyA3LqGYxI6p1xBBbRBPNLlrqnQQx0iM/IzndFw0v85IDBy2Lo1pintLUn1HcowPzvYzFYezkklaSgraUw==, tarball: file:projects/decision-table.tgz}
+    resolution: {integrity: sha512-RP5HC02vN8nvPG1ppdIbl/+K28vdTQayU6q6xGU4mv8qPym6ibcmc2EMTQ79zWXBEM4qMEuw3Zb9g8e2i9DACQ==, tarball: file:projects/decision-table.tgz}
     name: '@rush-temp/decision-table'
     version: 0.0.0
     dependencies:
@@ -11954,6 +12024,7 @@ packages:
       ramda: 0.27.1
       rimraf: 3.0.2
       semantic-release: 17.4.4
+      semantic-release-monorepo: 7.0.5_semantic-release@17.4.4
       size-limit: 5.0.1
       ts-jest: 27.0.3_jest@27.0.6+typescript@4.3.5
       ts-node: 10.1.0_typescript@4.3.5

@@ -103,7 +103,7 @@ jobs:
       - run:
           name: release
           command: |
-            rush semantic-release
+            rush release
 
 workflows:
   test-and-release:
