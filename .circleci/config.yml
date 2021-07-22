@@ -52,8 +52,8 @@ jobs:
       - save_cache:
           key: v1-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
           paths:
-            - ./projects/decision-table/.rush/temp/package-deps_build.json
-            - ./projects/decision-table/dist/
+            - ./projects/decision-tables/.rush/temp/package-deps_build.json
+            - ./projects/decision-tables/dist/
       - run:
           name: Run tests
           command: |

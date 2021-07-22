@@ -439,9 +439,9 @@
     //   // "versionPolicyName": ""
     // },
     {
-      "packageName": "@jondpenton/decision-table",
+      "packageName": "@jondpenton/decision-tables",
       "shouldPublish": true,
-      "projectFolder": "projects/decision-table"
+      "projectFolder": "projects/decision-tables"
     }
   ]
 }
