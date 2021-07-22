@@ -1,6 +1,6 @@
 # Pivotal Tracker Story Branch Generator
 
-[Pivotal Tracker Story Branch Generator](https://yarnpkg.com/package/pivotal-story-branch) is a tool to automatically generate a branch name for a new story in [Pivotal Tracker](https://www.pivotaltracker.com/).
+[Pivotal Tracker Story Branch Generator](https://www.npmjs.com/package/@jondpenton/pivotal-story-branch) is a tool to automatically generate a branch name for a new story in [Pivotal Tracker](https://www.pivotaltracker.com/).
 
 ## Installation
 
@@ -8,10 +8,10 @@ Installing this package will install a binary `psb`.
 
 ```bash
 # NPM
-npm install --global pivotal-story-branch
+npm install --global @jondpenton/pivotal-story-branch
 
 # Yarn
-yarn global add pivotal-story-branch
+yarn global add @jondpenton/pivotal-story-branch
 ```
 
 ## Setup
