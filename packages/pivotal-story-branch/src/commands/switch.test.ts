@@ -86,10 +86,9 @@ test
 test
   .stderr()
   .command(['switch'])
-  .catch((err) =>
-    expect(
-      err.message.startsWith(`Missing 1 required arg:
-branch_or_story_link`)
-    ).toBeTruthy()
-  )
+  .catch((err) => {
+    expect((err as Error).message).toMatch(
+      /^Missing 1 required arg:\s+branch_or_story_link/
+    )
+  })
   .it(`throws error if branch or story link not provided`)

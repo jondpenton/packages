@@ -34,10 +34,10 @@ test
 test
   .stderr()
   .command(['config:remove'])
-  .catch((err) =>
+  .catch((err) => {
     expect(
-      err.message.startsWith(`Missing 1 required arg:
+      (err as Error).message.startsWith(`Missing 1 required arg:
 key`)
     ).toBeTruthy()
-  )
+  })
   .it(`throws error if key is not provided`)
