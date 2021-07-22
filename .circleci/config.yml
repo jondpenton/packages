@@ -9,11 +9,11 @@ jobs:
       - run:
           name: Install PNPM
           command: |
-            sudo npm install --global pnpm
+            sudo npm install --global pnpm@6.3.0
       - run:
           name: Install Global Packages
           command: |
-            sudo pnpm add --global @microsoft/rush
+            sudo pnpm add --global @microsoft/rush@5.47.0
       - run:
           name: Install scripts packages
           working_directory: ./scripts
