@@ -441,7 +441,7 @@
     {
       "packageName": "@jondpenton/decision-tables",
       "shouldPublish": true,
-      "projectFolder": "projects/decision-tables"
+      "projectFolder": "packages/decision-tables"
     }
   ]
 }

@@ -5,5 +5,5 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush-project.schema.json",
 
-  "extends": "../../../common/config/projects/config/rush-project.json"
+  "extends": "../../../common/config/packages/config/rush-project.json"
 }
