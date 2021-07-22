@@ -25,14 +25,14 @@ jobs:
             node scripts/src/combine-projects-packages.js > combined-projects-packages.txt
       - restore_cache:
           keys:
-            - v1-deps-{{ checksum "combined-projects-packages.txt" }}
-            - v1-deps-
+            - v2-deps-{{ checksum "combined-projects-packages.txt" }}
+            - v2-deps-
       - run:
           name: Install Dependencies
           command: |
             rush update
       - save_cache:
-          key: v1-deps-{{ checksum "combined-projects-packages.txt" }}-3
+          key: v2-deps-{{ checksum "combined-projects-packages.txt" }}-3
           paths:
             - /home/circleci/.pnpm-store/v3
             - ./common/temp
@@ -42,15 +42,15 @@ jobs:
             node scripts/src/combine-build-caches.js > combined-build-caches.txt
       - restore_cache:
           keys:
-            - v1-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
-            - v1-build-{{ checksum "combined-build-caches.txt" }}
-            - v1-build-
+            - v2-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
+            - v2-build-{{ checksum "combined-build-caches.txt" }}
+            - v2-build-
       - run:
           name: Build
           command: |
             rush build
       - save_cache:
-          key: v1-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
+          key: v2-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
           paths:
             - ./projects/decision-tables/.rush/temp/package-deps_build.json
             - ./projects/decision-tables/dist/
@@ -82,8 +82,8 @@ jobs:
             node scripts/src/combine-projects-packages.js > combined-projects-packages.txt
       - restore_cache:
           keys:
-            - v1-deps-{{ checksum "combined-projects-packages.txt" }}
-            - v1-deps-
+            - v2-deps-{{ checksum "combined-projects-packages.txt" }}
+            - v2-deps-
       - run:
           name: Link Dependencies
           command: |
@@ -94,9 +94,9 @@ jobs:
             node scripts/src/combine-build-caches.js > combined-build-caches.txt
       - restore_cache:
           keys:
-            - v1-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
-            - v1-build-{{ checksum "combined-build-caches.txt" }}
-            - v1-build-
+            - v2-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
+            - v2-build-{{ checksum "combined-build-caches.txt" }}
+            - v2-build-
       - run:
           name: build
           command: |
