@@ -58,6 +58,8 @@ jobs:
           paths:
             - ./packages/decision-tables/.rush/temp/package-deps_build.json
             - ./packages/decision-tables/dist/
+            - ./packages/pivotal-story-branch/.rush/temp/package-deps_build.json
+            - ./packages/pivotal-story-branch/dist/
       - run:
           name: Run tests
           command: |

@@ -21,6 +21,7 @@ specifiers:
   babel-jest: ~26.3.0
   chai: ~4.2.0
   dotenv: ~8.2.0
+  fancy-test: ~1.4.10
   husky: ~4.3.0
   jest: ~27.0.6
   msw: ~0.32.2
@@ -62,6 +63,7 @@ dependencies:
   babel-jest: 26.3.0_@babel+core@7.11.6
   chai: 4.2.0
   dotenv: 8.2.0
+  fancy-test: 1.4.10
   husky: 4.3.8
   jest: 27.0.6_ts-node@10.1.0
   msw: 0.32.2
@@ -9944,7 +9946,7 @@ packages:
     dev: false
 
   file:projects/pivotal-story-branch.tgz:
-    resolution: {integrity: sha512-e8mLLFFWcBCR7iUUIgUK+B5kgET+kHQMLRw4eZBzcHyAN7BVf1YtO+pLcBTm1qLFUJHtZTT6ZN9UVHY+8lMOsQ==, tarball: file:projects/pivotal-story-branch.tgz}
+    resolution: {integrity: sha512-tqYb6qdm9LS8fewcU55vF1MkCSM+rmqUwFhM7ezkbB8TKeTRXZh5qqTjo6WNs5LZYjfvpoXnHY2brZwUeFcGoQ==, tarball: file:projects/pivotal-story-branch.tgz}
     name: '@rush-temp/pivotal-story-branch'
     version: 0.0.0
     dependencies:
@@ -9978,6 +9980,7 @@ packages:
       pretty-quick: 3.0.2_prettier@2.3.2
       rimraf: 3.0.2
       semantic-release: 17.4.4
+      semantic-release-monorepo: 7.0.5_semantic-release@17.4.4
       slugify: 1.4.7
       ts-node: 10.1.0_b99c331a9cb902db876f9615f84a7b10
       tslib: 2.3.0
