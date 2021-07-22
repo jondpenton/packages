@@ -440,8 +440,11 @@
     // },
     {
       "packageName": "@jondpenton/decision-tables",
-      "shouldPublish": true,
       "projectFolder": "packages/decision-tables"
+    },
+    {
+      "packageName": "@jondpenton/pivotal-story-branch",
+      "projectFolder": "packages/pivotal-story-branch"
     }
   ]
 }

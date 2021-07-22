@@ -37,6 +37,10 @@ jobs:
             - /home/circleci/.pnpm-store/v3
             - ./common/temp
       - run:
+          name: Lint packages
+          command: |
+            rush lint
+      - run:
           name: Combine project's build caches
           command: |
             node scripts/src/combine-build-caches.js > combined-build-caches.txt
