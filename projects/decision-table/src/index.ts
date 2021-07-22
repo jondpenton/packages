@@ -12,7 +12,6 @@ interface DecisionTableOptions<
   conditions: { [Key in ConditionKeys]: boolean | (() => Promisable<boolean>) }
   actions: { [Key in ActionKeys]: <T>() => Promisable<T> }
   decisions: Decision<ConditionKeys, ActionKeys>[]
-  executeActionsConcurrently?: true
 }
 
 export class DecisionTable<
