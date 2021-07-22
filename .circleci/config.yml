@@ -53,6 +53,7 @@ jobs:
           key: v1-build-{{ checksum "combined-build-caches.txt" }}-{{ checksum "combined-projects-packages.txt" }}
           paths:
             - ./projects/decision-table/.rush/temp/package-deps_build.json
+            - ./projects/decision-table/dist/
       - run:
           name: Run tests
           command: |
