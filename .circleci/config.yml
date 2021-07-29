@@ -116,12 +116,16 @@ workflows:
   test-and-release:
     jobs:
       - test
-      - release:
+      - hold:
+          type: approval
+          requires:
+            - test
           filters:
             branches:
               only: master
+      - release:
           requires:
-            - test
+            - hold
           context:
             - npm-auth
             - utils
