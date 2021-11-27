@@ -1,0 +1,4 @@
+#!/bin/bash
+export PATH="$PATH:/usr/local"
+
+node common/scripts/install-run-rush.js lint-staged || exit$?
