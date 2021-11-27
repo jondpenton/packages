@@ -133,7 +133,9 @@ jobs:
 workflows:
   test-and-release:
     jobs:
-      - test
+      - test:
+          context:
+            - packages
       - hold:
           type: approval
           requires:
