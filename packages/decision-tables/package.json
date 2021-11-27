@@ -21,8 +21,7 @@
     "ts-jest": "~27.0.3",
     "ts-node": "~10.4.0",
     "semantic-release": "~18.0.1",
-    "semantic-release-monorepo": "~7.0.5",
-    "jest-junit": "~13.0.0"
+    "semantic-release-monorepo": "~7.0.5"
   },
   "scripts": {
     "build:clean": "rimraf ./dist/",

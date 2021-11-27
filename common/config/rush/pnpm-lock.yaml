@@ -7457,19 +7457,6 @@ packages:
       - supports-color
     dev: false
 
-  /jest-junit/13.0.0:
-    resolution:
-      {
-        integrity: sha512-JSHR+Dhb32FGJaiKkqsB7AR3OqWKtldLd6ZH2+FJ8D4tsweb8Id8zEVReU4+OlrRO1ZluqJLQEETm+Q6/KilBg==,
-      }
-    engines: { node: '>=10.12.0' }
-    dependencies:
-      mkdirp: 1.0.4
-      strip-ansi: 6.0.1
-      uuid: 8.3.2
-      xml: 1.0.1
-    dev: false
-
   /jest-leak-detector/27.3.1:
     resolution:
       {
@@ -8627,7 +8614,7 @@ packages:
       node-match-path: 0.6.3
       statuses: 2.0.1
       strict-event-emitter: 0.2.0
-      type-fest: 1.2.3
+      type-fest: 1.4.0
       yargs: 17.2.1
     transitivePeerDependencies:
       - supports-color
@@ -11624,10 +11611,10 @@ packages:
     engines: { node: '>=8' }
     dev: false
 
-  /type-fest/1.2.3:
+  /type-fest/1.4.0:
     resolution:
       {
-        integrity: sha512-w81kTuuq5V8j7aZamYO9TJ+LYqhw11mkHyMISJIRl2+uMYmgOj3yhSLk2qH6lznyTicBOdMrudxrrVvCQzK1tQ==,
+        integrity: sha512-yGSza74xk0UG8k+pLh5oeoYirvIiWo5t0/o3zHHAO2tRDiZcxWP7fywNlXhqb6/r6sWvwi+RsyQMWhVLe4BVuA==,
       }
     engines: { node: '>=10' }
     dev: false
@@ -11859,14 +11846,6 @@ packages:
   /uuid/2.0.3:
     resolution: { integrity: sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho= }
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-    dev: false
-
-  /uuid/8.3.2:
-    resolution:
-      {
-        integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==,
-      }
-    hasBin: true
     dev: false
 
   /v8-to-istanbul/8.1.0:
@@ -12168,10 +12147,6 @@ packages:
       }
     dev: false
 
-  /xml/1.0.1:
-    resolution: { integrity: sha1-eLpyAgApxbyHuKgaPPzXS0ovweU= }
-    dev: false
-
   /xmlchars/2.2.0:
     resolution:
       {
@@ -12403,7 +12378,7 @@ packages:
   file:projects/decision-tables.tgz_130e17784d6b498965362f5db4894495:
     resolution:
       {
-        integrity: sha512-7j9gerwsTZPl35mt4dZq4/uQ0QInwPZ8Evm8FeFmAmA1IaNOjakXiTqpkoZYKCMtmiFac0t2n7zYfpqgVqP2rw==,
+        integrity: sha512-NOAJ0nU/7mJAkfIFw0WVL+7FyVkoj6UVg57AeK9CEq3A0pLflJDcCNOPFfNtx8HwAVDAnMDmBWm1b6OKHHsSLA==,
         tarball: file:projects/decision-tables.tgz,
       }
     id: file:projects/decision-tables.tgz
@@ -12412,7 +12387,6 @@ packages:
     dependencies:
       '@types/jest': 27.0.3
       jest: 27.3.1_ts-node@10.4.0
-      jest-junit: 13.0.0
       npm-run-all: 4.1.5
       prettier: 2.5.0
       rimraf: 3.0.2
@@ -12439,7 +12413,7 @@ packages:
   file:projects/pivotal-story-branch.tgz:
     resolution:
       {
-        integrity: sha512-ehcOsVxxBfw9vJnPSvqtos6ldDxA582Lz7Rv/HFuxjPjoLvNWBIPLyAd1znP2xeazasDxSIcTnNZTOj4Dc3ebw==,
+        integrity: sha512-O+MBJ1UC1KLR1F+ckGqZFBF86DCvSsXLhgsDwPhfKpi/oyp/ju0bTxjAzuaR1+/KZaab0hN6fxgBb+O/DiMglg==,
         tarball: file:projects/pivotal-story-branch.tgz,
       }
     name: '@rush-temp/pivotal-story-branch'
@@ -12464,7 +12438,6 @@ packages:
       chai: 4.3.4
       fancy-test: 1.4.10
       jest: 27.3.1_ts-node@10.4.0
-      jest-junit: 13.0.0
       msw: 0.35.0
       nodemon: 2.0.15
       npm-run-all: 4.1.5

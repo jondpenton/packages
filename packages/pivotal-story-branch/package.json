@@ -60,8 +60,7 @@
     "@oclif/parser": "~3.8.5",
     "tslib": "~2.3.0",
     "fancy-test": "~1.4.10",
-    "semantic-release-monorepo": "~7.0.5",
-    "jest-junit": "~13.0.0"
+    "semantic-release-monorepo": "~7.0.5"
   },
   "repository": {
     "type": "git",
