@@ -17,7 +17,7 @@ specifiers:
   '@rush-temp/pivotal-story-branch': file:./projects/pivotal-story-branch.tgz
   '@types/jest': ~27.0.3
   '@types/node': ~16.11.10
-  axios: ~0.20.0
+  axios: 0.21.4
   babel-jest: ~27.3.1
   chai: ~4.3.4
   fancy-test: ~1.4.10
@@ -57,7 +57,7 @@ dependencies:
   '@rush-temp/pivotal-story-branch': file:projects/pivotal-story-branch.tgz
   '@types/jest': 27.0.3
   '@types/node': 16.11.10
-  axios: 0.20.0
+  axios: 0.21.4
   babel-jest: 27.3.1_@babel+core@7.16.0
   chai: 4.3.4
   fancy-test: 1.4.10
@@ -3302,12 +3302,11 @@ packages:
     hasBin: true
     dev: false
 
-  /axios/0.20.0:
+  /axios/0.21.4:
     resolution:
       {
-        integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==,
+        integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==,
       }
-    deprecated: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
     dependencies:
       follow-redirects: 1.14.5
     transitivePeerDependencies:
@@ -12414,7 +12413,7 @@ packages:
   file:projects/pivotal-story-branch.tgz:
     resolution:
       {
-        integrity: sha512-ZQOQ9kfZdkXpl3kyVCEiLqIiJrf4oReKp9GSzFl5Fp6KIbiRVpXNYGpT2Px+mFapuAzLSjWiNOhQDkDi8Cd+7g==,
+        integrity: sha512-rCN3Nz8tRtjBO5ijwYSh6FGsZNd2RgJo0zHC2oA66d3im3QGCbmjM/o2B+FLUcMHcR0n3j+FkkBpCVacfJvJtA==,
         tarball: file:projects/pivotal-story-branch.tgz,
       }
     name: '@rush-temp/pivotal-story-branch'
@@ -12434,7 +12433,7 @@ packages:
       '@oclif/test': 1.2.8
       '@types/jest': 27.0.3
       '@types/node': 16.11.10
-      axios: 0.20.0
+      axios: 0.21.4
       babel-jest: 27.3.1_@babel+core@7.16.0
       chai: 4.3.4
       fancy-test: 1.4.10
