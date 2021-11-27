@@ -22,7 +22,7 @@ specifiers:
   chai: ~4.3.4
   fancy-test: ~1.4.10
   jest: ~27.3.1
-  msw: 0.33.3
+  msw: 0.34.0
   nodemon: ~2.0.4
   npm-run-all: ~4.1.5
   oclif: ~1.18.1
@@ -62,7 +62,7 @@ dependencies:
   chai: 4.3.4
   fancy-test: 1.4.10
   jest: 27.3.1_ts-node@10.4.0
-  msw: 0.33.3
+  msw: 0.34.0
   nodemon: 2.0.15
   npm-run-all: 4.1.5
   oclif: 1.18.1
@@ -8588,10 +8588,10 @@ packages:
       }
     dev: false
 
-  /msw/0.33.3:
+  /msw/0.34.0:
     resolution:
       {
-        integrity: sha512-VWBC6x5tK6hwGFEmATz+ca+//V9UGtW96owFEBjRMuhY4QiG0HT1Qm0xyf4w3QqnfOMtt/PsC+Zey50+iz8u9Q==,
+        integrity: sha512-Tp5uBOPelsdG7yN1m2B2K89vp16ffrywDpRs2A3dOqUz7tc7Zrg9InHZ3FKNJ/6yh+Q94iWbFWomVW6/YsVOzQ==,
       }
     hasBin: true
     requiresBuild: true
@@ -12413,7 +12413,7 @@ packages:
   file:projects/pivotal-story-branch.tgz:
     resolution:
       {
-        integrity: sha512-yfq6zgjNy2trLDo3XsMsbbUsj007q60I47Zfz1lOqsRl6qd3OB43u9kZjxaDY8g/0PcydYBkdQSW06g2H14yqw==,
+        integrity: sha512-dn4e25rasjNJd4RBzAQuazi4dkuQpyt3ycXLsEtyxD8/Eb4bfgm5vGbmB0CN89KtJxZ0iMJYPFA2kRpABx5rUg==,
         tarball: file:projects/pivotal-story-branch.tgz,
       }
     name: '@rush-temp/pivotal-story-branch'
@@ -12438,7 +12438,7 @@ packages:
       chai: 4.3.4
       fancy-test: 1.4.10
       jest: 27.3.1_ts-node@10.4.0
-      msw: 0.33.3
+      msw: 0.34.0
       nodemon: 2.0.15
       npm-run-all: 4.1.5
       oclif: 1.18.1
