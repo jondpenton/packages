@@ -15,7 +15,7 @@ specifiers:
   '@oclif/test': ~1.2.7
   '@rush-temp/decision-tables': file:./projects/decision-tables.tgz
   '@rush-temp/pivotal-story-branch': file:./projects/pivotal-story-branch.tgz
-  '@types/jest': ~26.0.24
+  '@types/jest': ~27.0.3
   '@types/node': ~14.6.1
   axios: ~0.20.0
   babel-jest: ~26.3.0
@@ -57,7 +57,7 @@ dependencies:
   '@oclif/test': 1.2.8
   '@rush-temp/decision-tables': file:projects/decision-tables.tgz_39b1c48c14500dec851e5b13fa740de6
   '@rush-temp/pivotal-story-branch': file:projects/pivotal-story-branch.tgz
-  '@types/jest': 26.0.24
+  '@types/jest': 27.0.3
   '@types/node': 14.6.4
   axios: 0.20.0
   babel-jest: 26.3.0_@babel+core@7.16.0
@@ -77,7 +77,7 @@ dependencies:
   semantic-release: 17.4.7
   semantic-release-monorepo: 7.0.5_semantic-release@17.4.7
   slugify: 1.6.3
-  ts-jest: 27.0.7_9bc4cf1bf20601f9296777bfb32cdf43
+  ts-jest: 27.0.7_5c3464cc37c45cb3f25628c2292bcdbe
   ts-node: 10.4.0_b8d26dac6ed008855eb2ac93324caaf6
   tslib: 2.3.1
   type-fest: 1.2.3
@@ -2254,11 +2254,11 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: false
 
-  /@types/jest/26.0.24:
-    resolution: {integrity: sha512-E/X5Vib8BWqZNRlDxj9vYXhsDwPYbPINqKF9BsnSoon4RQ0D9moEuLD8txgyypFLH7J4+Lho9Nr/c8H0Fi+17w==}
+  /@types/jest/27.0.3:
+    resolution: {integrity: sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg==}
     dependencies:
-      jest-diff: 26.6.2
-      pretty-format: 26.6.2
+      jest-diff: 27.3.1
+      pretty-format: 27.3.1
     dev: false
 
   /@types/js-levenshtein/1.1.0:
@@ -3822,11 +3822,6 @@ packages:
   /detect-newline/3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
     engines: {node: '>=8'}
-    dev: false
-
-  /diff-sequences/26.6.2:
-    resolution: {integrity: sha512-Mv/TDa3nZ9sbc5soK+OoA74BsS3mL37yixCvUAQkiuA4Wz6YtwP/K47n2rv2ovzHZvoiQeA5FTQOschKkEwB0Q==}
-    engines: {node: '>= 10.14.2'}
     dev: false
 
   /diff-sequences/27.0.6:
@@ -5802,16 +5797,6 @@ packages:
       - utf-8-validate
     dev: false
 
-  /jest-diff/26.6.2:
-    resolution: {integrity: sha512-6m+9Z3Gv9wN0WFVasqjCL/06+EFCMTqDEUl/b87HYK2rAPTyfz4ZIuSlPhY51PIQRWx5TaxeF1qmXKe9gfN3sA==}
-    engines: {node: '>= 10.14.2'}
-    dependencies:
-      chalk: 4.1.2
-      diff-sequences: 26.6.2
-      jest-get-type: 26.3.0
-      pretty-format: 26.6.2
-    dev: false
-
   /jest-diff/27.3.1:
     resolution: {integrity: sha512-PCeuAH4AWUo2O5+ksW4pL9v5xJAcIKPUPfIhZBcG1RKv/0+dvaWTQK1Nrau8d67dp65fOqbeMdoil+6PedyEPQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -5868,11 +5853,6 @@ packages:
       '@types/node': 14.6.4
       jest-mock: 27.3.0
       jest-util: 27.3.1
-    dev: false
-
-  /jest-get-type/26.3.0:
-    resolution: {integrity: sha512-TpfaviN1R2pQWkIihlfEanwOXK0zcxrKEE4MlU6Tn7keoXdN6/3gK/xl0yEh8DOunn5pOVGKf8hB4R9gVh04ig==}
-    engines: {node: '>= 10.14.2'}
     dev: false
 
   /jest-get-type/27.3.1:
@@ -7774,16 +7754,6 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /pretty-format/26.6.2:
-    resolution: {integrity: sha512-7AeGuCYNGmycyQbCqd/3PWH4eOoX/OiCa0uphp57NVTeAGdJGaAliecxwBDHYQCIvrW7aDBZCYeNTP/WX69mkg==}
-    engines: {node: '>= 10'}
-    dependencies:
-      '@jest/types': 26.6.2
-      ansi-regex: 5.0.1
-      ansi-styles: 4.3.0
-      react-is: 17.0.2
-    dev: false
-
   /pretty-format/27.3.1:
     resolution: {integrity: sha512-DR/c+pvFc52nLimLROYjnXPtolawm+uWDxr4FjuLDLUn+ktWnSN851KoHwHzzqq6rfCOjkzN8FLgDrSub6UDuA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -9136,7 +9106,7 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /ts-jest/27.0.7_9bc4cf1bf20601f9296777bfb32cdf43:
+  /ts-jest/27.0.7_5c3464cc37c45cb3f25628c2292bcdbe:
     resolution: {integrity: sha512-O41shibMqzdafpuP+CkrOL7ykbmLh+FqQrXEmV9CydQ5JBk0Sj0uAEF5TNNe94fZWKm3yYvWa/IbyV4Yg1zK2Q==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -9155,7 +9125,7 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.16.0
-      '@types/jest': 26.0.24
+      '@types/jest': 27.0.3
       babel-jest: 26.3.0_@babel+core@7.16.0
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
@@ -9862,19 +9832,19 @@ packages:
     dev: false
 
   file:projects/decision-tables.tgz_39b1c48c14500dec851e5b13fa740de6:
-    resolution: {integrity: sha512-3Gs8KALiTaG3rUI7rwb06lxC4LiCX16JS1R7t0EwckMhvpieUbtTIjSAtnn4k0vuZ/Kr/l7NYxDTjzBqzn66ag==, tarball: file:projects/decision-tables.tgz}
+    resolution: {integrity: sha512-r8amjETSp+bHbbflkDA/jmMuFWEoR67Cgc/2Y6zRFdQE4WoRV+kdgy1vI9nF8y9wK+OI9eQDVnSG7YCZFqVI1Q==, tarball: file:projects/decision-tables.tgz}
     id: file:projects/decision-tables.tgz
     name: '@rush-temp/decision-tables'
     version: 0.0.0
     dependencies:
-      '@types/jest': 26.0.24
+      '@types/jest': 27.0.3
       jest: 27.3.1_ts-node@10.4.0
       npm-run-all: 4.1.5
       prettier: 2.5.0
       rimraf: 3.0.2
       semantic-release: 17.4.7
       semantic-release-monorepo: 7.0.5_semantic-release@17.4.7
-      ts-jest: 27.0.7_9bc4cf1bf20601f9296777bfb32cdf43
+      ts-jest: 27.0.7_5c3464cc37c45cb3f25628c2292bcdbe
       ts-node: 10.4.0_b8d26dac6ed008855eb2ac93324caaf6
       tslib: 2.3.1
       type-fest: 1.2.3
@@ -9893,7 +9863,7 @@ packages:
     dev: false
 
   file:projects/pivotal-story-branch.tgz:
-    resolution: {integrity: sha512-MdnLjBeeXYzUS18eTVSg27z5I0553mwp3j4IIe0HReSM8/kxFvwRiB8qlQMBlsNj8CiXc0kN1RhEokcC3n84/Q==, tarball: file:projects/pivotal-story-branch.tgz}
+    resolution: {integrity: sha512-QEUrZX0KINgwV33O/VAnwodYVw9C+P4W5/SNU57vdELbVA8JMqQ6YTA2eeHaVTMuXtyEYQXQMAR4Sy5SnhUVuA==, tarball: file:projects/pivotal-story-branch.tgz}
     name: '@rush-temp/pivotal-story-branch'
     version: 0.0.0
     dependencies:
@@ -9909,7 +9879,7 @@ packages:
       '@oclif/parser': 3.8.6
       '@oclif/plugin-help': 3.2.7
       '@oclif/test': 1.2.8
-      '@types/jest': 26.0.24
+      '@types/jest': 27.0.3
       '@types/node': 14.6.4
       axios: 0.20.0
       babel-jest: 26.3.0_@babel+core@7.16.0
