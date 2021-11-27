@@ -36,7 +36,7 @@ specifiers:
   ts-jest: ~27.0.3
   ts-node: ~10.4.0
   tslib: ~2.3.0
-  type-fest: ~1.2.2
+  type-fest: ~2.6.0
   typescript: ~4.5.2
   xstate: ~4.26.1
 
@@ -76,7 +76,7 @@ dependencies:
   ts-jest: 27.0.7_30b6fcff5d98ca4c7c41e0929500ff50
   ts-node: 10.4.0_36929cccfdb926da0bb85cc291f27124
   tslib: 2.3.1
-  type-fest: 1.2.3
+  type-fest: 2.6.0
   typescript: 4.5.2
   xstate: 4.26.1
 
@@ -11620,6 +11620,14 @@ packages:
     engines: { node: '>=10' }
     dev: false
 
+  /type-fest/2.6.0:
+    resolution:
+      {
+        integrity: sha512-XN1FDGGtaSDA6CFsCW5iolTQqFsnJ+ZF6JqSz0SqXoh4F8GY0xqUv5RYnTilpmL+sOH8OH4FX8tf9YyAPM2LDA==,
+      }
+    engines: { node: '>=12.20' }
+    dev: false
+
   /typedarray-to-buffer/3.1.5:
     resolution:
       {
@@ -12371,7 +12379,7 @@ packages:
   file:projects/decision-tables.tgz_130e17784d6b498965362f5db4894495:
     resolution:
       {
-        integrity: sha512-1dy8CR8O+Ksw7jLl2C7xhNWtvPQ2a7pXdKgY1LVbcpt+onNpUkrPbBiGW9mQFr33MwwwScqnVyOFxynCqb3jzA==,
+        integrity: sha512-NOAJ0nU/7mJAkfIFw0WVL+7FyVkoj6UVg57AeK9CEq3A0pLflJDcCNOPFfNtx8HwAVDAnMDmBWm1b6OKHHsSLA==,
         tarball: file:projects/decision-tables.tgz,
       }
     id: file:projects/decision-tables.tgz
@@ -12388,7 +12396,7 @@ packages:
       ts-jest: 27.0.7_30b6fcff5d98ca4c7c41e0929500ff50
       ts-node: 10.4.0_36929cccfdb926da0bb85cc291f27124
       tslib: 2.3.1
-      type-fest: 1.2.3
+      type-fest: 2.6.0
       typescript: 4.5.2
     transitivePeerDependencies:
       - '@babel/core'
@@ -12406,7 +12414,7 @@ packages:
   file:projects/pivotal-story-branch.tgz:
     resolution:
       {
-        integrity: sha512-8julzhD2i0e6T2yiJ4w8kZGtXmmnnpmfbCwChrgp19L9ciRxydV5peiw8cVUExfWtNHUb1w9j49cG+ZHR/K0Zw==,
+        integrity: sha512-ZQOQ9kfZdkXpl3kyVCEiLqIiJrf4oReKp9GSzFl5Fp6KIbiRVpXNYGpT2Px+mFapuAzLSjWiNOhQDkDi8Cd+7g==,
         tarball: file:projects/pivotal-story-branch.tgz,
       }
     name: '@rush-temp/pivotal-story-branch'
@@ -12444,6 +12452,7 @@ packages:
       slugify: 1.6.3
       ts-node: 10.4.0_36929cccfdb926da0bb85cc291f27124
       tslib: 2.3.1
+      type-fest: 2.6.0
       typescript: 4.5.2
       xstate: 4.26.1
     transitivePeerDependencies:

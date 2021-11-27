@@ -8,7 +8,7 @@
     "/dist"
   ],
   "dependencies": {
-    "type-fest": "~1.2.2"
+    "type-fest": "~2.6.0"
   },
   "devDependencies": {
     "tslib": "~2.3.0",
