@@ -63,7 +63,25 @@ jobs:
       - run:
           name: Run tests
           command: |
-            rush test
+            rush test --coverage
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+          when: always
+      - run:
+          name: Format coverage reports
+          command: |
+            ./cc-test-reporter format-coverage -t='clover' -o tmp/codeclimate.decision-tables.json packages/decision-tables/coverage/clover.xml
+            ./cc-test-reporter format-coverage -t='clover' -o tmp/codeclimate.pivotal-story-branch.json packages/pivotal-story-branch/coverage/clover.xml
+            ./cc-test-reporter sum-coverage tmp/codeclimate.*.json -p 2 -o tmp/codeclimate.total.json
+      - run:
+          name: Send coverage report to Code Climate
+          command: ./cc-test-reporter upload-coverage -i tmp/codeclimate.total.json
+          when: always
   release:
     docker:
       - image: circleci/node:16.13.0
@@ -115,7 +133,9 @@ jobs:
 workflows:
   test-and-release:
     jobs:
-      - test
+      - test:
+          context:
+            - packages
       - hold:
           type: approval
           requires:

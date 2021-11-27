@@ -53,58 +53,12 @@
   ],
 
   "parameters": [
-    // {
-    //   "parameterKind": "flag",
-    //
-    //   "longName": "--my-flag",
-    //
-    //   "shortName": "-m",
-    //
-    //   "description": "A custom flag parameter that is passed to the scripts that are invoked when building projects",
-    //
-    //   "associatedCommands": ["build", "rebuild"]
-    // },
-    //
-    // {
-    //   "parameterKind": "string",
-    //   "longName": "--my-string",
-    //   "description": "A custom string parameter for the \"my-global-command\" custom command",
-    //
-    //   "associatedCommands": ["my-global-command"],
-    //
-    //   "argumentName": "SOME_TEXT",
-    //
-    //   "required": false
-    // },
-    //
-    // {
-    //   "parameterKind": "choice",
-    //   "longName": "--my-choice",
-    //   "description": "A custom choice parameter for the \"my-global-command\" custom command",
-    //
-    //   "associatedCommands": ["my-global-command"],
-    //
-    //   "required": false,
-    //
-    //   "defaultValue": "vanilla",
-    //
-    //   "alternatives": [
-    //     {
-    //       "name": "vanilla",
-    //
-    //       "description": "Use the vanilla flavor (the default)"
-    //     },
-    //
-    //     {
-    //       "name": "chocolate",
-    //       "description": "Use the chocolate flavor"
-    //     },
-    //
-    //     {
-    //       "name": "strawberry",
-    //       "description": "Use the strawberry flavor"
-    //     }
-    //   ]
-    // }
+    {
+      "description": "Coverage for tests",
+      "longName": "--coverage",
+      "parameterKind": "flag",
+      "required": false,
+      "associatedCommands": ["test"]
+    }
   ]
 }
