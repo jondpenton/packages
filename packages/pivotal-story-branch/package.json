@@ -44,7 +44,7 @@
     "@oclif/test": "~1.2.7",
     "@types/jest": "~27.0.3",
     "@types/node": "~16.11.10",
-    "babel-jest": "~26.3.0",
+    "babel-jest": "~27.3.1",
     "chai": "~4.3.4",
     "husky": "~4.3.0",
     "jest": "~27.3.1",
