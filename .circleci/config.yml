@@ -63,7 +63,13 @@ jobs:
       - run:
           name: Run tests
           command: |
-            rush test
+            rush test --coverage
+      - store_artifacts:
+          path: packages/decision-tables/coverage
+          destination: decision-tables-coverage
+      - store_artifacts:
+          path: packages/pivotal-story-branch/coverage
+          destination: pivotal-story-branch-coverage
   release:
     docker:
       - image: circleci/node:16.13.0
