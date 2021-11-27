@@ -17,7 +17,7 @@ specifiers:
   '@rush-temp/pivotal-story-branch': file:./projects/pivotal-story-branch.tgz
   '@types/jest': ~27.0.3
   '@types/node': ~16.11.10
-  axios: 0.21.4
+  axios: 0.22.0
   babel-jest: ~27.3.1
   chai: ~4.3.4
   fancy-test: ~1.4.10
@@ -57,7 +57,7 @@ dependencies:
   '@rush-temp/pivotal-story-branch': file:projects/pivotal-story-branch.tgz
   '@types/jest': 27.0.3
   '@types/node': 16.11.10
-  axios: 0.21.4
+  axios: 0.22.0
   babel-jest: 27.3.1_@babel+core@7.16.0
   chai: 4.3.4
   fancy-test: 1.4.10
@@ -3302,17 +3302,6 @@ packages:
     hasBin: true
     dev: false
 
-  /axios/0.21.4:
-    resolution:
-      {
-        integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==,
-      }
-    dependencies:
-      follow-redirects: 1.14.5
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
   /axios/0.21.4_debug@3.2.7:
     resolution:
       {
@@ -3320,6 +3309,17 @@ packages:
       }
     dependencies:
       follow-redirects: 1.14.5_debug@3.2.7
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /axios/0.22.0:
+    resolution:
+      {
+        integrity: sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==,
+      }
+    dependencies:
+      follow-redirects: 1.14.5
     transitivePeerDependencies:
       - debug
     dev: false
@@ -12413,7 +12413,7 @@ packages:
   file:projects/pivotal-story-branch.tgz:
     resolution:
       {
-        integrity: sha512-rCN3Nz8tRtjBO5ijwYSh6FGsZNd2RgJo0zHC2oA66d3im3QGCbmjM/o2B+FLUcMHcR0n3j+FkkBpCVacfJvJtA==,
+        integrity: sha512-ccmFgvGxMmy/8qVCJlvOmDRxBjXYyG6dWZPAUNxWmsD3GBxJ4Bx8yzN0d2eQRAYh5y6HfogxPl+1DzJADL4vTw==,
         tarball: file:projects/pivotal-story-branch.tgz,
       }
     name: '@rush-temp/pivotal-story-branch'
@@ -12433,7 +12433,7 @@ packages:
       '@oclif/test': 1.2.8
       '@types/jest': 27.0.3
       '@types/node': 16.11.10
-      axios: 0.21.4
+      axios: 0.22.0
       babel-jest: 27.3.1_@babel+core@7.16.0
       chai: 4.3.4
       fancy-test: 1.4.10
