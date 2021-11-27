@@ -20,7 +20,7 @@
     "rimraf": "~3.0.2",
     "ts-jest": "~27.0.3",
     "ts-node": "~10.4.0",
-    "semantic-release": "~17.4.4",
+    "semantic-release": "~18.0.1",
     "semantic-release-monorepo": "~7.0.5"
   },
   "scripts": {
