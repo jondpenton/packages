@@ -102,8 +102,8 @@ async function executeCommand({ command, hooks }: ExecuteCommandOptions) {
   return output
 }
 
-function createBranch(ctx: SwitchContext) {
-  return executeCommand({
+const createBranch = (ctx: SwitchContext) =>
+  executeCommand({
     command: `git pull && git checkout -b ${ctx.branch}`,
     hooks: {
       beforeStart: () => {
@@ -117,7 +117,6 @@ function createBranch(ctx: SwitchContext) {
       },
     },
   })
-}
 
 async function remoteBranchExists(
   ctx: SwitchContext,
