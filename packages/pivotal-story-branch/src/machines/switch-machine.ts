@@ -1,5 +1,6 @@
 import { exec } from 'child_process'
 import { Ora } from 'ora'
+import { Promisable } from 'type-fest'
 import {
   assign,
   createMachine,
@@ -30,18 +31,16 @@ interface SwitchContext {
 }
 
 async function branchExists(ctx: SwitchContext): Promise<boolean> {
-  ctx.spinner.start(`Checking if branch ${ctx.branch} exists...`)
-
-  const output = await new Promise<string>((resolve, reject) => {
-    exec(`git fetch && git branch --list ${ctx.branch}`, (err, stdout) => {
-      if (err) {
+  const output = await executeCommand({
+    command: `git fetch && git branch --list ${ctx.branch}`,
+    hooks: {
+      beforeStart: () => {
+        ctx.spinner.start(`Checking if branch ${ctx.branch} exists...`)
+      },
+      onFail: () => {
         ctx.spinner.fail(`Failed to check branch ${ctx.branch}`)
-        reject(err)
-        return
-      }
-
-      resolve(stdout)
-    })
+      },
+    },
   })
   const isLocal = !!output
 
@@ -76,22 +75,48 @@ async function checkoutBranch(ctx: SwitchContext): Promise<void> {
   })
 }
 
-async function createBranch(ctx: SwitchContext): Promise<void> {
-  ctx.spinner.start(`Creating branch ${ctx.branch}...`)
+interface ExecuteCommandOptions {
+  command: string
+  hooks: {
+    beforeStart?: () => Promisable<void>
+    onFail?: () => Promisable<void>
+    onSucceed?: () => Promisable<void>
+  }
+}
 
-  await new Promise<void>((resolve, reject) => {
-    exec(`git pull && git checkout -b ${ctx.branch}`, (err) => {
+async function executeCommand({ command, hooks }: ExecuteCommandOptions) {
+  await hooks.beforeStart?.()
+
+  const output = new Promise<string>((resolve, reject) => {
+    exec(command, async (err, stdout) => {
       if (err) {
-        ctx.spinner.fail(`Failed to create branch ${ctx.branch}`)
-        reject(err)
-        return
+        await hooks.onFail?.()
+        return reject(err)
       }
 
-      ctx.spinner.succeed(`Created branch ${ctx.branch}`)
-      resolve()
+      await hooks.onSucceed?.()
+      resolve(stdout)
     })
   })
+
+  return output
 }
+
+const createBranch = (ctx: SwitchContext) =>
+  executeCommand({
+    command: `git pull && git checkout -b ${ctx.branch}`,
+    hooks: {
+      beforeStart: () => {
+        ctx.spinner.start(`Creating branch ${ctx.branch}...`)
+      },
+      onFail: () => {
+        ctx.spinner.fail(`Failed to create branch ${ctx.branch}`)
+      },
+      onSucceed: () => {
+        ctx.spinner.succeed(`Created branch ${ctx.branch}`)
+      },
+    },
+  })
 
 async function remoteBranchExists(
   ctx: SwitchContext,
@@ -145,22 +170,21 @@ async function pullChanges(ctx: SwitchContext): Promise<void> {
   })
 }
 
-async function checkoutBaseBranch(ctx: SwitchContext): Promise<void> {
-  ctx.spinner.start(`Switching to base branch ${ctx.baseBranch}...`)
-
-  await new Promise<void>((resolve, reject) => {
-    exec(`git checkout ${ctx.baseBranch} && git pull`, (err) => {
-      if (err) {
+const checkoutBaseBranch = (ctx: SwitchContext) =>
+  executeCommand({
+    command: `git checkout ${ctx.baseBranch} && git pull`,
+    hooks: {
+      beforeStart: () => {
+        ctx.spinner.start(`Switching to base branch ${ctx.baseBranch}...`)
+      },
+      onFail: () => {
         ctx.spinner.fail(`Failed to switch to base branch ${ctx.baseBranch}`)
-        reject(err)
-        return
-      }
-
-      ctx.spinner.succeed(`Switched to base branch ${ctx.baseBranch}`)
-      resolve()
-    })
+      },
+      onSucceed: () => {
+        ctx.spinner.succeed(`Switched to base branch ${ctx.baseBranch}`)
+      },
+    },
   })
-}
 
 const isTruthy = (_ctx: SwitchContext, event: DoneInvokeEvent<unknown>) =>
   !!event.data
