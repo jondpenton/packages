@@ -57,23 +57,22 @@ async function branchExists(ctx: SwitchContext): Promise<boolean> {
   return isLocal
 }
 
-async function checkoutBranch(ctx: SwitchContext): Promise<void> {
-  ctx.spinner.succeed(`Found branch ${ctx.branch}`)
-  ctx.spinner.start(`Switching to branch ${ctx.branch}...`)
-
-  await new Promise<void>((resolve, reject) => {
-    exec(`git checkout ${ctx.branch}`, (err) => {
-      if (err) {
+const checkoutBranch = (ctx: SwitchContext) =>
+  executeCommand({
+    command: `git checkout ${ctx.branch}`,
+    hooks: {
+      beforeStart: () => {
+        ctx.spinner.succeed(`Found branch ${ctx.branch}`)
+        ctx.spinner.start(`Switching to branch ${ctx.branch}...`)
+      },
+      onFail: () => {
         ctx.spinner.fail(`Failed to switch to branch ${ctx.branch}`)
-        reject(err)
-        return
-      }
-
-      ctx.spinner.succeed(`Switched to branch ${ctx.branch}`)
-      resolve()
-    })
+      },
+      onSucceed: () => {
+        ctx.spinner.succeed(`Switched to branch ${ctx.branch}`)
+      },
+    },
   })
-}
 
 interface ExecuteCommandOptions {
   command: string
@@ -151,24 +150,23 @@ async function remoteBranchExists(
   return isRemote
 }
 
-async function pullChanges(ctx: SwitchContext): Promise<void> {
-  ctx.spinner.start(`Pulling changes from branch ${ctx.branch}`)
-
-  await new Promise<void>((resolve, reject) => {
-    exec(`git pull`, (err) => {
-      if (err) {
+const pullChanges = (ctx: SwitchContext) =>
+  executeCommand({
+    command: `git pull`,
+    hooks: {
+      beforeStart: () => {
+        ctx.spinner.start(`Pulling changes from branch ${ctx.branch}`)
+      },
+      onFail: () => {
         ctx.spinner.fail(`Failed to pull changes from branch ${ctx.branch}`)
-        reject(err)
-        return
-      }
-
-      ctx.spinner.succeed(
-        `Pulled changes from branch ${ctx.branch} successfully`
-      )
-      resolve()
-    })
+      },
+      onSucceed: () => {
+        ctx.spinner.succeed(
+          `Pulled changes from branch ${ctx.branch} successfully`
+        )
+      },
+    },
   })
-}
 
 const checkoutBaseBranch = (ctx: SwitchContext) =>
   executeCommand({
