@@ -1,0 +1,33 @@
+{
+  "name": "@jondpenton/prisma-proxy",
+  "author": "Jon Penton",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "type-fest": "~2.6.0",
+    "@types/node": "~16.11.10",
+    "prisma": "3.7.0",
+    "tslib": "~2.3.0",
+    "typescript": "~4.5.2",
+    "prettier": "~2.5.0",
+    "@types/jest": "~27.0.3",
+    "jest": "~27.3.1",
+    "npm-run-all": "~4.1.5",
+    "rimraf": "~3.0.2",
+    "ts-jest": "~27.0.3",
+    "ts-node": "~10.4.0",
+    "semantic-release": "~18.0.1",
+    "semantic-release-monorepo": "~7.0.5"
+  },
+  "scripts": {
+    "build:clean": "rimraf ./dist/",
+    "build:app": "tsc -p ./tsconfig.build.json",
+    "build": "run-s build:*",
+    "test": "jest --passWithNoTests",
+    "release": "semantic-release --extends semantic-release-monorepo"
+  }
+}
