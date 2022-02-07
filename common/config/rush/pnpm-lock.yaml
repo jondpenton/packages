@@ -15,6 +15,7 @@ specifiers:
   '@oclif/test': ~1.2.7
   '@rush-temp/decision-tables': file:./projects/decision-tables.tgz
   '@rush-temp/pivotal-story-branch': file:./projects/pivotal-story-branch.tgz
+  '@rush-temp/prisma-proxy': file:./projects/prisma-proxy.tgz
   '@types/jest': ~27.0.3
   '@types/node': ~16.11.10
   axios: 0.24.0
@@ -29,6 +30,7 @@ specifiers:
   ora: ~5.0.0
   prettier: ~2.5.0
   pretty-quick: ~3.1.2
+  prisma: 3.7.0
   rimraf: ~3.0.2
   semantic-release: ~18.0.1
   semantic-release-monorepo: ~7.0.5
@@ -55,6 +57,7 @@ dependencies:
   '@oclif/test': 1.2.8
   '@rush-temp/decision-tables': file:projects/decision-tables.tgz_130e17784d6b498965362f5db4894495
   '@rush-temp/pivotal-story-branch': file:projects/pivotal-story-branch.tgz
+  '@rush-temp/prisma-proxy': file:projects/prisma-proxy.tgz_9b52fcd7ddc4af16236f9065e7e797da
   '@types/jest': 27.0.3
   '@types/node': 16.11.10
   axios: 0.24.0
@@ -69,6 +72,7 @@ dependencies:
   ora: 5.0.0
   prettier: 2.5.0
   pretty-quick: 3.1.2_prettier@2.5.0
+  prisma: 3.7.0
   rimraf: 3.0.2
   semantic-release: 18.0.1
   semantic-release-monorepo: 7.0.5_semantic-release@18.0.1
@@ -2507,6 +2511,38 @@ packages:
       {
         integrity: sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==,
       }
+    dev: false
+
+  /@prisma/client/3.9.1_prisma@3.7.0:
+    resolution:
+      {
+        integrity: sha512-aLwfXKLvL+loQ0IuPPCXkcq8cXBg1IeoHHa5lqQu3dJHdj45wnislA/Ny4UxRQjD5FXqrfAb8sWtF+jhdmjFTg==,
+      }
+    engines: { node: '>=12.6' }
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 3.9.0-58.bcc2ff906db47790ee902e7bbc76d7ffb1893009
+      prisma: 3.7.0
+    dev: false
+
+  /@prisma/engines-version/3.9.0-58.bcc2ff906db47790ee902e7bbc76d7ffb1893009:
+    resolution:
+      {
+        integrity: sha512-5Dh+qTDhpPR66w6NNAnPs+/W/Qt4r1DSd+qhfPFcDThUK4uxoZKGlPb2IYQn5LL+18aIGnmteDf7BnVMmvBNSQ==,
+      }
+    dev: false
+
+  /@prisma/engines/3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f:
+    resolution:
+      {
+        integrity: sha512-W549ub5NlgexNhR8EFstA/UwAWq3Zq0w9aNkraqsozVCt2CsX+lK4TK7IW5OZVSnxHwRjrgEAt3r9yPy8nZQRg==,
+      }
+    requiresBuild: true
     dev: false
 
   /@semantic-release/commit-analyzer/9.0.2_semantic-release@18.0.1:
@@ -9704,6 +9740,18 @@ packages:
       prettier: 2.5.0
     dev: false
 
+  /prisma/3.7.0:
+    resolution:
+      {
+        integrity: sha512-pzgc95msPLcCHqOli7Hnabu/GRfSGSUWl5s2P6N13T/rgMB+NNeKbxCmzQiZT2yLOeLEPivV6YrW1oeQIwJxcg==,
+      }
+    engines: { node: '>=12.6' }
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 3.7.0-31.8746e055198f517658c08a0c426c7eec87f5a85f
+    dev: false
+
   /process-nextick-args/2.0.1:
     resolution:
       {
@@ -12460,6 +12508,43 @@ packages:
       - bufferutil
       - canvas
       - debug
+      - node-notifier
+      - supports-color
+      - utf-8-validate
+    dev: false
+
+  file:projects/prisma-proxy.tgz_9b52fcd7ddc4af16236f9065e7e797da:
+    resolution:
+      {
+        integrity: sha512-balMdgNKXOTMPJisW+wTcVrfy/D/ufTh4vNv2BOLnF2yiLtUvGcD3FDZ6cdyHf5goVB2yUXub+C1RPHY2nVwJQ==,
+        tarball: file:projects/prisma-proxy.tgz,
+      }
+    id: file:projects/prisma-proxy.tgz
+    name: '@rush-temp/prisma-proxy'
+    version: 0.0.0
+    dependencies:
+      '@prisma/client': 3.9.1_prisma@3.7.0
+      '@types/jest': 27.0.3
+      '@types/node': 16.11.10
+      jest: 27.3.1_ts-node@10.4.0
+      npm-run-all: 4.1.5
+      prettier: 2.5.0
+      prisma: 3.7.0
+      rimraf: 3.0.2
+      semantic-release: 18.0.1
+      semantic-release-monorepo: 7.0.5_semantic-release@18.0.1
+      ts-jest: 27.0.7_30b6fcff5d98ca4c7c41e0929500ff50
+      ts-node: 10.4.0_36929cccfdb926da0bb85cc291f27124
+      tslib: 2.3.1
+      type-fest: 2.6.0
+      typescript: 4.5.2
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@swc/core'
+      - '@swc/wasm'
+      - babel-jest
+      - bufferutil
+      - canvas
       - node-notifier
       - supports-color
       - utf-8-validate
