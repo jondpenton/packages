@@ -41,43 +41,63 @@ const createPrismaFindOperationProxy = <TFunction extends TFindFunction>(
   })
 
 export interface Delegate {
+  aggregate: TFindFunction
+  count: TFindFunction
   findFirst: TFindFunction
   findMany: TFindFunction
+  findUnique: TFindFunction
+  groupBy: TFindFunction
 }
 
 const createPrismaFindOperationsProxies = <
+  TAggregateFunction extends TFindFunction,
+  TCountFunction extends TFindFunction,
   TFindFirstFunction extends TFindFunction,
-  TFindManyFunction extends TFindFunction
+  TFindManyFunction extends TFindFunction,
+  TFindUniqueFunction extends TFindFunction,
+  TGroupByFunction extends TFindFunction
 >(
   delegate: {
+    aggregate: TAggregateFunction
+    count: TCountFunction
     findFirst: TFindFirstFunction
     findMany: TFindManyFunction
+    findUnique: TFindUniqueFunction
+    groupBy: TGroupByFunction
   },
   where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>
 ) => ({
+  aggregate: createPrismaFindOperationProxy(delegate.aggregate, where),
+  count: createPrismaFindOperationProxy(delegate.count, where),
   findFirst: createPrismaFindOperationProxy(delegate.findFirst, where),
   findMany: createPrismaFindOperationProxy(delegate.findMany, where),
+  findUnique: createPrismaFindOperationProxy(delegate.findUnique, where),
+  groupBy: createPrismaFindOperationProxy(delegate.groupBy, where),
 })
 
 export const createPrismaDelegateProxy = <
+  TAggregateFunction extends TFindFunction,
+  TCountFunction extends TFindFunction,
   TFindFirstFunction extends TFindFunction,
-  TFindManyFunction extends TFindFunction
+  TFindManyFunction extends TFindFunction,
+  TFindUniqueFunction extends TFindFunction,
+  TGroupByFunction extends TFindFunction
 >(
   delegate: {
+    aggregate: TAggregateFunction
+    count: TCountFunction
     findFirst: TFindFirstFunction
     findMany: TFindManyFunction
+    findUnique: TFindUniqueFunction
+    groupBy: TGroupByFunction
   },
   where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>
 ) => {
   const findProxies = createPrismaFindOperationsProxies(delegate, where)
   const delegateProxy = new Proxy(delegate, {
     get(target, propertyKey, receiver) {
-      if (propertyKey === `findFirst`) {
-        return findProxies.findFirst
-      }
-
-      if (propertyKey === `findMany`) {
-        return findProxies.findMany
+      if (propertyKey in findProxies) {
+        return findProxies[propertyKey as keyof typeof findProxies]
       }
 
       return Reflect.get(target, propertyKey, receiver)
