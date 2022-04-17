@@ -1,4 +1,6 @@
-type TFindFunction = (args?: {
+import { ConditionalKeys } from 'type-fest'
+
+type TFindFunction = (args: {
   where?: {
     AND?: any
   }
@@ -45,25 +47,19 @@ export interface Delegate {
   count: TFindFunction
   findFirst: TFindFunction
   findMany: TFindFunction
-  findUnique: TFindFunction
-  groupBy: TFindFunction
 }
 
 const createPrismaFindOperationsProxies = <
   TAggregateFunction extends TFindFunction,
   TCountFunction extends TFindFunction,
   TFindFirstFunction extends TFindFunction,
-  TFindManyFunction extends TFindFunction,
-  TFindUniqueFunction extends TFindFunction,
-  TGroupByFunction extends TFindFunction
+  TFindManyFunction extends TFindFunction
 >(
   delegate: {
     aggregate: TAggregateFunction
     count: TCountFunction
     findFirst: TFindFirstFunction
     findMany: TFindManyFunction
-    findUnique: TFindUniqueFunction
-    groupBy: TGroupByFunction
   },
   where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>
 ) => ({
@@ -71,25 +67,19 @@ const createPrismaFindOperationsProxies = <
   count: createPrismaFindOperationProxy(delegate.count, where),
   findFirst: createPrismaFindOperationProxy(delegate.findFirst, where),
   findMany: createPrismaFindOperationProxy(delegate.findMany, where),
-  findUnique: createPrismaFindOperationProxy(delegate.findUnique, where),
-  groupBy: createPrismaFindOperationProxy(delegate.groupBy, where),
 })
 
 export const createPrismaDelegateProxy = <
   TAggregateFunction extends TFindFunction,
   TCountFunction extends TFindFunction,
   TFindFirstFunction extends TFindFunction,
-  TFindManyFunction extends TFindFunction,
-  TFindUniqueFunction extends TFindFunction,
-  TGroupByFunction extends TFindFunction
+  TFindManyFunction extends TFindFunction
 >(
   delegate: {
     aggregate: TAggregateFunction
     count: TCountFunction
     findFirst: TFindFirstFunction
     findMany: TFindManyFunction
-    findUnique: TFindUniqueFunction
-    groupBy: TGroupByFunction
   },
   where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>
 ) => {
@@ -107,13 +97,10 @@ export const createPrismaDelegateProxy = <
   return delegateProxy
 }
 
-export type ClientDelegateKeys<TClient extends {}> = {
-  [TKey in keyof TClient]: TClient[TKey] extends Delegate
-    ? TKey extends string
-      ? TKey
-      : never
-    : never
-}[keyof TClient]
+export type ClientDelegateKeys<TClient extends {}> = Extract<
+  ConditionalKeys<TClient, Delegate>,
+  string
+>
 
 export type DelegateWhereMap<TClient extends {}> = {
   [TKey in ClientDelegateKeys<TClient>]?: TClient[TKey] extends Delegate
