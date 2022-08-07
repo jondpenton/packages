@@ -2,6 +2,7 @@
 export default {
   displayName: 'pivotal-story-branch',
   preset: '../../jest.preset.js',
+  setupFilesAfterEnv: [`<rootDir>/jest.setup.ts`],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',

@@ -33,9 +33,9 @@ test
   .stderr()
   .command(['config:set'])
   .catch((err) => {
-    expect(
-      /^Missing 2 required args:\s+key.*\s+value/.test((err as Error).message),
-    ).toBeTruthy()
+    expect((err as Error).message).toMatch(
+      /^Missing 2 required args:\s+key.*\s+value/,
+    )
   })
   .it(`throws error if key and value is not provided`)
 
