@@ -1,28 +1,7 @@
 {
   "name": "@jondpenton/pivotal-story-branch",
-  "description": "Pivotal Tracker Story Branch Generator is a tool to automatically generate a branch name for a new story in Pivotal Tracker.",
-  "homepage": "https://github.com/jondpenton/packages/tree/master/packages/pivotal-story-branch",
-  "version": "0.0.0-development",
-  "main": "./dist/index.js",
-  "bin": {
-    "psb": "./bin/run"
-  },
-  "license": "MIT",
-  "scripts": {
-    "clean": "rm -rf ./dist/",
-    "build:clean": "rimraf ./dist/",
-    "build:app": "tsc -p ./tsconfig.build.json",
-    "build": "run-s build:*",
-    "start": "node ./dist/index.js",
-    "dev": "nodemon -e ts --exec \"pnpm run-s build start\"",
-    "release": "semantic-release --extends semantic-release-monorepo",
-    "test": "jest",
-    "test:ci": "jest --ci --coverage",
-    "lint": "run-p lint:*",
-    "lint:commit": "commitlint --from HEAD~1 --to HEAD --verbose",
-    "lint:format": "prettier -c 'src/**/*.ts'",
-    "lint:format:fix": "prettier --write ."
-  },
+  "version": "0.0.1",
+  "type": "commonjs",
   "dependencies": {
     "@oclif/command": "~1.8.0",
     "@oclif/config": "~1.17.0",
@@ -61,23 +40,5 @@
     "tslib": "~2.3.0",
     "fancy-test": "~1.4.10",
     "semantic-release-monorepo": "~7.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jondpenton/packages.git"
-  },
-  "oclif": {
-    "bin": "psb",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "files": [
-    "/bin",
-    "/dist"
-  ]
+  }
 }

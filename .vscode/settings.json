@@ -1,9 +1,0 @@
-{
-  "conventionalCommits.scopes": [
-    "decision-tables",
-    "scripts",
-    "pivotal-story-branch",
-    "prisma-proxy"
-  ],
-  "typescript.tsdk": "./common/temp/node_modules/typescript/lib/"
-}

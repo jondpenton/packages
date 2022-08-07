@@ -1,4 +1,0 @@
-#!/bin/sh
-export PATH="$PATH:/usr/local"
-
-common/temp/node_modules/.bin/commitlint --edit="$1" -V
