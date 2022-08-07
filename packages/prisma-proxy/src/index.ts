@@ -1,1 +1,1 @@
-export * from './lib/prisma-proxy';
+export * from './lib/prisma-proxy'

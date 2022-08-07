@@ -24,6 +24,6 @@ it('throws an error if story not found', async () => {
   const storyId = `12345679`
 
   await expect(getStory({ projects, storyId, token: '' })).rejects.toThrowError(
-    'Unable to find story'
+    'Unable to find story',
   )
 })

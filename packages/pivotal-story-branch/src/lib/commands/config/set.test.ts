@@ -5,17 +5,17 @@ test
   .stub(
     fs,
     'readdir',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stub(
     fs,
     'readFile',
-    jest.fn(() => Promise.resolve(JSON.stringify({})))
+    jest.fn(() => Promise.resolve(JSON.stringify({}))),
   )
   .stub(
     fs,
     'writeFile',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stdout()
   .command(['config:set', 'myKey', 'myValue'])
@@ -25,7 +25,7 @@ test
     expect(passedConfig).toBe(
       JSON.stringify({
         myKey: 'myValue',
-      })
+      }),
     )
   })
 
@@ -34,7 +34,7 @@ test
   .command(['config:set'])
   .catch((err) => {
     expect(
-      /^Missing 2 required args:\s+key.*\s+value/.test((err as Error).message)
+      /^Missing 2 required args:\s+key.*\s+value/.test((err as Error).message),
     ).toBeTruthy()
   })
   .it(`throws error if key and value is not provided`)

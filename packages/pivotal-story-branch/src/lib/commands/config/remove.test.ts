@@ -5,7 +5,7 @@ test
   .stub(
     fs,
     'readdir',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stub(
     fs,
@@ -14,14 +14,14 @@ test
       Promise.resolve(
         JSON.stringify({
           myKey: 'myValue',
-        })
-      )
-    )
+        }),
+      ),
+    ),
   )
   .stub(
     fs,
     'writeFile',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stdout()
   .command(['config:remove', 'myKey'])
@@ -37,7 +37,7 @@ test
   .catch((err) => {
     expect(
       (err as Error).message.startsWith(`Missing 1 required arg:
-key`)
+key`),
     ).toBeTruthy()
   })
   .it(`throws error if key is not provided`)

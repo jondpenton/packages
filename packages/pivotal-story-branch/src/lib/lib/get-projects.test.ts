@@ -15,8 +15,8 @@ it('fetches projects from Pivotal Tracker API', async () => {
   server.use(
     rest.get(
       'https://www.pivotaltracker.com/services/v5/projects',
-      (_req, res, ctx) => res(ctx.json(projects))
-    )
+      (_req, res, ctx) => res(ctx.json(projects)),
+    ),
   )
 
   const fetchedProjects = await getProjects({ token: '' })

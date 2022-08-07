@@ -1,8 +1,8 @@
 describe(`DecisionTable`, () => {
   describe(`#execute`, () => {
     it(`when all conditions met, executes actions`, async () => {
-      const fn = jest.fn();
-      const fn2 = jest.fn();
+      const fn = jest.fn()
+      const fn2 = jest.fn()
       const decisionTable = new DecisionTable({
         conditions: {
           first: true,
@@ -23,12 +23,12 @@ describe(`DecisionTable`, () => {
             },
           },
         ],
-      });
+      })
 
-      await decisionTable.execute();
+      await decisionTable.execute()
 
-      expect(fn).toHaveBeenCalledTimes(1);
-      expect(fn2).toHaveBeenCalledTimes(1);
-    });
-  });
-});
+      expect(fn).toHaveBeenCalledTimes(1)
+      expect(fn2).toHaveBeenCalledTimes(1)
+    })
+  })
+})

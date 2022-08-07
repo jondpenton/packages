@@ -39,7 +39,7 @@ it('returns a longer formatted branch name when PIVOTAL_TRACKER_BRANCH_MAX_LENGT
     const branchName = formatBranch(story)
 
     expect(branchName).toBe(
-      'feature/this-is-an-extremely-long-precarious-name-and-#1'
+      'feature/this-is-an-extremely-long-precarious-name-and-#1',
     )
   } catch (err) {
     process.env.PIVOTAL_TRACKER_BRANCH_MAX_LENGTH = originalMaxLength

@@ -1,1 +1,1 @@
-export * from './lib/decision-table';
+export * from './lib/decision-table'

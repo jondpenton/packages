@@ -6,7 +6,7 @@ test
   .stub(
     fs,
     'readdir',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stub(
     fs,
@@ -15,14 +15,14 @@ test
       Promise.resolve(
         JSON.stringify({
           token: 'ABC123',
-        })
-      )
-    )
+        }),
+      ),
+    ),
   )
   .stub(
     util,
     'format',
-    jest.fn(() => '')
+    jest.fn(() => ''),
   )
   .stderr()
   .command(['generate', 'https://www.pivotaltracker.com/story/show/12345678'])
@@ -36,7 +36,7 @@ test
   .catch((err) =>
     expect(
       err.message.startsWith(`Missing 1 required arg:
-story_link`)
-    ).toBeTruthy()
+story_link`),
+    ).toBeTruthy(),
   )
   .it(`throws error if story_link is not provided`)

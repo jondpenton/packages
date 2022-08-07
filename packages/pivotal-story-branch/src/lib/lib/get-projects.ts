@@ -14,7 +14,7 @@ export async function getProjects({
       headers: {
         'X-TrackerToken': token,
       },
-    }
+    },
   )
 
   return response.data
