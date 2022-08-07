@@ -16,6 +16,7 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-yml": "^1.1.0",

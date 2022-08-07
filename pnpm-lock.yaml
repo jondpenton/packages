@@ -15,6 +15,7 @@ importers:
       '@types/node': 16.11.7
       '@typescript-eslint/eslint-plugin': ^5.32.0
       '@typescript-eslint/parser': ^5.32.0
+      dotenv: ^16.0.1
       eslint: ^8.15.0
       eslint-config-prettier: ^8.1.0
       eslint-plugin-yml: ^1.1.0
@@ -39,6 +40,7 @@ importers:
       '@types/node': 16.11.7
       '@typescript-eslint/eslint-plugin': 5.32.0_l33ttz2aztmmhkk6wlbnjwv4sm
       '@typescript-eslint/parser': 5.32.0_4hx5bygx4rxgd7xwyndf6ymwce
+      dotenv: 16.0.1
       eslint: 8.15.0
       eslint-config-prettier: 8.1.0_eslint@8.15.0
       eslint-plugin-yml: 1.1.0_eslint@8.15.0
@@ -4743,6 +4745,11 @@ packages:
   /dotenv/10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /download-stats/0.3.4:
