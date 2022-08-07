@@ -1,1 +1,1 @@
-export * from './lib/pivotal-story-branch';
+export * from './lib'

@@ -1,0 +1,21 @@
+extends:
+  - ../../.eslintrc.yaml
+ignorePatterns:
+  - '!**/*'
+parserOptions:
+  project: 'packages/pivotal-story-branch/tsconfig.*?.json'
+overrides:
+  - files:
+      - '*.ts'
+      - '*.tsx'
+      - '*.js'
+      - '*.jsx'
+    rules: {}
+  - files:
+      - '*.ts'
+      - '*.tsx'
+    rules: {}
+  - files:
+      - '*.js'
+      - '*.jsx'
+    rules: {}

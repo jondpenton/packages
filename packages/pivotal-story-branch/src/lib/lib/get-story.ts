@@ -24,10 +24,12 @@ export async function getStory({
           headers: {
             'X-TrackerToken': token,
           },
-        }
+        },
       )
       return response.data
-    } catch (err) {}
+    } catch (err) {
+      continue
+    }
   }
 
   throw new Error('Unable to find story')

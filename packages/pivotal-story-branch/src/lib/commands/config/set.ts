@@ -9,9 +9,9 @@ interface IUserConfig {
 }
 
 class SetConfig extends Command {
-  static description = 'Sets a value in the configuration'
+  static override description = 'Sets a value in the configuration'
 
-  static args: Parser.args.Input = [
+  static override args: Parser.args.Input = [
     {
       name: 'key',
       required: true,

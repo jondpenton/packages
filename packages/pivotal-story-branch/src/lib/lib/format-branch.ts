@@ -2,8 +2,8 @@ import { IStory } from './get-story'
 import slugify from 'slugify'
 
 export function formatBranch(story: IStory): string {
-  const characterLimit = process.env.PIVOTAL_TRACKER_BRANCH_MAX_LENGTH
-    ? parseInt(process.env.PIVOTAL_TRACKER_BRANCH_MAX_LENGTH, 10)
+  const characterLimit = process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH']
+    ? parseInt(process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH'], 10)
     : 50
   const baseLength = `${story.story_type}/`.length + `-#${story.id}`.length
   const remainingLength = characterLimit - baseLength

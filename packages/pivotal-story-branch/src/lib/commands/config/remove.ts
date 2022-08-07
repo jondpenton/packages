@@ -3,9 +3,9 @@ import { promises as fs } from 'fs'
 import { Command } from '../../lib/command'
 
 class RemoveConfig extends Command {
-  static description = 'Removes a key from the configuration'
+  static override description = 'Removes a key from the configuration'
 
-  static args: Parser.args.Input = [
+  static override args: Parser.args.Input = [
     {
       name: 'key',
       required: true,

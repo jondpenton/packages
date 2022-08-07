@@ -13,7 +13,7 @@ test
   .stub(
     fs,
     'readdir',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stub(
     fs,
@@ -22,18 +22,20 @@ test
       Promise.resolve(
         JSON.stringify({
           token: 'ABC123',
-        })
-      )
-    )
+        }),
+      ),
+    ),
   )
   .stub(
     childProcess,
     'exec',
-    jest.fn<void, any[]>((_command, cb) => {
+    jest.fn<void, unknown[]>((_command, cb) => {
       const results = callbackMock()
 
-      cb(...results)
-    })
+      if (typeof cb === `function`) {
+        cb(...results)
+      }
+    }),
   )
   .stderr()
   .command(['switch', 'https://www.pivotaltracker.com/story/show/12345678'])
@@ -51,7 +53,7 @@ test
   .stub(
     fs,
     'readdir',
-    jest.fn(() => Promise.resolve())
+    jest.fn(() => Promise.resolve()),
   )
   .stub(
     fs,
@@ -60,18 +62,20 @@ test
       Promise.resolve(
         JSON.stringify({
           token: 'ABC123',
-        })
-      )
-    )
+        }),
+      ),
+    ),
   )
   .stub(
     childProcess,
     'exec',
-    jest.fn<void, any[]>((_command, cb) => {
+    jest.fn<void, unknown[]>((_command, cb) => {
       const results = callbackMock()
 
-      cb(...results)
-    })
+      if (typeof cb === `function`) {
+        cb(...results)
+      }
+    }),
   )
   .stderr()
   .command(['switch', 'https://www.pivotaltracker.com/story/show/12345678'])
@@ -88,7 +92,7 @@ test
   .command(['switch'])
   .catch((err) => {
     expect((err as Error).message).toMatch(
-      /^Missing 1 required arg:\s+branch_or_story_link/
+      /^Missing 1 required arg:\s+branch_or_story_link/,
     )
   })
   .it(`throws error if branch or story link not provided`)

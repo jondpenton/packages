@@ -21,7 +21,7 @@ enum SwitchState {
 }
 
 interface SwitchContext {
-  [key: string]: any
+  [key: string]: unknown
   branch?: string
   spinner: Ora
   storyId?: string
@@ -95,7 +95,7 @@ async function createBranch(ctx: SwitchContext): Promise<void> {
 
 async function remoteBranchExists(
   ctx: SwitchContext,
-  silent = false
+  silent = false,
 ): Promise<boolean> {
   ctx.spinner.start(`Checking if remote branch ${ctx.branch} exists`)
 
@@ -118,7 +118,7 @@ async function remoteBranchExists(
       ctx.spinner.succeed(`Found remote branch ${ctx.branch}`)
     } else {
       ctx.spinner.info(
-        `Unable to find remote branch ${ctx.branch}. Not pulling any changes`
+        `Unable to find remote branch ${ctx.branch}. Not pulling any changes`,
       )
     }
   }
@@ -138,7 +138,7 @@ async function pullChanges(ctx: SwitchContext): Promise<void> {
       }
 
       ctx.spinner.succeed(
-        `Pulled changes from branch ${ctx.branch} successfully`
+        `Pulled changes from branch ${ctx.branch} successfully`,
       )
       resolve()
     })
@@ -191,12 +191,21 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.GenerateBranch]: {
       invoke: {
         id: 'getBranch',
-        src: (ctx) =>
-          runGenerate({
+        async src(ctx) {
+          if (!ctx.storyId) {
+            const message = `No story ID found`
+
+            ctx.spinner.fail(message)
+
+            throw new Error(message)
+          }
+
+          return runGenerate({
             spinner: ctx.spinner,
             token: ctx.token,
-            storyId: ctx.storyId!,
-          }),
+            storyId: ctx.storyId,
+          })
+        },
         onDone: {
           actions: [assign({ branch: (_ctx, event) => event.data })],
           target: SwitchState.VerifyBranch,

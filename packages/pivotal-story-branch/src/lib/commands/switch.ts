@@ -7,10 +7,10 @@ import { getStoryId } from '../lib/get-story-id'
 import { switchMachine } from '../machines/switch-machine'
 
 class Switch extends Command {
-  static description =
+  static override description =
     'switches branch to generated Pivotal Tracker story branch'
 
-  static args: Parser.args.Input = [
+  static override args: Parser.args.Input = [
     {
       name: 'branch_or_story_link',
       description: 'Branch name or link to Pivotal Tracker story',
@@ -18,7 +18,7 @@ class Switch extends Command {
     },
   ]
 
-  static flags = {
+  static override flags = {
     'base-branch': flags.string({
       char: 'b',
       description: 'Branch used when creating a new branch',
@@ -33,7 +33,7 @@ class Switch extends Command {
 
     if (!token) {
       throw new Error(
-        `\`token\` is required in configuration. Set one using the 'config:set' command`
+        `\`token\` is required in configuration. Set one using the 'config:set' command`,
       )
     }
 
@@ -45,9 +45,9 @@ class Switch extends Command {
     let storyId: string | undefined
 
     try {
-      storyId = getStoryId(args.branch_or_story_link)
+      storyId = getStoryId(args['branch_or_story_link'])
     } catch (err) {
-      branch = args.branch_or_story_link
+      branch = args['branch_or_story_link']
     }
 
     interpret(
@@ -57,7 +57,7 @@ class Switch extends Command {
         token,
         branch,
         baseBranch,
-      })
+      }),
     ).start()
   }
 }

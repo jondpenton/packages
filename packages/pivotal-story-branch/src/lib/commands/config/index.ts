@@ -1,7 +1,7 @@
 import { Command } from '../../lib/command'
 
 class Config extends Command {
-  static description = 'reads the configuration'
+  static override description = 'reads the configuration'
 
   async run() {
     const config = await this.getConfig()
