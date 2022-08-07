@@ -5,7 +5,7 @@ import {
   DelegateWhereMap,
 } from './utils'
 
-export const createPrismaProxy = <TClient extends {}>(
+export const createPrismaProxy = <TClient extends Record<string, unknown>>(
   unrestrictedPrisma: TClient,
   delegateMap: DelegateWhereMap<TClient>,
 ) => {

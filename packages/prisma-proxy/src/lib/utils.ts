@@ -2,9 +2,9 @@ import { ConditionalKeys } from 'type-fest'
 
 type TFindFunction = (args: {
   where?: {
-    AND?: any
+    AND?: unknown
   }
-}) => any
+}) => unknown
 
 const createPrismaFindOperationProxy = <TFunction extends TFindFunction>(
   fn: TFunction,
@@ -15,7 +15,7 @@ const createPrismaFindOperationProxy = <TFunction extends TFindFunction>(
       let [args] = argArray as [
         {
           where?: {
-            AND?: any
+            AND?: unknown
           }
         },
       ]
@@ -97,12 +97,10 @@ export const createPrismaDelegateProxy = <
   return delegateProxy
 }
 
-export type ClientDelegateKeys<TClient extends {}> = Extract<
-  ConditionalKeys<TClient, Delegate>,
-  string
->
+export type ClientDelegateKeys<TClient extends Record<string, unknown>> =
+  Extract<ConditionalKeys<TClient, Delegate>, string>
 
-export type DelegateWhereMap<TClient extends {}> = {
+export type DelegateWhereMap<TClient extends Record<string, unknown>> = {
   [TKey in ClientDelegateKeys<TClient>]?: TClient[TKey] extends Delegate
     ? NonNullable<Parameters<TClient[TKey][`findFirst`]>[0]> extends {
         where?: infer TWhere

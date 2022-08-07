@@ -11,19 +11,15 @@
         "main": "packages/prisma-proxy/src/index.ts",
         "tsConfig": "packages/prisma-proxy/tsconfig.lib.json",
         "assets": ["packages/prisma-proxy/*.md"]
-      }
+      },
+      "dependsOn": ["^build", "lint"]
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "node tools/scripts/publish.mjs prisma-proxy {args.ver} {args.tag}"
       },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
+      "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -38,7 +34,8 @@
       "options": {
         "jestConfig": "packages/prisma-proxy/jest.config.ts",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": ["build"]
     }
   },
   "tags": []
