@@ -1,3 +1,5 @@
+import { DecisionTable } from './decision-table'
+
 describe(`DecisionTable`, () => {
   describe(`#execute`, () => {
     it(`when all conditions met, executes actions`, async () => {

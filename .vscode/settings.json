@@ -1,4 +1,8 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "conventionalCommits.scopes": ["pivotal-story-branch", "prisma-proxy"]
+  "conventionalCommits.scopes": [
+    "pivotal-story-branch",
+    "prisma-proxy",
+    "decision-tables"
+  ]
 }
