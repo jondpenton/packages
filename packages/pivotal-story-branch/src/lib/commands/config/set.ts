@@ -1,7 +1,6 @@
-import Command from '@oclif/command'
+import { Command } from '@oclif/core'
 import { promises as fs } from 'fs'
 import path from 'path'
-import * as Parser from '@oclif/parser'
 
 interface IUserConfig {
   [key: string]: string | undefined
@@ -11,7 +10,7 @@ interface IUserConfig {
 class SetConfig extends Command {
   static override description = 'Sets a value in the configuration'
 
-  static override args: Parser.args.Input = [
+  static override args = [
     {
       name: 'key',
       required: true,
@@ -51,7 +50,7 @@ class SetConfig extends Command {
   async run() {
     const {
       args: { key, value },
-    } = this.parse(SetConfig)
+    } = await this.parse(SetConfig)
     const config = await this.getConfig()
     config[key] = value
 

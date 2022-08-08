@@ -1,4 +1,4 @@
-import Command from '@oclif/command'
+import { Command } from '@oclif/core'
 import { promises as fs } from 'fs'
 import path from 'path'
 

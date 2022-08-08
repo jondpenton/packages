@@ -1,4 +1,3 @@
-import * as Parser from '@oclif/parser'
 import Ora from 'ora'
 import { Command } from '../lib/command'
 import { formatBranch } from '../lib/format-branch'
@@ -14,12 +13,12 @@ class Generate extends Command {
 
   static override aliases = ['gen']
 
-  static override args: Parser.args.Input = [
+  static override args = [
     {
       name: 'story_link',
       description: 'Link to Pivotal Tracker story',
       required: true,
-      parse: getStoryId,
+      parse: async (input: string) => getStoryId(input),
     },
   ]
 
@@ -30,7 +29,7 @@ class Generate extends Command {
   }
 
   async run() {
-    const { args } = this.parse(Generate)
+    const { args } = await this.parse(Generate)
     const { token } = await this.getConfig()
 
     if (!token) {

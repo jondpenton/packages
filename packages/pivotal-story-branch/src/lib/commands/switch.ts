@@ -1,5 +1,4 @@
-import { flags } from '@oclif/command'
-import * as Parser from '@oclif/parser'
+import { Flags } from '@oclif/core'
 import Ora from 'ora'
 import { interpret } from 'xstate'
 import { Command } from '../lib/command'
@@ -10,7 +9,7 @@ class Switch extends Command {
   static override description =
     'switches branch to generated Pivotal Tracker story branch'
 
-  static override args: Parser.args.Input = [
+  static override args = [
     {
       name: 'branch_or_story_link',
       description: 'Branch name or link to Pivotal Tracker story',
@@ -19,14 +18,14 @@ class Switch extends Command {
   ]
 
   static override flags = {
-    'base-branch': flags.string({
+    'base-branch': Flags.string({
       char: 'b',
       description: 'Branch used when creating a new branch',
     }),
   }
 
   async run() {
-    const { args, flags } = this.parse(Switch)
+    const { args, flags } = await this.parse(Switch)
     const config = await this.getConfig()
     const { token } = config
     let { baseBranch } = config

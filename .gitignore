@@ -28,6 +28,7 @@ node_modules
 /.eslintcache
 /.sass-cache
 /connect.lock
+/core.*
 /coverage
 /libpeerconnection.log
 npm-debug.log
