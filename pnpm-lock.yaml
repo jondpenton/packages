@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 importers:
   .:
     specifiers:
+      '@mattinton/prettier-plugin-tidy-imports': ^1.1.12
       '@nrwl/cli': 14.5.4
       '@nrwl/eslint-plugin-nx': 14.5.4
       '@nrwl/jest': 14.5.4
@@ -23,6 +24,7 @@ importers:
       lint-staged: ^13.0.3
       nx: 14.5.4
       prettier: ^2.6.2
+      prettier-plugin-packagejson: ^2.2.18
       ts-jest: ^27.1.4
       ts-node: ^10.8.0
       tslib: ^2.3.0
@@ -30,6 +32,7 @@ importers:
     dependencies:
       tslib: 2.4.0
     devDependencies:
+      '@mattinton/prettier-plugin-tidy-imports': 1.1.12_gd3y7r3s3evy6b2vthd7dmacga
       '@nrwl/cli': 14.5.4
       '@nrwl/eslint-plugin-nx': 14.5.4_bksgi437r5bi6sietpqd2tifia
       '@nrwl/jest': 14.5.4_pog2w3zkul5hbrbhurbj4m5ldu
@@ -50,6 +53,7 @@ importers:
       lint-staged: 13.0.3
       nx: 14.5.4
       prettier: 2.7.1
+      prettier-plugin-packagejson: 2.2.18_prettier@2.7.1
       ts-jest: 27.1.4_uvmegsgu3wwy5ezssftqak7ika
       ts-node: 10.8.2_t4lrjbt3sxauai4t5o275zsepa
       typescript: 4.7.4
@@ -2546,6 +2550,23 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@mattinton/prettier-plugin-tidy-imports/1.1.12_gd3y7r3s3evy6b2vthd7dmacga:
+    resolution:
+      {
+        integrity: sha512-lZhd9FP4ON5g3tmI946CE6kaNNqymbnQl00Ehf2PENpFCLej8YJdbk4snAjUqiMaubnpovZEpUR50Szu4EbK2w==,
+      }
+    engines: { node: '>= 12' }
+    peerDependencies:
+      prettier: 2.x
+      typescript: 4.x
+    dependencies:
+      lodash: 4.17.21
+      natural-sort: 1.0.0
+      prettier: 2.7.1
+      ts-morph: 14.0.0
+      typescript: 4.7.4
+    dev: true
+
   /@mrmlnc/readdir-enhanced/2.2.1:
     resolution:
       {
@@ -3617,6 +3638,18 @@ packages:
         integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==,
       }
     engines: { node: '>= 10' }
+    dev: true
+
+  /@ts-morph/common/0.13.0:
+    resolution:
+      {
+        integrity: sha512-fEJ6j7Cu8yiWjA4UmybOBH9Efgb/64ZTWuvCF4KysGu4xz8ettfyaqFt8WZ1btCxXsGZJjZ2/3svOF6rL+UFdQ==,
+      }
+    dependencies:
+      fast-glob: 3.2.11
+      minimatch: 5.1.0
+      mkdirp: 1.0.4
+      path-browserify: 1.0.1
     dev: true
 
   /@tsconfig/node10/1.0.9:
@@ -5461,6 +5494,13 @@ packages:
         integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==,
       }
     engines: { iojs: '>= 1.0.0', node: '>= 0.12.0' }
+    dev: true
+
+  /code-block-writer/11.0.3:
+    resolution:
+      {
+        integrity: sha512-NiujjUFB4SwScJq2bwbYUtXbZhBSlY6vYzm++3Q6oC+U+injTqfPYFK8wS9COOmb2lueqp0ZRB4nK1VYeHgNyw==,
+      }
     dev: true
 
   /code-point-at/1.1.0:
@@ -7569,6 +7609,13 @@ packages:
       is-plain-obj: 1.1.0
     dev: true
 
+  /git-hooks-list/1.0.3:
+    resolution:
+      {
+        integrity: sha512-Y7wLWcrLUXwk2noSka166byGCvhMtDRpgHdzCno1UQv/n/Hegp++a2xBWJL1lJarnKD3SWaljD+0z1ztqxuKyQ==,
+      }
+    dev: true
+
   /git-log-parser/1.2.0:
     resolution:
       {
@@ -7714,6 +7761,23 @@ packages:
     engines: { node: '>=8' }
     dependencies:
       type-fest: 0.20.2
+    dev: true
+
+  /globby/10.0.0:
+    resolution:
+      {
+        integrity: sha512-3LifW9M4joGZasyYPz2A1U74zbC/45fvpXUvO/9KbSa+VV0aGZarWkfdgKyR9sExNP0t0x0ss/UMJpNpcaTspw==,
+      }
+    engines: { node: '>=8' }
+    dependencies:
+      '@types/glob': 7.2.0
+      array-union: 2.1.0
+      dir-glob: 3.0.1
+      fast-glob: 3.2.11
+      glob: 7.1.4
+      ignore: 5.2.0
+      merge2: 1.4.1
+      slash: 3.0.0
     dev: true
 
   /globby/10.0.2:
@@ -10863,6 +10927,13 @@ packages:
         integrity: sha512-p7KTHxU0CUrcOXe62Zfrb5Z13nLvPhSWR/so3kFulUQU0sgUll2Z0LwpsLN351eOOD+hRGu/F1g+6xDfPeD++Q==,
       }
 
+  /natural-sort/1.0.0:
+    resolution:
+      {
+        integrity: sha512-mOeYmwgon7Nhpwdoan+sysJ0B9VcE9srh+rek7P7f67YOqXkc1MoPJ2+TbCjph9L/h8fuL1zduY7h0cRcn9Usw==,
+      }
+    dev: true
+
   /ncp/2.0.0:
     resolution:
       {
@@ -11799,6 +11870,13 @@ packages:
       ansi-escapes: 3.2.0
       cross-spawn: 6.0.5
 
+  /path-browserify/1.0.1:
+    resolution:
+      {
+        integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==,
+      }
+    dev: true
+
   /path-dirname/1.0.2:
     resolution:
       {
@@ -12049,6 +12127,18 @@ packages:
         integrity: sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==,
       }
     engines: { node: '>=0.10.0' }
+    dev: true
+
+  /prettier-plugin-packagejson/2.2.18_prettier@2.7.1:
+    resolution:
+      {
+        integrity: sha512-iBjQ3IY6IayFrQHhXvg+YvKprPUUiIJ04Vr9+EbeQPfwGajznArIqrN33c5bi4JcIvmLHGROIMOm9aYakJj/CA==,
+      }
+    peerDependencies:
+      prettier: '>= 1.16.0'
+    dependencies:
+      prettier: 2.7.1
+      sort-package-json: 1.57.0
     dev: true
 
   /prettier/2.5.1:
@@ -13199,6 +13289,28 @@ packages:
       is-plain-obj: 2.1.0
     dev: true
 
+  /sort-object-keys/1.1.3:
+    resolution:
+      {
+        integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==,
+      }
+    dev: true
+
+  /sort-package-json/1.57.0:
+    resolution:
+      {
+        integrity: sha512-FYsjYn2dHTRb41wqnv+uEqCUvBpK3jZcTp9rbz2qDTmel7Pmdtf+i2rLaaPMRZeSVM60V3Se31GyWFpmKs4Q5Q==,
+      }
+    hasBin: true
+    dependencies:
+      detect-indent: 6.1.0
+      detect-newline: 3.1.0
+      git-hooks-list: 1.0.3
+      globby: 10.0.0
+      is-plain-obj: 2.1.0
+      sort-object-keys: 1.1.3
+    dev: true
+
   /sort-pjson/1.0.3:
     resolution:
       {
@@ -14193,6 +14305,16 @@ packages:
       semver: 7.3.7
       typescript: 4.7.4
       yargs-parser: 20.2.9
+    dev: true
+
+  /ts-morph/14.0.0:
+    resolution:
+      {
+        integrity: sha512-tO8YQ1dP41fw8GVmeQAdNsD8roZi1JMqB7YwZrqU856DvmG5/710e41q2XauzTYrygH9XmMryaFeLo+kdCziyA==,
+      }
+    dependencies:
+      '@ts-morph/common': 0.13.0
+      code-block-writer: 11.0.3
     dev: true
 
   /ts-node/10.4.0_i6bdezmfw3svzvgn6ktdqrstrq:

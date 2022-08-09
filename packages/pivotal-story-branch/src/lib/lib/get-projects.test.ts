@@ -1,5 +1,5 @@
-import { server, rest } from '../mocks/server'
-import { IProject, getProjects } from './get-projects'
+import { getProjects, IProject } from './get-projects'
+import { rest, server } from '../mocks/server'
 
 it('fetches projects from Pivotal Tracker API', async () => {
   const projects: IProject[] = [

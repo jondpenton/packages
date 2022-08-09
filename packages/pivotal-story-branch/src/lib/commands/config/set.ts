@@ -1,6 +1,6 @@
+import path from 'path'
 import { Command } from '@oclif/core'
 import { promises as fs } from 'fs'
-import path from 'path'
 
 interface IUserConfig {
   [key: string]: string | undefined

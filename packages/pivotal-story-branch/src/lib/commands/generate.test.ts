@@ -1,6 +1,6 @@
+import util from 'util'
 import { test } from '@oclif/test'
 import { promises as fs } from 'fs'
-import util from 'util'
 
 test
   .stub(

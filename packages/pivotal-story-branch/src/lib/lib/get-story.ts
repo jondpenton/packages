@@ -1,5 +1,5 @@
-import { IProject } from './get-projects'
 import axios from 'axios'
+import { IProject } from './get-projects'
 
 export interface IStory {
   id: number

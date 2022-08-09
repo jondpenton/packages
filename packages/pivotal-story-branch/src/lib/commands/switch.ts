@@ -1,5 +1,5 @@
-import { Flags } from '@oclif/core'
 import Ora from 'ora'
+import { Flags } from '@oclif/core'
 import { interpret } from 'xstate'
 import { Command } from '../lib/command'
 import { getStoryId } from '../lib/get-story-id'

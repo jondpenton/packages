@@ -1,5 +1,5 @@
-import { test } from '@oclif/test'
 import childProcess from 'child_process'
+import { test } from '@oclif/test'
 import { promises as fs } from 'fs'
 
 const callbackMock = jest
