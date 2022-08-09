@@ -3,7 +3,18 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "jondpenton",
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "master"
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build", "lint"]
+    },
+    "publish": {
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "dependsOn": ["^test", "build"]
+    }
   },
   "tasksRunnerOptions": {
     "default": {

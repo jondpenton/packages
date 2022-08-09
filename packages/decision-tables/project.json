@@ -25,7 +25,12 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/decision-tables/**/*.ts"]
+        "cache": true,
+        "cacheStrategy": "content",
+        "fix": true,
+        "hasTypeAwareRules": true,
+        "lintFilePatterns": ["packages/decision-tables/**/*.{js,ts,yml,yaml}"],
+        "maxWarnings": 0
       }
     },
     "test": {

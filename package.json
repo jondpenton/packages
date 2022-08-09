@@ -2,7 +2,9 @@
   "name": "jondpenton",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/cli": "14.5.4",
@@ -20,7 +22,9 @@
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-yml": "^1.1.0",
+    "husky": "^8.0.1",
     "jest": "^27.5.1",
+    "lint-staged": "^13.0.3",
     "nx": "14.5.4",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
