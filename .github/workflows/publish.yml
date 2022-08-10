@@ -1,0 +1,22 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v2
+        with:
+          main-branch-name: master
+
+      - run: npm install --global pnpm
+      - run: pnpm install
+      - run: pnpm exec nx run-many --target release --parallel 3
