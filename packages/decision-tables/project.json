@@ -17,7 +17,8 @@
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "pnpm --filter @jondpenton/decision-tables exec semantic-release --extends semantic-release-monorepo"
+        "command": "pnpm exec semantic-release --extends semantic-release-monorepo",
+        "cwd": "packages/decision-tables"
       },
       "dependsOn": ["build"]
     },

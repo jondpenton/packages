@@ -17,7 +17,8 @@
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "pnpm --filter @jondpenton/pivotal-story-branch exec semantic-release --extends semantic-release-monorepo"
+        "command": "pnpm exec semantic-release --extends semantic-release-monorepo",
+        "cwd": "packages/pivotal-story-branch"
       },
       "dependsOn": ["build"]
     },
