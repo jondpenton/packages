@@ -1,0 +1,47 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/decision-tables/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/decision-tables",
+        "main": "packages/decision-tables/src/index.ts",
+        "tsConfig": "packages/decision-tables/tsconfig.lib.json",
+        "assets": ["packages/decision-tables/*.md"]
+      },
+      "dependsOn": ["^build", "lint"]
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "pnpm --filter @jondpenton/decision-tables exec semantic-release --extends semantic-release-monorepo"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "cache": true,
+        "cacheStrategy": "content",
+        "fix": true,
+        "hasTypeAwareRules": true,
+        "lintFilePatterns": ["packages/decision-tables/**/*.{js,ts,yml,yaml}"],
+        "maxWarnings": 0
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/decision-tables"],
+      "options": {
+        "jestConfig": "packages/decision-tables/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

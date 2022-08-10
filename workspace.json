@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "decision-tables": "packages/decision-tables",
+    "pivotal-story-branch": "packages/pivotal-story-branch",
+    "prisma-proxy": "packages/prisma-proxy"
+  }
+}

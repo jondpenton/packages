@@ -1,0 +1,6 @@
+extends:
+  - ../../.eslintrc.yaml
+ignorePatterns:
+  - '!**/*'
+parserOptions:
+  project: 'packages/pivotal-story-branch/tsconfig.*?.json'

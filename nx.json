@@ -1,0 +1,28 @@
+{
+  "extends": "nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "jondpenton",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build", "lint"]
+    },
+    "publish": {
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "dependsOn": ["^test", "build"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MDA4ZGMyNGItNWZmYi00MjFhLTk0MTUtYmJkYTMwMDFhOThjfHJlYWQtd3JpdGU="
+      }
+    }
+  }
+}

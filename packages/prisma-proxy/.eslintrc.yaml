@@ -1,0 +1,7 @@
+---
+extends:
+  - ../../.eslintrc.yaml
+ignorePatterns:
+  - '!**/*'
+parserOptions:
+  project: 'packages/prisma-proxy/tsconfig.*?.json'

@@ -1,0 +1,39 @@
+{
+  "name": "jondpenton",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@mattinton/prettier-plugin-tidy-imports": "^1.1.12",
+    "@nrwl/cli": "14.5.4",
+    "@nrwl/eslint-plugin-nx": "14.5.4",
+    "@nrwl/jest": "14.5.4",
+    "@nrwl/js": "14.5.4",
+    "@nrwl/linter": "14.5.4",
+    "@nrwl/nx-cloud": "latest",
+    "@nrwl/workspace": "14.5.4",
+    "@types/jest": "27.4.1",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-yml": "^1.1.0",
+    "husky": "^8.0.1",
+    "jest": "^27.5.1",
+    "lint-staged": "^13.0.3",
+    "nx": "14.5.4",
+    "prettier": "^2.6.2",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  }
+}

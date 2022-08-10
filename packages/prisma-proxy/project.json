@@ -1,0 +1,47 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/prisma-proxy/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/prisma-proxy",
+        "main": "packages/prisma-proxy/src/index.ts",
+        "tsConfig": "packages/prisma-proxy/tsconfig.lib.json",
+        "assets": ["packages/prisma-proxy/*.md"]
+      },
+      "dependsOn": ["^build", "lint"]
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "pnpm --filter @jondpenton/prisma-proxy exec semantic-release --extends semantic-release-monorepo"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "cache": true,
+        "cacheStrategy": "content",
+        "fix": true,
+        "hasTypeAwareRules": true,
+        "lintFilePatterns": ["packages/prisma-proxy/**/*.{js,ts,yml,yaml}"],
+        "maxWarnings": 0
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/prisma-proxy"],
+      "options": {
+        "jestConfig": "packages/prisma-proxy/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
