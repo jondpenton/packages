@@ -17,7 +17,7 @@
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs prisma-proxy {args.ver} {args.tag}"
+        "command": "pnpm --filter @jondpenton/prisma-proxy exec semantic-release --extends semantic-release-monorepo"
       },
       "dependsOn": ["build"]
     },
