@@ -1,0 +1,6 @@
+tasks:
+  - init: |
+      pnpm install
+      pnpm exec nx run-many --target build
+    command: |
+      pnpm exec nx run-many --target build
