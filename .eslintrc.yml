@@ -23,16 +23,15 @@ overrides:
       accessor-pairs: error
       arrow-body-style: warn
       camelcase: warn
-      capitalized-comments: warn
       class-methods-use-this: error
       curly: warn
       default-case: warn
       default-case-last: error
       eqeqeq: error
-      func-names: error
       func-style:
         - error
         - declaration
+        - allowArrowFunctions: true
 
       id-length: error
       no-await-in-loop: error
