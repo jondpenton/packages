@@ -9,8 +9,10 @@ beforeEach(() => {
   process.env['PIVOTAL_TRACKER_TOKEN'] = undefined
 })
 
-// Reset any request handlers that we may add during the tests,
-// So they don't affect other tests.
+/*
+ * Reset any request handlers that we may add during the tests,
+ * So they don't affect other tests.
+ */
 afterEach(() => server.resetHandlers())
 
 afterAll(() => {

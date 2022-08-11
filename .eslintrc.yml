@@ -34,7 +34,14 @@ overrides:
         - allowArrowFunctions: true
 
       id-length: error
+      multiline-comment-style: warn
+      new-cap:
+        - error
+        - capIsNew: false
+
+      no-array-constructor: error
       no-await-in-loop: error
+      no-bitwise: error
       no-constant-binary-expression: error
       no-constructor-return: error
       no-duplicate-imports: error
@@ -58,6 +65,13 @@ overrides:
       - 'plugin:@nrwl/nx/javascript'
     rules:
       dot-notation: warn
+
+  - files:
+      - '*.js'
+      - '*.jsx'
+      - '*.tsx'
+    rules:
+      no-alert: error
 
   - files:
       - '*.yaml'
