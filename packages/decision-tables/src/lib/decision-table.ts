@@ -43,7 +43,7 @@ export class DecisionTable<
   ): Promise<{ [Key in ConditionKeys]: boolean }> {
     const { conditions } = this.options
 
-    await Promise.all(
+    const keyResults = await Promise.all(
       keys.map(async (key) => {
         const fnOrBoolean = conditions[key]
 
@@ -53,11 +53,20 @@ export class DecisionTable<
 
         const fn = fnOrBoolean as Exclude<typeof fnOrBoolean, boolean>
 
-        const result: boolean = await fn()
-
-        conditions[key] = result
+        return {
+          key,
+          result: await fn(),
+        }
       }),
     )
+
+    keyResults
+      .filter((keyResult): keyResult is NonNullable<typeof keyResult> =>
+        Boolean(keyResult),
+      )
+      .forEach(({ key, result }) => {
+        conditions[key] = result
+      })
 
     const booleanConditions = keys.reduce((obj, key) => {
       return {

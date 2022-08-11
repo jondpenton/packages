@@ -26,6 +26,14 @@ overrides:
       no-duplicate-imports: error
       no-promise-executor-return: error
       no-self-compare: error
+      no-template-curly-in-string: warn
+      no-unreachable-loop: error
+      no-unused-private-class-members: error
+      no-use-before-define:
+        - error
+        - functions: false
+
+      require-atomic-updates: error
 
   - files:
       - '*.ts'
