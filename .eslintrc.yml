@@ -22,6 +22,7 @@ overrides:
                 - '*'
       no-await-in-loop: error
       no-constant-binary-expression: warn
+      no-constructor-return: warn
 
   - files:
       - '*.ts'
