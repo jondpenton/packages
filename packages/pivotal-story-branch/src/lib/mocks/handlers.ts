@@ -23,6 +23,8 @@ export const handlers = [
           ctx.json({
             id: 12345678,
             name: 'Story name',
+
+            // eslint-disable-next-line camelcase
             story_type: 'feature',
           } as IStory),
         )

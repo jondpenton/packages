@@ -5,10 +5,10 @@ import {
   DelegateWhereMap,
 } from './utils'
 
-export const createPrismaProxy = <TClient extends Record<string, unknown>>(
+export function createPrismaProxy<TClient extends Record<string, unknown>>(
   unrestrictedPrisma: TClient,
   delegateMap: DelegateWhereMap<TClient>,
-) => {
+) {
   type TDelegateMapValue =
     DelegateWhereMap<TClient>[ClientDelegateKeys<TClient>]
   const prismaDelegateProxies = Object.fromEntries(

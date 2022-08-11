@@ -68,12 +68,13 @@ export class DecisionTable<
         conditions[key] = result
       })
 
-    const booleanConditions = keys.reduce((obj, key) => {
-      return {
+    const booleanConditions = keys.reduce(
+      (obj, key) => ({
         ...obj,
         [key]: conditions[key],
-      }
-    }, {} as { [Key in ConditionKeys]: boolean })
+      }),
+      {} as { [Key in ConditionKeys]: boolean },
+    )
 
     return booleanConditions
   }

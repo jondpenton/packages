@@ -162,9 +162,13 @@ async function checkoutBaseBranch(ctx: SwitchContext): Promise<void> {
   })
 }
 
-const isTruthy = (_ctx: SwitchContext, event: DoneInvokeEvent<unknown>) =>
-  !!event.data
-const inContext = (key: string) => (ctx: SwitchContext) => !!ctx[key]
+function isTruthy(_ctx: SwitchContext, event: DoneInvokeEvent<unknown>) {
+  return !!event.data
+}
+
+function inContext(key: string) {
+  return (ctx: SwitchContext) => !!ctx[key]
+}
 
 const switchMachine = createMachine<SwitchContext>({
   id: 'switch',

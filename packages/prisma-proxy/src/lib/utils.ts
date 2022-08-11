@@ -6,11 +6,11 @@ type TFindFunction = (args: {
   }
 }) => unknown
 
-const createPrismaFindOperationProxy = <TFunction extends TFindFunction>(
+function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
   fn: TFunction,
   where: NonNullable<NonNullable<Parameters<TFunction>[0]>[`where`]>,
-) =>
-  new Proxy(fn, {
+) {
+  return new Proxy(fn, {
     apply(target, thisArg, argArray) {
       let [args] = argArray as [
         {
@@ -41,6 +41,7 @@ const createPrismaFindOperationProxy = <TFunction extends TFindFunction>(
       return Reflect.apply(target, thisArg, [args])
     },
   })
+}
 
 export interface Delegate {
   aggregate: TFindFunction
@@ -49,7 +50,7 @@ export interface Delegate {
   findMany: TFindFunction
 }
 
-const createPrismaFindOperationsProxies = <
+function createPrismaFindOperationsProxies<
   TAggregateFunction extends TFindFunction,
   TCountFunction extends TFindFunction,
   TFindFirstFunction extends TFindFunction,
@@ -62,14 +63,16 @@ const createPrismaFindOperationsProxies = <
     findMany: TFindManyFunction
   },
   where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>,
-) => ({
-  aggregate: createPrismaFindOperationProxy(delegate.aggregate, where),
-  count: createPrismaFindOperationProxy(delegate.count, where),
-  findFirst: createPrismaFindOperationProxy(delegate.findFirst, where),
-  findMany: createPrismaFindOperationProxy(delegate.findMany, where),
-})
+) {
+  return {
+    aggregate: createPrismaFindOperationProxy(delegate.aggregate, where),
+    count: createPrismaFindOperationProxy(delegate.count, where),
+    findFirst: createPrismaFindOperationProxy(delegate.findFirst, where),
+    findMany: createPrismaFindOperationProxy(delegate.findMany, where),
+  }
+}
 
-export const createPrismaDelegateProxy = <
+export function createPrismaDelegateProxy<
   TAggregateFunction extends TFindFunction,
   TCountFunction extends TFindFunction,
   TFindFirstFunction extends TFindFunction,
@@ -82,7 +85,7 @@ export const createPrismaDelegateProxy = <
     findMany: TFindManyFunction
   },
   where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>,
-) => {
+) {
   const findProxies = createPrismaFindOperationsProxies(delegate, where)
   const delegateProxy = new Proxy(delegate, {
     get(target, propertyKey, receiver) {

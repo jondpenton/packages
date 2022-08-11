@@ -5,6 +5,8 @@ it('formats a short story correctly', () => {
   const story: IStory = {
     id: 1,
     name: 'some name',
+
+    // eslint-disable-next-line camelcase
     story_type: 'feature',
   }
 
@@ -17,6 +19,8 @@ it('formats a long story correctly', () => {
   const story: IStory = {
     id: 1,
     name: "this is an extremely, long, precarious name and should be shortened but won't",
+
+    // eslint-disable-next-line camelcase
     story_type: 'feature',
   }
 
@@ -33,6 +37,8 @@ it('returns a longer formatted branch name when PIVOTAL_TRACKER_BRANCH_MAX_LENGT
     const story: IStory = {
       id: 1,
       name: "this is an extremely, long, precarious name and should be shortened but won't",
+
+      // eslint-disable-next-line camelcase
       story_type: 'feature',
     }
 

@@ -20,19 +20,30 @@ overrides:
             - sourceTag: '*'
               onlyDependOnLibsWithTags:
                 - '*'
+      accessor-pairs: error
+      arrow-body-style: warn
+      camelcase: warn
+      capitalized-comments: warn
+      class-methods-use-this: error
+      curly: warn
+      default-case: warn
+      default-case-last: error
+      eqeqeq: error
+      func-names: error
+      func-style:
+        - error
+        - declaration
+
+      id-length: error
       no-await-in-loop: error
       no-constant-binary-expression: warn
-      no-constructor-return: warn
+      no-constructor-return: error
       no-duplicate-imports: error
       no-promise-executor-return: error
       no-self-compare: error
       no-template-curly-in-string: warn
       no-unreachable-loop: error
       no-unused-private-class-members: error
-      no-use-before-define:
-        - error
-        - functions: false
-
       require-atomic-updates: error
 
   - files:
@@ -40,14 +51,14 @@ overrides:
       - '*.tsx'
     extends:
       - 'plugin:@nrwl/nx/typescript'
-    rules: {}
 
   - files:
       - '*.js'
       - '*.jsx'
     extends:
       - 'plugin:@nrwl/nx/javascript'
-    rules: {}
+    rules:
+      dot-notation: error
 
   - files:
       - '*.yaml'
