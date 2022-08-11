@@ -22,12 +22,12 @@ overrides:
                 - '*'
       accessor-pairs: error
       arrow-body-style: warn
-      camelcase: warn
+      camelcase: error
       class-methods-use-this: error
       curly: warn
-      default-case: warn
+      default-case: error
       default-case-last: error
-      eqeqeq: error
+      eqeqeq: warn
       func-style:
         - error
         - declaration
@@ -35,12 +35,12 @@ overrides:
 
       id-length: error
       no-await-in-loop: error
-      no-constant-binary-expression: warn
+      no-constant-binary-expression: error
       no-constructor-return: error
       no-duplicate-imports: error
       no-promise-executor-return: error
       no-self-compare: error
-      no-template-curly-in-string: warn
+      no-template-curly-in-string: error
       no-unreachable-loop: error
       no-unused-private-class-members: error
       require-atomic-updates: error
@@ -57,7 +57,7 @@ overrides:
     extends:
       - 'plugin:@nrwl/nx/javascript'
     rules:
-      dot-notation: error
+      dot-notation: warn
 
   - files:
       - '*.yaml'
