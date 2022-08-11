@@ -1,6 +1,6 @@
-'*.!({js,jsx,ts,tsx,yml,yaml})':
+'*.!({js,jsx,ts,tsx,yaml,yml})':
   - &prettier prettier --cache --cache-strategy content --write
 
-'*.{js,jsx,ts,tsx,yml,yaml}':
+'*.{js,jsx,ts,tsx,yaml,yml}':
   - eslint --cache --cache-strategy content --fix --max-warnings 0
   - *prettier
