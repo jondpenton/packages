@@ -11,16 +11,14 @@
         "main": "packages/pivotal-story-branch/src/index.ts",
         "tsConfig": "packages/pivotal-story-branch/tsconfig.lib.json",
         "assets": ["packages/pivotal-story-branch/*.md"]
-      },
-      "dependsOn": ["^build", "lint"]
+      }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "pnpm exec semantic-release --extends semantic-release-monorepo",
         "cwd": "packages/pivotal-story-branch"
-      },
-      "dependsOn": ["build"]
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -42,8 +40,7 @@
       "options": {
         "jestConfig": "packages/pivotal-story-branch/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build"]
+      }
     }
   },
   "tags": []

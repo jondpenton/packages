@@ -7,10 +7,10 @@ plugins:
   - eslint-plugin-yml
 overrides:
   - files:
-      - '*.ts'
-      - '*.tsx'
       - '*.js'
       - '*.jsx'
+      - '*.ts'
+      - '*.tsx'
     rules:
       '@nrwl/nx/enforce-module-boundaries':
         - error
@@ -36,11 +36,10 @@ overrides:
     rules: {}
 
   - files:
-      - '*.yml'
       - '*.yaml'
+      - '*.yml'
     extends:
       - plugin:yml/recommended
+      - plugin:yml/prettier
     rules:
-      yml/plain-scalar:
-        - error
-        - always
+      yml/plain-scalar: error

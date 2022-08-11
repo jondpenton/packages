@@ -11,16 +11,14 @@
         "main": "packages/prisma-proxy/src/index.ts",
         "tsConfig": "packages/prisma-proxy/tsconfig.lib.json",
         "assets": ["packages/prisma-proxy/*.md"]
-      },
-      "dependsOn": ["^build", "lint"]
+      }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "pnpm exec semantic-release --extends semantic-release-monorepo",
         "cwd": "packages/prisma-proxy"
-      },
-      "dependsOn": ["build"]
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -40,8 +38,7 @@
       "options": {
         "jestConfig": "packages/prisma-proxy/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build"]
+      }
     }
   },
   "tags": []

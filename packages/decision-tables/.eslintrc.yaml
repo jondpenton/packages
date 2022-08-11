@@ -1,6 +1,0 @@
-extends:
-  - ../../.eslintrc.yaml
-ignorePatterns:
-  - '!**/*'
-parserOptions:
-  project: 'packages/decision-tables/tsconfig.*?.json'

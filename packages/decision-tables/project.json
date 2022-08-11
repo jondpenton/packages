@@ -11,16 +11,14 @@
         "main": "packages/decision-tables/src/index.ts",
         "tsConfig": "packages/decision-tables/tsconfig.lib.json",
         "assets": ["packages/decision-tables/*.md"]
-      },
-      "dependsOn": ["^build", "lint"]
+      }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "pnpm exec semantic-release --extends semantic-release-monorepo",
         "cwd": "packages/decision-tables"
-      },
-      "dependsOn": ["build"]
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -40,8 +38,7 @@
       "options": {
         "jestConfig": "packages/decision-tables/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build"]
+      }
     }
   },
   "tags": []

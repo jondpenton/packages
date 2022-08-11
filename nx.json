@@ -9,6 +9,9 @@
     "build": {
       "dependsOn": ["^build", "lint"]
     },
+    "lint": {
+      "inputs": ["{workspaceRoot}/.eslintrc.yml", "default"]
+    },
     "publish": {
       "dependsOn": ["build"]
     },

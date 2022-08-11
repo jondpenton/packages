@@ -1,0 +1,9 @@
+extends:
+  - ../../.eslintrc.yml
+ignorePatterns:
+  - '!**/*'
+overrides:
+  - files:
+      - '*.ts'
+    parserOptions:
+      project: 'packages/decision-tables/tsconfig.*?.json'
