@@ -24,6 +24,7 @@ overrides:
       no-constant-binary-expression: warn
       no-constructor-return: warn
       no-duplicate-imports: error
+      no-promise-executor-return: error
 
   - files:
       - '*.ts'
