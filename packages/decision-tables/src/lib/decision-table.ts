@@ -33,6 +33,7 @@ export class DecisionTable<
     )
 
     for (const action of actions) {
+      // eslint-disable-next-line no-await-in-loop
       await action()
     }
   }
@@ -42,19 +43,21 @@ export class DecisionTable<
   ): Promise<{ [Key in ConditionKeys]: boolean }> {
     const { conditions } = this.options
 
-    for (const key of keys) {
-      const fnOrBoolean = conditions[key]
+    await Promise.all(
+      keys.map(async (key) => {
+        const fnOrBoolean = conditions[key]
 
-      if (typeof fnOrBoolean !== `function`) {
-        continue
-      }
+        if (typeof fnOrBoolean !== `function`) {
+          return
+        }
 
-      const fn = fnOrBoolean as Exclude<typeof fnOrBoolean, boolean>
+        const fn = fnOrBoolean as Exclude<typeof fnOrBoolean, boolean>
 
-      const result: boolean = await fn()
+        const result: boolean = await fn()
 
-      conditions[key] = result
-    }
+        conditions[key] = result
+      }),
+    )
 
     const booleanConditions = keys.reduce((obj, key) => {
       return {
@@ -71,22 +74,29 @@ export class DecisionTable<
   > {
     const { decisions } = this.options
 
-    decisionLoop: for (const decision of decisions) {
-      const conditions = await this.processConditions(
-        Object.keys(decision.conditions) as ConditionKeys[],
-      )
+    const decisionResults = await Promise.all(
+      decisions.map(async (decision) => {
+        const conditions = await this.processConditions(
+          Object.keys(decision.conditions) as ConditionKeys[],
+        )
 
-      for (const condition of Object.entries(conditions)) {
-        const [key, value] = condition as [ConditionKeys, boolean]
+        for (const condition of Object.entries(conditions)) {
+          const [key, value] = condition as [ConditionKeys, boolean]
 
-        if (value !== decision.conditions[key]) {
-          continue decisionLoop
+          if (value !== decision.conditions[key]) {
+            return
+          }
         }
-      }
 
-      return decision
+        return decision
+      }),
+    )
+    const decision = decisionResults.filter(Boolean)[0]
+
+    if (!decision) {
+      throw new Error(`Matching decision not found`)
     }
 
-    throw new Error(`Matching decision not found`)
+    return decision
   }
 }

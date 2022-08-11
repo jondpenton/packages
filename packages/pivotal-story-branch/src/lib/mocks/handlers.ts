@@ -16,7 +16,7 @@ export const handlers = [
       ),
   ),
   rest.get(
-    'https://www.pivotaltracker.com/services/v5/projects/123/stories/:storyId',
+    'https://www.pivotaltracker.com/services/v5/stories/:storyId',
     (req, res, ctx) => {
       if (req.params['storyId'] === `12345678`) {
         return res(

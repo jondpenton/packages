@@ -1,7 +1,6 @@
 import Ora from 'ora'
 import { Command } from '../lib/command'
 import { formatBranch } from '../lib/format-branch'
-import { getProjects } from '../lib/get-projects'
 import { getStory } from '../lib/get-story'
 import { getStoryId } from '../lib/get-story-id'
 
@@ -57,13 +56,9 @@ async function runGenerate({
   token: string
   storyId: string
 }): Promise<string> {
-  spinner?.start('Fetching projects...')
-  const projects = await getProjects({ token })
-
-  spinner?.succeed('Fetched projects')
   spinner?.start('Fetching story...')
 
-  const story = await getStory({ token, projects, storyId })
+  const story = await getStory({ token, storyId })
 
   spinner?.succeed('Fetched story')
 

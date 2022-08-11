@@ -20,6 +20,7 @@ overrides:
             - sourceTag: '*'
               onlyDependOnLibsWithTags:
                 - '*'
+      no-await-in-loop: error
 
   - files:
       - '*.ts'
