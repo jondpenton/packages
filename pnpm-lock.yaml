@@ -106,7 +106,6 @@ importers:
       axios: 0.24.0
       babel-jest: ^28.1.3
       chai: ~4.3.6
-      fancy-test: ~1.4.10
       jest: ^28.1.3
       mem-fs: ^2.1.0
       msw: 0.35.0
@@ -142,7 +141,6 @@ importers:
       '@types/node': 16.11.49
       babel-jest: 28.1.3_@babel+core@7.18.10
       chai: 4.3.6
-      fancy-test: 1.4.10
       jest: 28.1.3_ajmrjnfk5ns62v53qgmd377bjq
       mem-fs: 2.2.1
       msw: 0.35.0
@@ -7055,25 +7053,6 @@ packages:
         integrity: sha512-AEo4zm+TenK7zQorGK1f9mJ8L14hnTDi2ZQPR+Mub1NX8zimka1mXpV5LpH8x9HoUmFSHZCfLHqWvp0Y4FxxzQ==,
       }
     engines: { node: '>=8' }
-    dev: true
-
-  /fancy-test/1.4.10:
-    resolution:
-      {
-        integrity: sha512-AaUX6wKS7D5OP2YK2q5G7c8PGx2lgoyLUD7Bbg8z323sb9aebBqzb9UN6phzI73UgO/ViihmNfOxF3kdfZLhew==,
-      }
-    engines: { node: '>=8.0.0' }
-    dependencies:
-      '@types/chai': 4.3.3
-      '@types/lodash': 4.14.183
-      '@types/node': 16.11.49
-      '@types/sinon': 10.0.13
-      lodash: 4.17.21
-      mock-stdin: 1.0.0
-      nock: 13.2.9
-      stdout-stderr: 0.1.13
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /fancy-test/2.0.0:
