@@ -7,17 +7,16 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build", "lint"]
+      "dependsOn": ["^build"]
     },
     "lint": {
-      "dependsOn": ["^lint"],
       "inputs": ["{workspaceRoot}/.eslintrc.yml", "default"]
     },
     "publish": {
       "dependsOn": ["test"]
     },
     "test": {
-      "dependsOn": ["^test", "build"]
+      "dependsOn": ["build"]
     }
   },
   "tasksRunnerOptions": {
