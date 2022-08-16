@@ -13,7 +13,7 @@
       "inputs": ["{workspaceRoot}/.eslintrc.yml", "default"]
     },
     "publish": {
-      "dependsOn": ["build"]
+      "dependsOn": ["test"]
     },
     "test": {
       "dependsOn": ["^test", "build"]
