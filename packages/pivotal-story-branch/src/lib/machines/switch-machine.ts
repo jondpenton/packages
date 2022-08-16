@@ -43,7 +43,7 @@ async function branchExists(ctx: SwitchContext): Promise<boolean> {
       resolve(stdout)
     })
   })
-  const isLocal = !!output
+  const isLocal = Boolean(output)
 
   if (!isLocal) {
     const isRemote = await remoteBranchExists(ctx, true)
@@ -163,11 +163,11 @@ async function checkoutBaseBranch(ctx: SwitchContext): Promise<void> {
 }
 
 function isTruthy(_ctx: SwitchContext, event: DoneInvokeEvent<unknown>) {
-  return !!event.data
+  return Boolean(event.data)
 }
 
 function inContext(key: string) {
-  return (ctx: SwitchContext) => !!ctx[key]
+  return (ctx: SwitchContext) => Boolean(ctx[key])
 }
 
 const switchMachine = createMachine<SwitchContext>({
