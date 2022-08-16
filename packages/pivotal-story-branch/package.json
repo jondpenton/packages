@@ -11,7 +11,7 @@
     "/dist"
   ],
   "dependencies": {
-    "@oclif/core": "^1.13.11",
+    "@oclif/core": "^1.14.0",
     "@oclif/plugin-help": "~3.2.20",
     "axios": "0.24.0",
     "ora": "~5.0.0",
