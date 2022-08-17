@@ -1,5 +1,6 @@
 import { exec } from 'child_process'
 import { Ora } from 'ora'
+import { isEmpty } from 'ramda'
 import {
   assign,
   createMachine,
@@ -111,7 +112,7 @@ async function remoteBranchExists(
     })
   })
 
-  const isRemote = output.length > 0
+  const isRemote = !isEmpty(output)
 
   if (!silent) {
     if (isRemote) {

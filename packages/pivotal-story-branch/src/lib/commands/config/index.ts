@@ -7,7 +7,16 @@ class Config extends Command {
     const config = await this.getConfig()
 
     this.log('Configuration:')
-    this.log(JSON.stringify(config, null, 2))
+
+    this.log(
+      JSON.stringify(
+        config,
+        null,
+
+        // eslint-disable-next-line no-magic-numbers
+        2,
+      ),
+    )
   }
 }
 

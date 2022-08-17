@@ -67,6 +67,18 @@ overrides:
       no-implicit-globals: error
       no-implied-eval: error
       no-invalid-this: error
+      no-iterator: error
+      no-label-var: error
+      no-lone-blocks: error
+      no-lonely-if: warn
+      no-loop-func: error
+      no-magic-numbers:
+        - error
+        - ignoreArrayIndexes: true
+
+      no-mixed-operators: error
+      no-multi-assign: error
+      no-multi-str: error
       no-promise-executor-return: error
       no-self-compare: error
       no-template-curly-in-string: error

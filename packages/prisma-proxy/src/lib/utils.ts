@@ -8,7 +8,12 @@ type TFindFunction = (args: {
 
 function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
   fn: TFunction,
-  where: NonNullable<NonNullable<Parameters<TFunction>[0]>[`where`]>,
+  where: NonNullable<
+    NonNullable<
+      // eslint-disable-next-line no-magic-numbers
+      Parameters<TFunction>[0]
+    >[`where`]
+  >,
 ) {
   return new Proxy(fn, {
     apply(target, thisArg, argArray) {
@@ -23,7 +28,11 @@ function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
       if (args === undefined) {
         args = { where }
       } else if (`where` in args && args.where !== undefined) {
-        if (Object.keys(args.where).length === 1 && `AND` in args.where) {
+        if (
+          // eslint-disable-next-line no-magic-numbers
+          Object.keys(args.where).length === 1 &&
+          `AND` in args.where
+        ) {
           if (Array.isArray(args.where.AND)) {
             args.where.AND = [...args.where.AND, where]
           } else {
@@ -62,7 +71,12 @@ function createPrismaFindOperationsProxies<
     findFirst: TFindFirstFunction
     findMany: TFindManyFunction
   },
-  where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>,
+  where: NonNullable<
+    NonNullable<
+      // eslint-disable-next-line no-magic-numbers
+      Parameters<TFindFirstFunction>[0]
+    >[`where`]
+  >,
 ) {
   return {
     aggregate: createPrismaFindOperationProxy(delegate.aggregate, where),
@@ -84,7 +98,12 @@ export function createPrismaDelegateProxy<
     findFirst: TFindFirstFunction
     findMany: TFindManyFunction
   },
-  where: NonNullable<NonNullable<Parameters<TFindFirstFunction>[0]>[`where`]>,
+  where: NonNullable<
+    NonNullable<
+      // eslint-disable-next-line no-magic-numbers
+      Parameters<TFindFirstFunction>[0]
+    >[`where`]
+  >,
 ) {
   const findProxies = createPrismaFindOperationsProxies(delegate, where)
   const delegateProxy = new Proxy(delegate, {
@@ -105,7 +124,12 @@ export type ClientDelegateKeys<TClient extends Record<string, unknown>> =
 
 export type DelegateWhereMap<TClient extends Record<string, unknown>> = {
   [TKey in ClientDelegateKeys<TClient>]?: TClient[TKey] extends Delegate
-    ? NonNullable<Parameters<TClient[TKey][`findFirst`]>[0]> extends {
+    ? NonNullable<
+        Parameters<
+          TClient[TKey][`findFirst`]
+          // eslint-disable-next-line no-magic-numbers
+        >[0]
+      > extends {
         where?: infer TWhere
       }
       ? TWhere

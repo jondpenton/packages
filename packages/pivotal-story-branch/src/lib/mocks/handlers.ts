@@ -1,4 +1,5 @@
 import { rest } from 'msw'
+import { BAD_REQUEST_STATUS_CODE } from './handlers.constants'
 import { IProject } from '../lib/get-projects'
 import { IStory } from '../lib/get-story'
 
@@ -30,7 +31,7 @@ export const handlers = [
         )
       }
 
-      return res(ctx.status(400))
+      return res(ctx.status(BAD_REQUEST_STATUS_CODE))
     },
   ),
 ]

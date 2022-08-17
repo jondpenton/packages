@@ -29,8 +29,14 @@ describe(`DecisionTable`, () => {
 
       await decisionTable.execute()
 
-      expect(fn).toHaveBeenCalledTimes(1)
-      expect(fn2).toHaveBeenCalledTimes(1)
+      expect(fn).toHaveBeenCalledTimes(
+        // eslint-disable-next-line no-magic-numbers
+        1,
+      )
+      expect(fn2).toHaveBeenCalledTimes(
+        // eslint-disable-next-line no-magic-numbers
+        1,
+      )
     })
   })
 })

@@ -1,0 +1,1 @@
+export const DEFAULT_BRANCH_MAX_LENGTH = 50

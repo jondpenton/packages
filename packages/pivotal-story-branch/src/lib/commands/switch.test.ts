@@ -43,7 +43,10 @@ test
     const branchName = 'feature/story-name-#12345678'
     const exec = childProcess.exec as unknown as jest.Mock
 
-    expect(exec).toHaveBeenCalledTimes(2)
+    expect(exec).toHaveBeenCalledTimes(
+      // eslint-disable-next-line no-magic-numbers
+      2,
+    )
     expect(exec.mock.calls[0][0]).toBe(`git checkout ${branchName}`)
     expect(exec.mock.calls[1][0]).toBe(`git checkout -b ${branchName}`)
   })
@@ -83,7 +86,10 @@ test
     const branchName = 'feature/story-name-#12345678'
     const exec = childProcess.exec as unknown as jest.Mock
 
-    expect(exec).toHaveBeenCalledTimes(1)
+    expect(exec).toHaveBeenCalledTimes(
+      // eslint-disable-next-line no-magic-numbers
+      1,
+    )
     expect(exec.mock.calls[0][0]).toBe(`git checkout ${branchName}`)
   })
 

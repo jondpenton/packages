@@ -1,10 +1,11 @@
 import slugify from 'slugify'
+import { DEFAULT_BRANCH_MAX_LENGTH } from './format-branch.constants'
 import { IStory } from './get-story'
 
 export function formatBranch(story: IStory): string {
   const characterLimit = process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH']
     ? parseInt(process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH'], 10)
-    : 50
+    : DEFAULT_BRANCH_MAX_LENGTH
   const baseLength = `${story.story_type}/`.length + `-#${story.id}`.length
   const remainingLength = characterLimit - baseLength
   const nameSlug = slugify(story.name.trim(), {
@@ -17,8 +18,11 @@ export function formatBranch(story: IStory): string {
   }
 
   const nameWords = nameSlug.split('-')
-  const usedWords: string[] = [nameWords[0]]
 
+  // eslint-disable-next-line no-magic-numbers
+  const usedWords: string[] = nameWords.slice(0, 1)
+
+  // eslint-disable-next-line no-magic-numbers
   for (const word of nameWords.slice(1)) {
     if ([...usedWords, word].join('-').length > remainingLength) {
       break
