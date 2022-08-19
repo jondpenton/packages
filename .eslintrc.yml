@@ -79,6 +79,7 @@ overrides:
       no-mixed-operators: error
       no-multi-assign: error
       no-multi-str: error
+      no-negated-condition: error
       no-promise-executor-return: error
       no-self-compare: error
       no-template-curly-in-string: error
