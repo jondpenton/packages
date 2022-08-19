@@ -6,7 +6,7 @@ const originalToken = process.env['PIVOTAL_TRACKER_TOKEN']
 beforeAll(() => server.listen())
 
 beforeEach(() => {
-  process.env['PIVOTAL_TRACKER_TOKEN'] = undefined
+  delete process.env['PIVOTAL_TRACKER_TOKEN']
 })
 
 /*

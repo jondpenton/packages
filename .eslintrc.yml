@@ -80,11 +80,52 @@ overrides:
       no-multi-assign: error
       no-multi-str: error
       no-negated-condition: error
+      no-nested-ternary: error
+      no-new: error
+      no-new-func: error
+      no-new-object: error
+      no-new-wrappers: error
+      no-nonoctal-decimal-escape: error
+      no-octal: error
+      no-octal-escape: error
+      no-param-reassign: error
       no-promise-executor-return: error
+      no-proto: error
+      no-redeclare: error
+      no-regex-spaces: warn
+      no-restricted-properties:
+        - error
+        - object: Object
+          property: assign
+
+      no-restricted-syntax:
+        - error
+        - VariableDeclarator[init.type='ArrowFunctionExpression']
+        - VariableDeclarator[init.type='FunctionExpression']
+
+      no-return-assign: error
+      no-script-url: error
       no-self-compare: error
+      no-sequences: error
+      no-shadow-restricted-names: error
       no-template-curly-in-string: error
+      no-throw-literal: error
+      no-undef-init: warn
+      no-undefined: error
+      no-underscore-dangle:
+        - error
+        - allowFunctionParams: true
+
+      no-unneeded-ternary:
+        - warn
+        - defaultAssignment: false
+
       no-unreachable-loop: error
+      no-unused-expressions: error
       no-unused-private-class-members: error
+      no-useless-call: error
+      no-useless-catch: error
+      no-useless-computed-key: warn
       require-atomic-updates: error
 
   - files:
