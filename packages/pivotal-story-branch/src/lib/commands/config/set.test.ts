@@ -20,7 +20,7 @@ test
   .stdout()
   .command(['config:set', 'myKey', 'myValue'])
   .it(`sets 'myKey' in configuration`, () => {
-    const [, passedConfig] = (fs.writeFile as jest.Mock).mock.calls[0]
+    const [[, passedConfig]] = (fs.writeFile as jest.Mock).mock.calls
 
     expect(passedConfig).toBe(
       JSON.stringify({

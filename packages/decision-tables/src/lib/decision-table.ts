@@ -101,7 +101,7 @@ export class DecisionTable<
         return decision
       }),
     )
-    const decision = decisionResults.filter(Boolean)[0]
+    const [decision] = decisionResults.filter(Boolean)
 
     if (!decision) {
       throw new Error(`Matching decision not found`)

@@ -126,6 +126,30 @@ overrides:
       no-useless-call: error
       no-useless-catch: error
       no-useless-computed-key: warn
+      no-useless-concat: error
+      no-useless-constructor: error
+      no-useless-escape: error
+      no-useless-rename: warn
+      no-useless-return: warn
+      no-var: warn
+      no-void: error
+      no-with: error
+      object-shorthand: warn
+      one-var:
+        - warn
+        - never
+
+      operator-assignment: warn
+      prefer-arrow-callback: warn
+      prefer-const: warn
+      prefer-destructuring:
+        - error
+        - object: false
+          array: true
+
+      prefer-exponentiation-operator: warn
+      prefer-named-capture-group: error
+      prefer-numeric-literals: warn
       require-atomic-updates: error
 
   - files:
@@ -133,6 +157,9 @@ overrides:
       - '*.tsx'
     extends:
       - 'plugin:@nrwl/nx/typescript'
+    rules:
+      '@typescript-eslint/no-useless-constructor': warn
+      no-useless-constructor: off
 
   - files:
       - '*.js'
