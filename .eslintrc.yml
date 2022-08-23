@@ -166,7 +166,26 @@ overrides:
       prefer-exponentiation-operator: warn
       prefer-named-capture-group: error
       prefer-numeric-literals: warn
+      prefer-object-has-own: warn
+      prefer-object-spread: warn
+      prefer-promise-reject-errors: error
+      prefer-regex-literals:
+        - error
+        - disallowRedundantWrapping: true
+
+      prefer-rest-params: error
+      prefer-spread: error
+      prefer-template: warn
+      quote-props:
+        - warn
+        - as-needed
+
+      radix:
+        - warn
+        - as-needed
+
       require-atomic-updates: error
+      require-await: error
 
   - files:
       - '*.ts'

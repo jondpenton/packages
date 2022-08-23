@@ -4,7 +4,7 @@ import { IStory } from './get-story'
 
 export function formatBranch(story: IStory): string {
   const characterLimit = process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH']
-    ? parseInt(process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH'], 10)
+    ? parseInt(process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH'])
     : DEFAULT_BRANCH_MAX_LENGTH
   const baseLength = `${story.story_type}/`.length + `-#${story.id}`.length
   const remainingLength = characterLimit - baseLength

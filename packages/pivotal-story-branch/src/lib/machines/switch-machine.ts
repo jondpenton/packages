@@ -196,7 +196,7 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.GenerateBranch]: {
       invoke: {
         id: 'getBranch',
-        async src(ctx) {
+        src(ctx) {
           if (!ctx.storyId) {
             const message = `No story ID found`
 

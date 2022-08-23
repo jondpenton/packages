@@ -17,6 +17,8 @@ class Generate extends Command {
       name: 'story_link',
       description: 'Link to Pivotal Tracker story',
       required: true,
+
+      // eslint-disable-next-line require-await
       parse: async (input: string) => getStoryId(input),
     },
   ]
