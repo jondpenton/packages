@@ -100,8 +100,24 @@ overrides:
 
       no-restricted-syntax:
         - error
-        - VariableDeclarator[init.type='ArrowFunctionExpression']
-        - VariableDeclarator[init.type='FunctionExpression']
+
+        # const foo = () => {}
+        - selector: VariableDeclarator[init.type='ArrowFunctionExpression']
+          message: Arrow function declarations aren't allowed.
+
+        # const foo = function foo() {}
+        - selector: VariableDeclarator[init.type='FunctionExpression']
+          message: Function expressions cannot be assigned to variables.
+
+        # let foo
+        # foo = () => {}
+        - selector: AssignmentExpression[right.type='ArrowFunctionExpression']
+          message: Arrow function expressions cannot be assigned to variables.
+
+        # let foo
+        # foo = function foo() {}
+        - selector: AssignmentExpression[right.type='FunctionExpression']
+          message: Function expressions cannot be assigned to variables.
 
       no-return-assign: error
       no-script-url: error
