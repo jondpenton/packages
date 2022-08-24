@@ -1,6 +1,6 @@
 export function getStoryId(link: string): string {
   const linkRegex =
-    /^https?:\/\/www\.pivotaltracker\.com\/story\/show\/(?<storyId>\d+)$/
+    /^https?:\/\/www\.pivotaltracker\.com\/story\/show\/(?<storyId>\d+)$/u
   const linkResult = linkRegex.exec(link)
 
   if (!linkResult?.groups?.['storyId']) {

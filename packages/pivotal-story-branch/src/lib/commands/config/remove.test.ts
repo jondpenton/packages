@@ -26,7 +26,7 @@ test
   .stdout()
   .command(['config:remove', 'myKey'])
   .it(`deletes 'myKey' from configuration`, () => {
-    const [, passedConfig] = (fs.writeFile as jest.Mock).mock.calls[0]
+    const [[, passedConfig]] = (fs.writeFile as jest.Mock).mock.calls
 
     expect(passedConfig).toBe(JSON.stringify({}))
   })

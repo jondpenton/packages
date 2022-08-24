@@ -6,13 +6,13 @@ describe(`DecisionTable`, () => {
       const fn = jest.fn()
       const fn2 = jest.fn()
       const decisionTable = new DecisionTable({
-        conditions: {
-          first: true,
-          second: false,
-        },
         actions: {
           fn,
           fn2,
+        },
+        conditions: {
+          first: true,
+          second: false,
         },
         decisions: [
           {

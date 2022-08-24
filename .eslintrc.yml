@@ -79,18 +79,137 @@ overrides:
       no-mixed-operators: error
       no-multi-assign: error
       no-multi-str: error
+      no-negated-condition: error
+      no-nested-ternary: error
+      no-new: error
+      no-new-func: error
+      no-new-object: error
+      no-new-wrappers: error
+      no-nonoctal-decimal-escape: error
+      no-octal: error
+      no-octal-escape: error
+      no-param-reassign: error
       no-promise-executor-return: error
+      no-proto: error
+      no-redeclare: error
+      no-regex-spaces: warn
+      no-restricted-properties:
+        - error
+        - object: Object
+          property: assign
+
+      no-restricted-syntax:
+        - error
+
+        # const foo = () => {}
+        - selector: VariableDeclarator > ArrowFunctionExpression
+          message: Arrow function declarations aren't allowed.
+
+        # let foo
+        # foo = () => {}
+        - selector: AssignmentExpression > ArrowFunctionExpression
+          message: Arrow function expressions cannot be assigned to variables.
+
+        # let foo
+        # foo = function foo() {}
+        - selector: AssignmentExpression > FunctionExpression
+          message: Function expressions cannot be assigned to variables.
+
+        # foo: () => {
+        #   let bar
+        #
+        #   return bar
+        # }
+        - selector: Property > ArrowFunctionExpression > BlockStatement > :first-child:not(ReturnStatement)
+          message: Arrow function expressions with a block statement can only be assigned to a property if they only contain a return statement.
+
+      no-return-assign: error
+      no-script-url: error
       no-self-compare: error
+      no-sequences: error
+      no-shadow-restricted-names: error
       no-template-curly-in-string: error
+      no-throw-literal: error
+      no-undef-init: warn
+      no-undefined: error
+      no-underscore-dangle:
+        - error
+        - allowFunctionParams: true
+
+      no-unneeded-ternary:
+        - warn
+        - defaultAssignment: false
+
       no-unreachable-loop: error
+      no-unused-expressions: error
       no-unused-private-class-members: error
+      no-useless-call: error
+      no-useless-catch: error
+      no-useless-computed-key: warn
+      no-useless-concat: error
+      no-useless-constructor: error
+      no-useless-escape: error
+      no-useless-rename: warn
+      no-useless-return: warn
+      no-var: warn
+      no-void: error
+      no-with: error
+      object-shorthand: warn
+      one-var:
+        - warn
+        - never
+
+      operator-assignment: warn
+      prefer-arrow-callback: warn
+      prefer-const: warn
+      prefer-destructuring:
+        - error
+        - object: false
+          array: true
+
+      prefer-exponentiation-operator: warn
+      prefer-named-capture-group: error
+      prefer-numeric-literals: warn
+      prefer-object-has-own: warn
+      prefer-object-spread: warn
+      prefer-promise-reject-errors: error
+      prefer-regex-literals:
+        - error
+        - disallowRedundantWrapping: true
+
+      prefer-rest-params: error
+      prefer-spread: error
+      prefer-template: warn
+      quote-props:
+        - warn
+        - as-needed
+
+      radix:
+        - warn
+        - as-needed
+
       require-atomic-updates: error
+      require-await: error
+      require-unicode-regexp: error
+      require-yield: error
+      sort-keys:
+        - error
+        - asc
+        - allowLineSeparatedGroups: true
+          natural: true
+
+      spaced-comment: warn
+      symbol-description: error
+      yoda: warn
 
   - files:
       - '*.ts'
       - '*.tsx'
     extends:
       - 'plugin:@nrwl/nx/typescript'
+    rules:
+      '@typescript-eslint/no-useless-constructor': warn
+      no-useless-constructor: off
 
   - files:
       - '*.js'

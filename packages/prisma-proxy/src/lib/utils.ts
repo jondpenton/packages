@@ -25,9 +25,9 @@ function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
         },
       ]
 
-      if (args === undefined) {
+      if (!args) {
         args = { where }
-      } else if (`where` in args && args.where !== undefined) {
+      } else if (`where` in args && args.where) {
         if (
           // eslint-disable-next-line no-magic-numbers
           Object.keys(args.where).length === 1 &&

@@ -12,6 +12,7 @@ class Switch extends Command {
   static override args = [
     {
       name: 'branch_or_story_link',
+
       description: 'Branch name or link to Pivotal Tracker story',
       required: true,
     },
@@ -51,11 +52,11 @@ class Switch extends Command {
 
     interpret(
       switchMachine.withContext({
+        baseBranch,
+        branch,
         spinner: Ora(),
         storyId,
         token,
-        branch,
-        baseBranch,
       }),
     ).start()
   }
