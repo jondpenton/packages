@@ -102,22 +102,26 @@ overrides:
         - error
 
         # const foo = () => {}
-        - selector: VariableDeclarator[init.type='ArrowFunctionExpression']
+        - selector: VariableDeclarator > ArrowFunctionExpression
           message: Arrow function declarations aren't allowed.
-
-        # const foo = function foo() {}
-        - selector: VariableDeclarator[init.type='FunctionExpression']
-          message: Function expressions cannot be assigned to variables.
 
         # let foo
         # foo = () => {}
-        - selector: AssignmentExpression[right.type='ArrowFunctionExpression']
+        - selector: AssignmentExpression > ArrowFunctionExpression
           message: Arrow function expressions cannot be assigned to variables.
 
         # let foo
         # foo = function foo() {}
-        - selector: AssignmentExpression[right.type='FunctionExpression']
+        - selector: AssignmentExpression > FunctionExpression
           message: Function expressions cannot be assigned to variables.
+
+        # foo: () => {
+        #   let bar
+        #
+        #   return bar
+        # }
+        - selector: Property > ArrowFunctionExpression > BlockStatement > :first-child:not(ReturnStatement)
+          message: Arrow function expressions with a block statement can only be assigned to a property if they only contain a return statement.
 
       no-return-assign: error
       no-script-url: error
