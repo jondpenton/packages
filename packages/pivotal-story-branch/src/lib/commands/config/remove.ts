@@ -7,8 +7,9 @@ class RemoveConfig extends Command {
   static override args = [
     {
       name: 'key',
-      required: true,
+
       description: 'Key to remove from configuration',
+      required: true,
     },
   ]
 

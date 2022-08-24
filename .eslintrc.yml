@@ -186,6 +186,17 @@ overrides:
 
       require-atomic-updates: error
       require-await: error
+      require-unicode-regexp: error
+      require-yield: error
+      sort-keys:
+        - error
+        - asc
+        - allowLineSeparatedGroups: true
+          natural: true
+
+      spaced-comment: warn
+      symbol-description: error
+      yoda: warn
 
   - files:
       - '*.ts'

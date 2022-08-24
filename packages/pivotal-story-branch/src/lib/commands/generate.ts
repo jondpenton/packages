@@ -15,11 +15,12 @@ class Generate extends Command {
   static override args = [
     {
       name: 'story_link',
+
       description: 'Link to Pivotal Tracker story',
-      required: true,
 
       // eslint-disable-next-line require-await
       parse: async (input: string) => getStoryId(input),
+      required: true,
     },
   ]
 
@@ -41,8 +42,8 @@ class Generate extends Command {
 
     const branch = await runGenerate({
       spinner: this.spinner,
-      token,
       storyId: args['story_link'],
+      token,
     })
 
     this.log(branch)
@@ -60,7 +61,10 @@ async function runGenerate({
 }): Promise<string> {
   spinner?.start('Fetching story...')
 
-  const story = await getStory({ token, storyId })
+  const story = await getStory({
+    storyId,
+    token,
+  })
 
   spinner?.succeed('Fetched story')
 

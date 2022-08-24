@@ -34,7 +34,7 @@ test
   .command(['config:set'])
   .catch((err) => {
     expect((err as Error).message).toMatch(
-      /^Missing 2 required args:\s+key.*\s+value/,
+      /^Missing 2 required args:\s+key.*\s+value/u,
     )
   })
   .it(`throws error if key and value is not provided`)
@@ -43,6 +43,6 @@ test
   .stderr()
   .command(['config:set', 'myKey'])
   .catch((err) => {
-    expect((err as Error).message).toMatch(/^Missing 1 required arg:\s+value/)
+    expect((err as Error).message).toMatch(/^Missing 1 required arg:\s+value/u)
   })
   .it(`throws error if value is not provided`)

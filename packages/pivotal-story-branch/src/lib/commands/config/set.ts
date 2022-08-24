@@ -13,13 +13,15 @@ class SetConfig extends Command {
   static override args = [
     {
       name: 'key',
-      required: true,
+
       description: 'Key the value is set under in configuration',
+      required: true,
     },
     {
       name: 'value',
-      required: true,
+
       description: 'Value that is set under key in configuration',
+      required: true,
     },
   ]
 

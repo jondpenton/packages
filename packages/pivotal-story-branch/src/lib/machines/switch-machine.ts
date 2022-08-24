@@ -178,15 +178,18 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.Initial]: {
       always: [
         {
-          cond: inContext('branch'),
           target: SwitchState.VerifyBranch,
+
+          cond: inContext('branch'),
         },
         {
-          cond: inContext('storyId'),
           target: SwitchState.GenerateBranch,
+
+          cond: inContext('storyId'),
         },
         {
           target: SwitchState.Final,
+
           actions: [
             (ctx) => ctx.spinner.fail('Failed to find branch or story id'),
           ],
@@ -196,6 +199,7 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.GenerateBranch]: {
       invoke: {
         id: 'getBranch',
+
         src(ctx) {
           if (!ctx.storyId) {
             const message = `No story ID found`
@@ -207,10 +211,11 @@ const switchMachine = createMachine<SwitchContext>({
 
           return runGenerate({
             spinner: ctx.spinner,
-            token: ctx.token,
             storyId: ctx.storyId,
+            token: ctx.token,
           })
         },
+
         onDone: {
           actions: [assign({ branch: (_ctx, event) => event.data })],
           target: SwitchState.VerifyBranch,
@@ -223,7 +228,9 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.VerifyBranch]: {
       invoke: {
         id: 'verifyBranch',
+
         src: branchExists,
+
         onDone: [
           {
             cond: isTruthy,
@@ -245,7 +252,9 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.CheckoutBranch]: {
       invoke: {
         id: 'checkoutBranch',
+
         src: checkoutBranch,
+
         onDone: {
           target: SwitchState.VerifyRemoteBranch,
         },
@@ -257,7 +266,9 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.VerifyRemoteBranch]: {
       invoke: {
         id: 'verifyRemoteBranch',
+
         src: (ctx) => remoteBranchExists(ctx),
+
         onDone: [
           {
             cond: isTruthy,
@@ -272,7 +283,9 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.PullChanges]: {
       invoke: {
         id: 'pullChanges',
+
         src: pullChanges,
+
         onDone: {
           target: SwitchState.Final,
         },
@@ -284,7 +297,9 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.CheckoutBaseBranch]: {
       invoke: {
         id: 'checkoutBaseBranch',
+
         src: checkoutBaseBranch,
+
         onDone: {
           target: SwitchState.CreateBranch,
         },
@@ -296,7 +311,9 @@ const switchMachine = createMachine<SwitchContext>({
     [SwitchState.CreateBranch]: {
       invoke: {
         id: 'createBranch',
+
         src: createBranch,
+
         onDone: {
           target: SwitchState.Final,
         },
