@@ -208,6 +208,21 @@ overrides:
     extends:
       - 'plugin:@nrwl/nx/typescript'
     rules:
+      '@typescript-eslint/adjacent-overload-signatures': error
+      '@typescript-eslint/array-type':
+        - warn
+        - default: array
+
+      '@typescript-eslint/await-thenable': error
+      '@typescript-eslint/ban-ts-comment':
+        - error
+        - ts-expect-error:
+            descriptionFormat: '^: TS\\d+ .+$'
+
+      '@typescript-eslint/ban-types': warn
+      '@typescript-eslint/class-literal-property-style': warn
+      '@typescript-eslint/consistent-generic-constructors': error
+      '@typescript-eslint/consistent-indexed-object-style': error
       '@typescript-eslint/no-useless-constructor': warn
       no-useless-constructor: off
 
