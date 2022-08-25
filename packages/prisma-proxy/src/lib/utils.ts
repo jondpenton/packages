@@ -1,4 +1,4 @@
-import { ConditionalKeys } from 'type-fest'
+import type { ConditionalKeys } from 'type-fest'
 
 type TFindFunction = (args: {
   where?: {

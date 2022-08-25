@@ -1,9 +1,9 @@
 import { Command } from '../../lib/command'
 
 class Config extends Command {
-  static override description = 'reads the configuration'
+  public static override description = 'reads the configuration'
 
-  async run() {
+  public async run() {
     const config = await this.getConfig()
 
     this.log('Configuration:')

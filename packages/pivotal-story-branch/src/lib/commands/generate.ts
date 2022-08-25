@@ -5,14 +5,12 @@ import { getStory } from '../lib/get-story'
 import { getStoryId } from '../lib/get-story-id'
 
 class Generate extends Command {
-  private spinner: Ora.Ora
-
-  static override description =
+  public static override description =
     'generates a branch name for a Pivotal Tracker story'
 
-  static override aliases = ['gen']
+  public static override aliases = ['gen']
 
-  static override args = [
+  public static override args = [
     {
       name: 'story_link',
 
@@ -24,13 +22,15 @@ class Generate extends Command {
     },
   ]
 
+  private spinner: Ora.Ora
+
   constructor(...args: ConstructorParameters<typeof Command>) {
     super(...args)
 
     this.spinner = Ora()
   }
 
-  async run() {
+  public async run() {
     const { args } = await this.parse(Generate)
     const { token } = await this.getConfig()
 

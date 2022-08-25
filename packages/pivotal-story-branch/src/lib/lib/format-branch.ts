@@ -1,6 +1,6 @@
 import slugify from 'slugify'
 import { DEFAULT_BRANCH_MAX_LENGTH } from './format-branch.constants'
-import { IStory } from './get-story'
+import type { IStory } from './get-story'
 
 export function formatBranch(story: IStory): string {
   const characterLimit = process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH']

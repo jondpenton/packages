@@ -48,7 +48,6 @@ overrides:
       no-constant-binary-expression: error
       no-constructor-return: error
       no-delete-var: error
-      no-duplicate-imports: error
       no-else-return: warn
       no-empty:
         - error
@@ -207,6 +206,8 @@ overrides:
       - '*.tsx'
     extends:
       - 'plugin:@nrwl/nx/typescript'
+    plugins:
+      - import
     rules:
       '@typescript-eslint/adjacent-overload-signatures': error
       '@typescript-eslint/array-type':
@@ -225,7 +226,17 @@ overrides:
       '@typescript-eslint/consistent-indexed-object-style': error
       '@typescript-eslint/consistent-type-assertions': error
       '@typescript-eslint/consistent-type-definitions': warn
+      '@typescript-eslint/consistent-type-exports': warn
+      '@typescript-eslint/consistent-type-imports': warn
+      '@typescript-eslint/default-param-last': error
+      '@typescript-eslint/explicit-member-accessibility':
+        - warn
+        - overrides:
+            constructors: no-public
+
       '@typescript-eslint/no-useless-constructor': warn
+      '@typescript-eslint/member-ordering': error
+      import/no-duplicates: error
       no-useless-constructor: off
 
   - files:
@@ -235,6 +246,7 @@ overrides:
       - 'plugin:@nrwl/nx/javascript'
     rules:
       dot-notation: warn
+      no-duplicate-imports: error
 
   - files:
       - '*.js'

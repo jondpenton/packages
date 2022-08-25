@@ -2,9 +2,9 @@ import { promises as fs } from 'fs'
 import { Command } from '../../lib/command'
 
 class RemoveConfig extends Command {
-  static override description = 'Removes a key from the configuration'
+  public static override description = 'Removes a key from the configuration'
 
-  static override args = [
+  public static override args = [
     {
       name: 'key',
 
@@ -13,7 +13,7 @@ class RemoveConfig extends Command {
     },
   ]
 
-  async run() {
+  public async run() {
     const {
       args: { key },
     } = await this.parse(RemoveConfig)

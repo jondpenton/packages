@@ -1,4 +1,4 @@
-import { Promisable, ValueOf } from 'type-fest'
+import type { Promisable, ValueOf } from 'type-fest'
 
 interface Decision<ConditionKeys extends string, ActionKeys extends string> {
   conditions: { [Key in ConditionKeys]?: boolean }

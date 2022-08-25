@@ -8,7 +8,7 @@ interface IUserConfig {
 }
 
 abstract class CommandWithHelpers extends Command {
-  async getConfig() {
+  public async getConfig() {
     try {
       await fs.readdir(this.config.configDir)
     } catch (err) {
@@ -28,7 +28,7 @@ abstract class CommandWithHelpers extends Command {
     return userConfig
   }
 
-  getConfigPath() {
+  public getConfigPath() {
     return path.join(this.config.configDir, './config.json')
   }
 }

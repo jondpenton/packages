@@ -6,10 +6,10 @@ import { getStoryId } from '../lib/get-story-id'
 import { switchMachine } from '../machines/switch-machine'
 
 class Switch extends Command {
-  static override description =
+  public static override description =
     'switches branch to generated Pivotal Tracker story branch'
 
-  static override args = [
+  public static override args = [
     {
       name: 'branch_or_story_link',
 
@@ -18,14 +18,14 @@ class Switch extends Command {
     },
   ]
 
-  static override flags = {
+  public static override flags = {
     'base-branch': Flags.string({
       char: 'b',
       description: 'Branch used when creating a new branch',
     }),
   }
 
-  async run() {
+  public async run() {
     const { args, flags } = await this.parse(Switch)
     const config = await this.getConfig()
     const { token } = config

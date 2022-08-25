@@ -1,7 +1,7 @@
 import { rest } from 'msw'
 import { BAD_REQUEST_STATUS_CODE } from './handlers.constants'
-import { IProject } from '../lib/get-projects'
-import { IStory } from '../lib/get-story'
+import type { IProject } from '../lib/get-projects'
+import type { IStory } from '../lib/get-story'
 
 export const handlers = [
   rest.get(

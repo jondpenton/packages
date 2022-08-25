@@ -1,12 +1,8 @@
 import { exec } from 'child_process'
-import { Ora } from 'ora'
+import type { Ora } from 'ora'
 import { isEmpty } from 'ramda'
-import {
-  assign,
-  createMachine,
-  DoneInvokeEvent,
-  TransitionConfig,
-} from 'xstate'
+import type { DoneInvokeEvent, TransitionConfig } from 'xstate'
+import { assign, createMachine } from 'xstate'
 import { runGenerate } from '../commands/generate'
 
 enum SwitchState {

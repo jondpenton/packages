@@ -8,9 +8,9 @@ interface IUserConfig {
 }
 
 class SetConfig extends Command {
-  static override description = 'Sets a value in the configuration'
+  public static override description = 'Sets a value in the configuration'
 
-  static override args = [
+  public static override args = [
     {
       name: 'key',
 
@@ -25,7 +25,7 @@ class SetConfig extends Command {
     },
   ]
 
-  async getConfig() {
+  public async getConfig() {
     try {
       await fs.readdir(this.config.configDir)
     } catch (err) {
@@ -45,11 +45,11 @@ class SetConfig extends Command {
     return userConfig
   }
 
-  getConfigPath() {
+  public getConfigPath() {
     return path.join(this.config.configDir, './config.json')
   }
 
-  async run() {
+  public async run() {
     const {
       args: { key, value },
     } = await this.parse(SetConfig)

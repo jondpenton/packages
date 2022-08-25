@@ -1,9 +1,5 @@
-import {
-  ClientDelegateKeys,
-  createPrismaDelegateProxy,
-  Delegate,
-  DelegateWhereMap,
-} from './utils'
+import type { ClientDelegateKeys, Delegate, DelegateWhereMap } from './utils'
+import { createPrismaDelegateProxy } from './utils'
 
 export function createPrismaProxy<TClient extends Record<string, unknown>>(
   unrestrictedPrisma: TClient,

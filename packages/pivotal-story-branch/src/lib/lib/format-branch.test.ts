@@ -1,5 +1,5 @@
 import { formatBranch } from './format-branch'
-import { IStory } from './get-story'
+import type { IStory } from './get-story'
 
 it('formats a short story correctly', () => {
   const story: IStory = {

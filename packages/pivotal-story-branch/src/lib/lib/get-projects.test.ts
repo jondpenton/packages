@@ -1,4 +1,5 @@
-import { getProjects, IProject } from './get-projects'
+import type { IProject } from './get-projects'
+import { getProjects } from './get-projects'
 import { rest, server } from '../mocks/server'
 
 it('fetches projects from Pivotal Tracker API', async () => {
