@@ -223,6 +223,7 @@ overrides:
       '@typescript-eslint/class-literal-property-style': warn
       '@typescript-eslint/consistent-generic-constructors': error
       '@typescript-eslint/consistent-indexed-object-style': error
+      '@typescript-eslint/consistent-type-assertions': error
       '@typescript-eslint/no-useless-constructor': warn
       no-useless-constructor: off
 
