@@ -2,7 +2,7 @@ import path from 'path'
 import { Command } from '@oclif/core'
 import { promises as fs } from 'fs'
 
-interface IUserConfig {
+interface UserConfig {
   [key: string]: string | undefined
   token?: string
 }
@@ -33,7 +33,7 @@ class SetConfig extends Command {
     }
 
     const configPath = this.getConfigPath()
-    let userConfig: IUserConfig
+    let userConfig: UserConfig
 
     try {
       const rawUserConfig = await fs.readFile(configPath)

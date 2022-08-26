@@ -19,6 +19,7 @@ class Switch extends Command {
   ]
 
   public static override flags = {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     'base-branch': Flags.string({
       char: 'b',
       description: 'Branch used when creating a new branch',

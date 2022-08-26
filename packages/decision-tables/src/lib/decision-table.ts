@@ -1,34 +1,34 @@
 import type { Promisable, ValueOf } from 'type-fest'
 
-interface Decision<ConditionKeys extends string, ActionKeys extends string> {
-  conditions: { [Key in ConditionKeys]?: boolean }
-  actions: { [Key in ActionKeys]?: true }
+interface Decision<TConditionKeys extends string, TActionKeys extends string> {
+  conditions: { [Key in TConditionKeys]?: boolean }
+  actions: { [Key in TActionKeys]?: true }
 }
 
 interface DecisionTableOptions<
-  ConditionKeys extends string,
-  ActionKeys extends string,
+  TConditionKeys extends string,
+  TActionKeys extends string,
 > {
-  conditions: { [Key in ConditionKeys]: boolean | (() => Promisable<boolean>) }
-  actions: { [Key in ActionKeys]: <T>() => Promisable<T> }
-  decisions: Decision<ConditionKeys, ActionKeys>[]
+  conditions: { [Key in TConditionKeys]: boolean | (() => Promisable<boolean>) }
+  actions: { [Key in TActionKeys]: <T>() => Promisable<T> }
+  decisions: Decision<TConditionKeys, TActionKeys>[]
 }
 
 export class DecisionTable<
-  ConditionKeys extends string,
-  ActionKeys extends string,
+  TConditionKeys extends string,
+  TActionKeys extends string,
 > {
   constructor(
-    private options: DecisionTableOptions<ConditionKeys, ActionKeys>,
+    private options: DecisionTableOptions<TConditionKeys, TActionKeys>,
   ) {}
 
   public async execute() {
     const decision = await this.getFirstMatchingDecision()
-    const actionKeys = Object.keys(decision.actions) as ActionKeys[]
+    const actionKeys = Object.keys(decision.actions) as TActionKeys[]
     const actions = actionKeys.reduce(
       (arr, key) => [...arr, this.options.actions[key]],
       [] as ValueOf<
-        DecisionTableOptions<ConditionKeys, ActionKeys>['actions']
+        DecisionTableOptions<TConditionKeys, TActionKeys>['actions']
       >[],
     )
 
@@ -39,8 +39,8 @@ export class DecisionTable<
   }
 
   private async processConditions(
-    keys: ConditionKeys[],
-  ): Promise<{ [Key in ConditionKeys]: boolean }> {
+    keys: TConditionKeys[],
+  ): Promise<{ [Key in TConditionKeys]: boolean }> {
     const { conditions } = this.options
 
     const keyResults = await Promise.all(
@@ -73,25 +73,25 @@ export class DecisionTable<
         ...obj,
         [key]: conditions[key],
       }),
-      {} as { [Key in ConditionKeys]: boolean },
+      {} as { [Key in TConditionKeys]: boolean },
     )
 
     return booleanConditions
   }
 
   private async getFirstMatchingDecision(): Promise<
-    Decision<ConditionKeys, ActionKeys>
+    Decision<TConditionKeys, TActionKeys>
   > {
     const { decisions } = this.options
 
     const decisionResults = await Promise.all(
       decisions.map(async (decision) => {
         const conditions = await this.processConditions(
-          Object.keys(decision.conditions) as ConditionKeys[],
+          Object.keys(decision.conditions) as TConditionKeys[],
         )
 
         for (const condition of Object.entries(conditions)) {
-          const [key, value] = condition as [ConditionKeys, boolean]
+          const [key, value] = condition as [TConditionKeys, boolean]
 
           if (value !== decision.conditions[key]) {
             return

@@ -1,6 +1,6 @@
 import { server } from './src/lib/mocks/server'
 
-const originalToken = process.env['PIVOTAL_TRACKER_TOKEN']
+const ORIGINAL_PIVOTAL_TRACKER_TOKEN = process.env['PIVOTAL_TRACKER_TOKEN']
 
 // Establish API mocking before all tests.
 beforeAll(() => server.listen())
@@ -19,5 +19,5 @@ afterAll(() => {
   // Clean up after the tests are finished.
   server.close()
 
-  process.env['PIVOTAL_TRACKER_TOKEN'] = originalToken
+  process.env['PIVOTAL_TRACKER_TOKEN'] = ORIGINAL_PIVOTAL_TRACKER_TOKEN
 })

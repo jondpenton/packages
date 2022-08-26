@@ -170,6 +170,7 @@ function inContext(key: string) {
 const switchMachine = createMachine<SwitchContext>({
   id: 'switch',
   initial: SwitchState.Initial,
+  predictableActionArguments: true,
   states: {
     [SwitchState.Initial]: {
       always: [

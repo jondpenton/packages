@@ -1,7 +1,7 @@
 import { rest } from 'msw'
 import { BAD_REQUEST_STATUS_CODE } from './handlers.constants'
-import type { IProject } from '../lib/get-projects'
-import type { IStory } from '../lib/get-story'
+import type { Project } from '../lib/get-projects'
+import type { Story } from '../lib/get-story'
 
 export const handlers = [
   rest.get(
@@ -13,7 +13,7 @@ export const handlers = [
             id: 123,
             name: 'Some project',
           },
-        ] as IProject[]),
+        ] as Project[]),
       ),
   ),
   rest.get(
@@ -25,9 +25,9 @@ export const handlers = [
             id: 12345678,
             name: 'Story name',
 
-            // eslint-disable-next-line camelcase
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             story_type: 'feature',
-          } as IStory),
+          } as Story),
         )
       }
 

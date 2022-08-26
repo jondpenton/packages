@@ -1,9 +1,9 @@
-import type { IProject } from './get-projects'
+import type { Project } from './get-projects'
 import { getProjects } from './get-projects'
 import { rest, server } from '../mocks/server'
 
 it('fetches projects from Pivotal Tracker API', async () => {
-  const projects: IProject[] = [
+  const projects: Project[] = [
     {
       id: 123,
       name: 'Some project',

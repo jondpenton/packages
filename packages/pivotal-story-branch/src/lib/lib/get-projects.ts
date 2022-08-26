@@ -1,17 +1,18 @@
 import axios from 'axios'
 
-export interface IProject {
+export interface Project {
   id: number
   name: string
 }
 
 export async function getProjects({
   token,
-}: Record<'token', string>): Promise<IProject[]> {
-  const response = await axios.get<IProject[]>(
+}: Record<'token', string>): Promise<Project[]> {
+  const response = await axios.get<Project[]>(
     'https://www.pivotaltracker.com/services/v5/projects',
     {
       headers: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         'X-TrackerToken': token,
       },
     },

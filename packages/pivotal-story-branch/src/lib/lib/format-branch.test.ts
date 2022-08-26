@@ -1,12 +1,12 @@
 import { formatBranch } from './format-branch'
-import type { IStory } from './get-story'
+import type { Story } from './get-story'
 
 it('formats a short story correctly', () => {
-  const story: IStory = {
+  const story: Story = {
     id: 1,
     name: 'some name',
 
-    // eslint-disable-next-line camelcase
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     story_type: 'feature',
   }
 
@@ -16,11 +16,11 @@ it('formats a short story correctly', () => {
 })
 
 it('formats a long story correctly', () => {
-  const story: IStory = {
+  const story: Story = {
     id: 1,
     name: "this is an extremely, long, precarious name and should be shortened but won't",
 
-    // eslint-disable-next-line camelcase
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     story_type: 'feature',
   }
 
@@ -34,11 +34,11 @@ it('returns a longer formatted branch name when PIVOTAL_TRACKER_BRANCH_MAX_LENGT
 
   try {
     process.env['PIVOTAL_TRACKER_BRANCH_MAX_LENGTH'] = '60'
-    const story: IStory = {
+    const story: Story = {
       id: 1,
       name: "this is an extremely, long, precarious name and should be shortened but won't",
 
-      // eslint-disable-next-line camelcase
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       story_type: 'feature',
     }
 

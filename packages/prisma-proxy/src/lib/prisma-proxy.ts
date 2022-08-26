@@ -5,8 +5,7 @@ export function createPrismaProxy<TClient extends Record<string, unknown>>(
   unrestrictedPrisma: TClient,
   delegateMap: DelegateWhereMap<TClient>,
 ) {
-  type TDelegateMapValue =
-    DelegateWhereMap<TClient>[ClientDelegateKeys<TClient>]
+  type DelegateMapValue = DelegateWhereMap<TClient>[ClientDelegateKeys<TClient>]
   const prismaDelegateProxies = Object.fromEntries(
     Object.entries(delegateMap)
       .filter(
@@ -14,7 +13,7 @@ export function createPrismaProxy<TClient extends Record<string, unknown>>(
           entry,
         ): entry is [
           ClientDelegateKeys<TClient>,
-          Exclude<NonNullable<TDelegateMapValue>, unknown>,
+          Exclude<NonNullable<DelegateMapValue>, unknown>,
         ] => Boolean(entry[1]),
       )
       .map(([key, where]) => [

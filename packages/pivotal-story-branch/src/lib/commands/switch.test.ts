@@ -2,7 +2,7 @@ import childProcess from 'child_process'
 import { test } from '@oclif/test'
 import { promises as fs } from 'fs'
 
-const callbackMock = jest
+const CALLBACK_MOCK = jest
   .fn()
   .mockReturnValueOnce([new Error()])
   .mockReturnValueOnce([])
@@ -30,7 +30,7 @@ test
     childProcess,
     'exec',
     jest.fn<void, unknown[]>((_command, cb) => {
-      const results = callbackMock()
+      const results = CALLBACK_MOCK()
 
       if (typeof cb === `function`) {
         cb(...results)
@@ -73,7 +73,7 @@ test
     childProcess,
     'exec',
     jest.fn<void, unknown[]>((_command, cb) => {
-      const results = callbackMock()
+      const results = CALLBACK_MOCK()
 
       if (typeof cb === `function`) {
         cb(...results)

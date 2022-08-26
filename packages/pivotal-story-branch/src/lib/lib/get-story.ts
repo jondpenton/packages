@@ -1,8 +1,10 @@
 import axios from 'axios'
 
-export interface IStory {
+export interface Story {
   id: number
   name: string
+
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   story_type: 'feature' | 'bug' | 'chore' | 'release'
 }
 
@@ -12,12 +14,13 @@ export async function getStory({
 }: {
   storyId: string
   token: string
-}): Promise<IStory> {
+}): Promise<Story> {
   try {
-    const response = await axios.get<IStory>(
+    const response = await axios.get<Story>(
       `https://www.pivotaltracker.com/services/v5/stories/${storyId}`,
       {
         headers: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           'X-TrackerToken': token,
         },
       },

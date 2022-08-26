@@ -22,7 +22,6 @@ overrides:
                 - '*'
       accessor-pairs: error
       arrow-body-style: warn
-      camelcase: error
       class-methods-use-this: error
       curly: warn
       default-case: error
@@ -237,6 +236,61 @@ overrides:
       '@typescript-eslint/no-useless-constructor': warn
       '@typescript-eslint/member-ordering': error
       '@typescript-eslint/method-signature-style': warn
+      '@typescript-eslint/naming-convention':
+        - error
+        - selector: default
+          format:
+            - camelCase
+
+          leadingUnderscore: forbid
+          trailingUnderscore: forbid
+
+        - selector: enumMember
+          format:
+            - StrictPascalCase
+
+        - selector: parameter
+          format:
+            - camelCase
+
+          leadingUnderscore: allow
+
+        - selector: typeLike
+          format:
+            - StrictPascalCase
+
+        - selector: typeParameter
+          format:
+            - StrictPascalCase
+
+          prefix:
+            - T
+
+        - selector: variable
+          modifiers:
+            - exported
+
+          format:
+            - camelCase
+
+        - selector: variable
+          modifiers:
+            - const
+            - global
+
+          format:
+            - UPPER_CASE
+
+        - selector: variable
+          modifiers:
+            - const
+            - exported
+            - global
+
+          format:
+            - camelCase
+            - UPPER_CASE
+
       import/no-duplicates: error
       no-useless-constructor: off
 
@@ -246,6 +300,7 @@ overrides:
     extends:
       - 'plugin:@nrwl/nx/javascript'
     rules:
+      camelcase: error
       dot-notation: warn
       no-duplicate-imports: error
 

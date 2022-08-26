@@ -1,12 +1,13 @@
 import type { ConditionalKeys } from 'type-fest'
 
-type TFindFunction = (args: {
+type FindFunction = (args: {
   where?: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     AND?: unknown
   }
 }) => unknown
 
-function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
+function createPrismaFindOperationProxy<TFunction extends FindFunction>(
   fn: TFunction,
   where: NonNullable<
     NonNullable<
@@ -20,6 +21,7 @@ function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
       let [args] = argArray as [
         {
           where?: {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             AND?: unknown
           }
         },
@@ -40,6 +42,7 @@ function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
           }
         } else {
           args.where = {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             AND: [args.where, where],
           }
         }
@@ -53,17 +56,17 @@ function createPrismaFindOperationProxy<TFunction extends TFindFunction>(
 }
 
 export interface Delegate {
-  aggregate: TFindFunction
-  count: TFindFunction
-  findFirst: TFindFunction
-  findMany: TFindFunction
+  aggregate: FindFunction
+  count: FindFunction
+  findFirst: FindFunction
+  findMany: FindFunction
 }
 
 function createPrismaFindOperationsProxies<
-  TAggregateFunction extends TFindFunction,
-  TCountFunction extends TFindFunction,
-  TFindFirstFunction extends TFindFunction,
-  TFindManyFunction extends TFindFunction,
+  TAggregateFunction extends FindFunction,
+  TCountFunction extends FindFunction,
+  TFindFirstFunction extends FindFunction,
+  TFindManyFunction extends FindFunction,
 >(
   delegate: {
     aggregate: TAggregateFunction
@@ -87,10 +90,10 @@ function createPrismaFindOperationsProxies<
 }
 
 export function createPrismaDelegateProxy<
-  TAggregateFunction extends TFindFunction,
-  TCountFunction extends TFindFunction,
-  TFindFirstFunction extends TFindFunction,
-  TFindManyFunction extends TFindFunction,
+  TAggregateFunction extends FindFunction,
+  TCountFunction extends FindFunction,
+  TFindFirstFunction extends FindFunction,
+  TFindManyFunction extends FindFunction,
 >(
   delegate: {
     aggregate: TAggregateFunction
