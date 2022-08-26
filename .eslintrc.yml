@@ -236,6 +236,7 @@ overrides:
 
       '@typescript-eslint/no-useless-constructor': warn
       '@typescript-eslint/member-ordering': error
+      '@typescript-eslint/method-signature-style': warn
       import/no-duplicates: error
       no-useless-constructor: off
 
