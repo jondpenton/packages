@@ -33,10 +33,10 @@ test
 test
   .stderr()
   .command(['generate'])
-  .catch((err) =>
+  .catch((err) => {
     expect(
       err.message.startsWith(`Missing 1 required arg:
 story_link`),
-    ).toBeTruthy(),
-  )
+    ).toBeTruthy()
+  })
   .it(`throws error if story_link is not provided`)

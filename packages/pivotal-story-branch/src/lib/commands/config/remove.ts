@@ -18,7 +18,10 @@ class RemoveConfig extends Command {
       args: { key },
     } = await this.parse(RemoveConfig)
     const config = await this.getConfig()
-    delete config[key]
+    delete (
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+      config[key]
+    )
     const configPath = this.getConfigPath()
 
     await fs.writeFile(configPath, JSON.stringify(config))
