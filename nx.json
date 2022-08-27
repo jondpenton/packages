@@ -16,7 +16,7 @@
       "dependsOn": ["test"]
     },
     "test": {
-      "dependsOn": ["^test", "build"]
+      "dependsOn": ["build"]
     }
   },
   "tasksRunnerOptions": {
