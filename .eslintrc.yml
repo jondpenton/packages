@@ -58,7 +58,6 @@ overrides:
       no-extra-bind: warn
       no-extra-boolean-cast: warn
       no-extra-label: warn
-      no-extra-semi: warn
       no-floating-decimal: warn
       no-global-assign: error
       no-implicit-coercion: warn
@@ -303,6 +302,12 @@ overrides:
         - warn
         - fixToUnknown: true
 
+      '@typescript-eslint/no-extra-non-null-assertion': warn
+      '@typescript-eslint/no-extraneous-class': error
+      '@typescript-eslint/no-floating-promises': error
+      '@typescript-eslint/no-implied-eval': error
+      '@typescript-eslint/no-inferrable-types': warn
+      '@typescript-eslint/no-invalid-this': error
       import/no-duplicates: error
       no-useless-constructor: off
 
