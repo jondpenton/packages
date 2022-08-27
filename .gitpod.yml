@@ -3,4 +3,4 @@ tasks:
       pnpm install
       pnpm exec nx run-many --target build
     command: |
-      pnpm exec nx run-many --target build
+      pnpm exec nx run-many --target test
