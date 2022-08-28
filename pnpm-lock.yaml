@@ -128,7 +128,6 @@ importers:
       ts-node: ^10.9.1
       tslib: ^2.4.0
       type-fest: ^2.19.0
-      typescript: '>= 4.2.x <= 4.6.x'
       xstate: ^4.33.4
     dependencies:
       '@oclif/core': 1.16.0
@@ -154,7 +153,7 @@ importers:
       msw: 0.45.0_typescript@4.6.4
       nodemon: 2.0.19
       npm-run-all: 4.1.5
-      oclif: 3.1.2_mem-fs@2.2.1
+      oclif: 3.1.2_7yoz4vugw4qcykie6sit5r22dm
       prettier: 2.7.1
       pretty-quick: 3.1.3_prettier@2.7.1
       rimraf: 3.0.2
@@ -163,7 +162,6 @@ importers:
       ts-node: 10.9.1_tkkl7odfmhrn24lelksait6o5y
       tslib: 2.4.0
       type-fest: 2.19.0
-      typescript: 4.6.4
 
   packages/prisma-proxy:
     specifiers:
@@ -3070,12 +3068,32 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@oclif/command/1.8.16:
+  /@oclif/command/1.8.16_@oclif+config@1.18.2:
     resolution:
       {
         integrity: sha512-rmVKYEsKzurfRU0xJz+iHelbi1LGlihIWZ7Qvmb/CBz1EkhL7nOkW4SVXmG2dA5Ce0si2gr88i6q4eBOMRNJ1w==,
       }
     engines: { node: '>=12.0.0' }
+    peerDependencies:
+      '@oclif/config': ^1
+    dependencies:
+      '@oclif/config': 1.18.2
+      '@oclif/errors': 1.3.5
+      '@oclif/help': 1.0.1
+      '@oclif/parser': 3.8.7
+      debug: 4.3.4
+      semver: 7.3.7
+    transitivePeerDependencies:
+      - supports-color
+
+  /@oclif/command/1.8.16_@oclif+config@1.18.3:
+    resolution:
+      {
+        integrity: sha512-rmVKYEsKzurfRU0xJz+iHelbi1LGlihIWZ7Qvmb/CBz1EkhL7nOkW4SVXmG2dA5Ce0si2gr88i6q4eBOMRNJ1w==,
+      }
+    engines: { node: '>=12.0.0' }
+    peerDependencies:
+      '@oclif/config': ^1
     dependencies:
       '@oclif/config': 1.18.3
       '@oclif/errors': 1.3.5
@@ -3085,15 +3103,18 @@ packages:
       semver: 7.3.7
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
-  /@oclif/command/1.8.16_supports-color@8.1.1:
+  /@oclif/command/1.8.16_i4zayhaggchdik36ivy5ksjpdq:
     resolution:
       {
         integrity: sha512-rmVKYEsKzurfRU0xJz+iHelbi1LGlihIWZ7Qvmb/CBz1EkhL7nOkW4SVXmG2dA5Ce0si2gr88i6q4eBOMRNJ1w==,
       }
     engines: { node: '>=12.0.0' }
+    peerDependencies:
+      '@oclif/config': ^1
     dependencies:
-      '@oclif/config': 1.18.3_supports-color@8.1.1
+      '@oclif/config': 1.18.3
       '@oclif/errors': 1.3.5
       '@oclif/help': 1.0.1_supports-color@8.1.1
       '@oclif/parser': 3.8.7
@@ -3151,22 +3172,6 @@ packages:
       tslib: 2.4.0
     transitivePeerDependencies:
       - supports-color
-
-  /@oclif/config/1.18.3_supports-color@8.1.1:
-    resolution:
-      {
-        integrity: sha512-sBpko86IrTscc39EvHUhL+c++81BVTsIZ3ETu/vG+cCdi0N6vb2DoahR67A9FI2CGnxRRHjnTfa3m6LulwNATA==,
-      }
-    engines: { node: '>=8.0.0' }
-    dependencies:
-      '@oclif/errors': 1.3.5
-      '@oclif/parser': 3.8.7
-      debug: 4.3.4_supports-color@8.1.1
-      globby: 11.1.0
-      is-wsl: 2.2.0
-      tslib: 2.4.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@oclif/core/1.16.0:
@@ -3213,11 +3218,11 @@ packages:
     engines: { node: '>=8.10.0' }
     hasBin: true
     dependencies:
-      '@oclif/command': 1.8.16
+      '@oclif/command': 1.8.16_@oclif+config@1.18.3
       '@oclif/config': 1.18.3
       '@oclif/errors': 1.3.5
       '@oclif/plugin-help': 3.2.18
-      cli-ux: 5.6.7
+      cli-ux: 5.6.7_@oclif+config@1.18.3
       debug: 4.3.4
       find-yarn-workspace-root: 2.0.0
       fs-extra: 8.1.0
@@ -3307,7 +3312,7 @@ packages:
       }
     engines: { node: '>=8.0.0' }
     dependencies:
-      '@oclif/command': 1.8.16
+      '@oclif/command': 1.8.16_@oclif+config@1.18.2
       '@oclif/config': 1.18.2
       '@oclif/errors': 1.3.5
       '@oclif/help': 1.0.1
@@ -3329,7 +3334,7 @@ packages:
       }
     engines: { node: '>=8.0.0' }
     dependencies:
-      '@oclif/command': 1.8.16
+      '@oclif/command': 1.8.16_@oclif+config@1.18.2
       '@oclif/config': 1.18.2
       '@oclif/errors': 1.3.5
       '@oclif/help': 1.0.1
@@ -5644,7 +5649,7 @@ packages:
       string-width: 5.1.2
     dev: true
 
-  /cli-ux/5.6.7:
+  /cli-ux/5.6.7_@oclif+config@1.18.3:
     resolution:
       {
         integrity: sha512-dsKAurMNyFDnO6X1TiiRNiVbL90XReLKcvIq4H777NMqXGBxBws23ag8ubCJE97vVZEgWG2eSUhsyLf63Jv8+g==,
@@ -5652,7 +5657,7 @@ packages:
     engines: { node: '>=8.0.0' }
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
-      '@oclif/command': 1.8.16_supports-color@8.1.1
+      '@oclif/command': 1.8.16_i4zayhaggchdik36ivy5ksjpdq
       '@oclif/errors': 1.3.5
       '@oclif/linewrap': 1.0.0
       '@oclif/screen': 1.0.4
@@ -5678,6 +5683,8 @@ packages:
       supports-color: 8.1.1
       supports-hyperlinks: 2.2.0
       tslib: 2.4.0
+    transitivePeerDependencies:
+      - '@oclif/config'
     dev: true
 
   /cli-width/3.0.0:
@@ -11548,7 +11555,7 @@ packages:
       es-abstract: 1.20.1
     dev: true
 
-  /oclif/3.1.2_mem-fs@2.2.1:
+  /oclif/3.1.2_7yoz4vugw4qcykie6sit5r22dm:
     resolution:
       {
         integrity: sha512-zxKiCOWKLlFGCwPbajxyC1HLSudwTjgSujOf5oR4dsxHkNIRCvJ9VAQWCPG4BW+p/+n0G9E2OnEM8Y25nfJwuw==,
@@ -11571,13 +11578,14 @@ packages:
       qqjs: 0.3.11
       semver: 7.3.7
       tslib: 2.4.0
-      yeoman-environment: 3.10.0_mem-fs@2.2.1
+      yeoman-environment: 3.10.0_7yoz4vugw4qcykie6sit5r22dm
       yeoman-generator: 5.7.0_yeoman-environment@3.10.0
       yosay: 2.0.2
     transitivePeerDependencies:
       - bluebird
       - encoding
       - mem-fs
+      - mem-fs-editor
       - supports-color
     dev: true
 
@@ -15185,7 +15193,7 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /yeoman-environment/3.10.0_mem-fs@2.2.1:
+  /yeoman-environment/3.10.0_7yoz4vugw4qcykie6sit5r22dm:
     resolution:
       {
         integrity: sha512-sYtSxBK9daq21QjoskJTHKLQ1xEsRPURkmFV/aM8HS8ZlQVzwx57Rz1zCs8EGPhK4vqsmTE8H92Gp1jg1fT3EA==,
@@ -15194,6 +15202,7 @@ packages:
     hasBin: true
     peerDependencies:
       mem-fs: ^1.2.0 || ^2.0.0
+      mem-fs-editor: ^8.1.2 || ^9.0.0
     dependencies:
       '@npmcli/arborist': 4.3.1
       are-we-there-yet: 2.0.0
@@ -15261,7 +15270,7 @@ packages:
       shelljs: 0.8.5
       sort-keys: 4.2.0
       text-table: 0.2.0
-      yeoman-environment: 3.10.0_mem-fs@2.2.1
+      yeoman-environment: 3.10.0_7yoz4vugw4qcykie6sit5r22dm
     transitivePeerDependencies:
       - encoding
       - supports-color
