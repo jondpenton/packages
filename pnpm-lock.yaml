@@ -112,7 +112,6 @@ importers:
       babel-jest: ^28.1.3
       chai: ~4.3.6
       jest: ^28.1.3
-      mem-fs: ^2.2.1
       msw: ~0.45.0
       nodemon: ~2.0.19
       npm-run-all: ~4.1.5
@@ -149,7 +148,6 @@ importers:
       babel-jest: 28.1.3_@babel+core@7.18.13
       chai: 4.3.6
       jest: 28.1.3_oj7xplv46gm37jffc22wy7co6m
-      mem-fs: 2.2.1
       msw: 0.45.0_typescript@4.6.4
       nodemon: 2.0.19
       npm-run-all: 4.1.5
@@ -159,7 +157,7 @@ importers:
       rimraf: 3.0.2
       semantic-release: 19.0.5
       semantic-release-monorepo: 7.0.5_semantic-release@19.0.5
-      ts-node: 10.9.1_tkkl7odfmhrn24lelksait6o5y
+      ts-node: 10.9.1_o7liyg2j45tnaks7f56gkfbn7y
       tslib: 2.4.0
       type-fest: 2.19.0
 
@@ -9124,7 +9122,7 @@ packages:
       pretty-format: 28.1.3
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      ts-node: 10.9.1_tkkl7odfmhrn24lelksait6o5y
+      ts-node: 10.9.1_o7liyg2j45tnaks7f56gkfbn7y
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -14215,40 +14213,6 @@ packages:
       diff: 4.0.2
       make-error: 1.3.6
       typescript: 4.8.2
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: true
-
-  /ts-node/10.9.1_tkkl7odfmhrn24lelksait6o5y:
-    resolution:
-      {
-        integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==,
-      }
-    hasBin: true
-    peerDependencies:
-      '@swc/core': '>=1.2.50'
-      '@swc/wasm': '>=1.2.50'
-      '@types/node': '*'
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      '@swc/wasm':
-        optional: true
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.9
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.3
-      '@types/node': 16.11.56
-      acorn: 8.8.0
-      acorn-walk: 8.2.0
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 4.6.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
