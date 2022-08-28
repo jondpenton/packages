@@ -14,7 +14,7 @@
     "@oclif/core": "^1.16.0",
     "@oclif/plugin-help": "^5.1.12",
     "axios": "0.24.0",
-    "ora": "~5.0.0",
+    "ora": "^5.4.1",
     "ramda": "~0.28.0",
     "slugify": "~1.6.5",
     "xstate": "^4.33.4"
