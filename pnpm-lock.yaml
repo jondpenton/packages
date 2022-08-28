@@ -103,7 +103,7 @@ importers:
       '@babel/preset-typescript': ^7.18.6
       '@oclif/core': ^1.16.0
       '@oclif/dev-cli': ~1.26.10
-      '@oclif/plugin-help': ^4.0.3
+      '@oclif/plugin-help': ^5.1.12
       '@oclif/test': ^2.1.1
       '@types/jest': 28.1.8
       '@types/node': ~16.11.56
@@ -130,7 +130,7 @@ importers:
       xstate: ^4.33.4
     dependencies:
       '@oclif/core': 1.16.0
-      '@oclif/plugin-help': 4.0.3_@oclif+config@1.18.3
+      '@oclif/plugin-help': 5.1.12
       axios: 0.24.0
       ora: 5.0.0
       ramda: 0.28.0
@@ -3121,6 +3121,7 @@ packages:
       semver: 7.3.7
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@oclif/config/1.18.2:
     resolution:
@@ -3154,6 +3155,7 @@ packages:
       tslib: 2.4.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@oclif/config/1.18.3:
     resolution:
@@ -3170,35 +3172,7 @@ packages:
       tslib: 2.4.0
     transitivePeerDependencies:
       - supports-color
-
-  /@oclif/core/0.5.41_@oclif+config@1.18.3:
-    resolution:
-      {
-        integrity: sha512-zEYbpxSQr80t7MkLMHOmZr8QCrCIbVrI7fLSZWlsvD2AEM0vvzuhWymjo9/kHy2/kNfxwu7NTI4i2a0zoHu11w==,
-      }
-    engines: { node: '>=12.0.0' }
-    dependencies:
-      '@oclif/linewrap': 1.0.0
-      chalk: 4.1.2
-      clean-stack: 3.0.1
-      cli-ux: 5.6.7_@oclif+config@1.18.3
-      debug: 4.3.4
-      fs-extra: 9.1.0
-      get-package-type: 0.1.0
-      globby: 11.1.0
-      indent-string: 4.0.0
-      is-wsl: 2.2.0
-      lodash.template: 4.5.0
-      semver: 7.3.7
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      tslib: 2.4.0
-      widest-line: 3.1.0
-      wrap-ansi: 7.0.0
-    transitivePeerDependencies:
-      - '@oclif/config'
-      - supports-color
-    dev: false
+    dev: true
 
   /@oclif/core/1.16.0:
     resolution:
@@ -3273,6 +3247,7 @@ packages:
       indent-string: 4.0.0
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    dev: true
 
   /@oclif/help/1.0.1:
     resolution:
@@ -3312,6 +3287,7 @@ packages:
       wrap-ansi: 6.2.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@oclif/linewrap/1.0.0:
     resolution:
@@ -3330,6 +3306,7 @@ packages:
       '@oclif/linewrap': 1.0.0
       chalk: 4.1.2
       tslib: 2.4.0
+    dev: true
 
   /@oclif/plugin-help/3.2.18:
     resolution:
@@ -3353,19 +3330,6 @@ packages:
       - supports-color
     dev: true
 
-  /@oclif/plugin-help/4.0.3_@oclif+config@1.18.3:
-    resolution:
-      {
-        integrity: sha512-ZXVWjZuDg9A0Pq2x/fVE/tCbo/HIK9gfOM/r0BBrhI609+s5xlghZ4txXmcKHIwmrQDmZD0826B1bYZggNdsgA==,
-      }
-    engines: { node: '>=8.0.0' }
-    dependencies:
-      '@oclif/core': 0.5.41_@oclif+config@1.18.3
-    transitivePeerDependencies:
-      - '@oclif/config'
-      - supports-color
-    dev: false
-
   /@oclif/plugin-help/5.1.12:
     resolution:
       {
@@ -3374,7 +3338,6 @@ packages:
     engines: { node: '>=12.0.0' }
     dependencies:
       '@oclif/core': 1.16.0
-    dev: true
 
   /@oclif/plugin-not-found/2.3.1:
     resolution:
@@ -3413,6 +3376,7 @@ packages:
         integrity: sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==,
       }
     engines: { node: '>=8.0.0' }
+    dev: true
 
   /@oclif/screen/3.0.2:
     resolution:
@@ -5701,6 +5665,7 @@ packages:
       tslib: 2.4.0
     transitivePeerDependencies:
       - '@oclif/config'
+    dev: true
 
   /cli-width/3.0.0:
     resolution:
@@ -6261,6 +6226,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
+    dev: true
 
   /debug/4.3.4_supports-color@8.1.1:
     resolution:
@@ -7218,6 +7184,7 @@ packages:
         integrity: sha512-AEo4zm+TenK7zQorGK1f9mJ8L14hnTDi2ZQPR+Mub1NX8zimka1mXpV5LpH8x9HoUmFSHZCfLHqWvp0Y4FxxzQ==,
       }
     engines: { node: '>=8' }
+    dev: true
 
   /fancy-test/2.0.0:
     resolution:
@@ -7554,6 +7521,7 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 4.0.0
       universalify: 0.1.2
+    dev: true
 
   /fs-extra/9.1.0:
     resolution:
@@ -10081,6 +10049,7 @@ packages:
       }
     optionalDependencies:
       graceful-fs: 4.2.10
+    dev: true
 
   /jsonfile/6.1.0:
     resolution:
@@ -10293,13 +10262,6 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash._reinterpolate/3.0.0:
-    resolution:
-      {
-        integrity: sha512-xYHt68QRoYGjeeM/XOE1uJtvXQAgvszfBhjV4yvsQH0u2i9I6cI6c6/eG4Hh3UAOVn0y/xAXwmTzEay49Q//HA==,
-      }
-    dev: false
-
   /lodash.capitalize/4.2.1:
     resolution:
       {
@@ -10356,25 +10318,6 @@ packages:
       }
     dev: true
 
-  /lodash.template/4.5.0:
-    resolution:
-      {
-        integrity: sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==,
-      }
-    dependencies:
-      lodash._reinterpolate: 3.0.0
-      lodash.templatesettings: 4.2.0
-    dev: false
-
-  /lodash.templatesettings/4.2.0:
-    resolution:
-      {
-        integrity: sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==,
-      }
-    dependencies:
-      lodash._reinterpolate: 3.0.0
-    dev: false
-
   /lodash.uniqby/4.7.0:
     resolution:
       {
@@ -10387,6 +10330,7 @@ packages:
       {
         integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==,
       }
+    dev: true
 
   /log-symbols/4.1.0:
     resolution:
@@ -14548,6 +14492,7 @@ packages:
         integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==,
       }
     engines: { node: '>= 4.0.0' }
+    dev: true
 
   /universalify/0.2.0:
     resolution:
@@ -14965,6 +14910,7 @@ packages:
       ansi-styles: 4.3.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    dev: true
 
   /wrap-ansi/7.0.0:
     resolution:
