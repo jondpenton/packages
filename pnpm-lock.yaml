@@ -103,7 +103,7 @@ importers:
       '@babel/preset-typescript': ^7.18.6
       '@oclif/core': ^1.16.0
       '@oclif/dev-cli': ~1.26.10
-      '@oclif/plugin-help': ~3.2.20
+      '@oclif/plugin-help': ^3.3.1
       '@oclif/test': ^2.1.1
       '@types/jest': 28.1.8
       '@types/node': ~16.11.56
@@ -130,7 +130,7 @@ importers:
       xstate: ^4.33.4
     dependencies:
       '@oclif/core': 1.16.0
-      '@oclif/plugin-help': 3.2.20
+      '@oclif/plugin-help': 3.3.1
       axios: 0.24.0
       ora: 5.0.0
       ramda: 0.28.0
@@ -148,7 +148,7 @@ importers:
       babel-jest: 28.1.3_@babel+core@7.18.13
       chai: 4.3.6
       jest: 28.1.3_oj7xplv46gm37jffc22wy7co6m
-      msw: 0.45.0_typescript@4.6.4
+      msw: 0.45.0_typescript@4.8.2
       nodemon: 2.0.19
       npm-run-all: 4.1.5
       oclif: 3.1.2_7yoz4vugw4qcykie6sit5r22dm
@@ -3325,10 +3325,10 @@ packages:
       - supports-color
     dev: true
 
-  /@oclif/plugin-help/3.2.20:
+  /@oclif/plugin-help/3.3.1:
     resolution:
       {
-        integrity: sha512-3DhmxopYMHblO9peXulsVkb1ueEg0/5dAdQ3ddy+/S2Vi/lytrkA3WsJUTp+QNdJJc5w2y1+1BR8T8KS2nOmow==,
+        integrity: sha512-QuSiseNRJygaqAdABYFWn/H1CwIZCp9zp/PLid6yXvy6VcQV7OenEFF5XuYaCvSARe2Tg9r8Jqls5+fw1A9CbQ==,
       }
     engines: { node: '>=8.0.0' }
     dependencies:
@@ -10885,7 +10885,7 @@ packages:
       }
     dev: true
 
-  /msw/0.45.0_typescript@4.6.4:
+  /msw/0.45.0_typescript@4.8.2:
     resolution:
       {
         integrity: sha512-aZgYsSJWYLHj5wZs/g640GP5AK6gfHC6dKTED8bforKZx10IJ+b0z7Y+0infEKD4gNT3orj7tiUZe4pxgpY0SQ==,
@@ -10920,7 +10920,7 @@ packages:
       statuses: 2.0.1
       strict-event-emitter: 0.2.4
       type-fest: 1.4.0
-      typescript: 4.6.4
+      typescript: 4.8.2
       yargs: 17.5.1
     transitivePeerDependencies:
       - encoding
@@ -14369,15 +14369,6 @@ packages:
       }
     dependencies:
       is-typedarray: 1.0.0
-    dev: true
-
-  /typescript/4.6.4:
-    resolution:
-      {
-        integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==,
-      }
-    engines: { node: '>=4.2.0' }
-    hasBin: true
     dev: true
 
   /typescript/4.8.2:
