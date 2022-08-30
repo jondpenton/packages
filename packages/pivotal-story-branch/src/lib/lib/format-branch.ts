@@ -19,11 +19,18 @@ export function formatBranch(story: Story): string {
 
   const nameWords = nameSlug.split('-')
 
-  // eslint-disable-next-line no-magic-numbers
-  const usedWords: string[] = nameWords.slice(0, 1)
+  const usedWords: string[] = nameWords.slice(
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+    0,
 
-  // eslint-disable-next-line no-magic-numbers
-  for (const word of nameWords.slice(1)) {
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+    1,
+  )
+
+  for (const word of nameWords.slice(
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+    1,
+  )) {
     if ([...usedWords, word].join('-').length > remainingLength) {
       break
     }

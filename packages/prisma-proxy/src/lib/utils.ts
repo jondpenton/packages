@@ -9,12 +9,7 @@ type FindFunction = (args: {
 
 function createPrismaFindOperationProxy<TFunction extends FindFunction>(
   fn: TFunction,
-  where: NonNullable<
-    NonNullable<
-      // eslint-disable-next-line no-magic-numbers
-      Parameters<TFunction>[0]
-    >[`where`]
-  >,
+  where: NonNullable<NonNullable<Parameters<TFunction>[0]>[`where`]>,
 ) {
   return new Proxy(fn, {
     apply(target, thisArg, argArray) {
@@ -31,8 +26,9 @@ function createPrismaFindOperationProxy<TFunction extends FindFunction>(
         args = { where }
       } else if (`where` in args && args.where) {
         if (
-          // eslint-disable-next-line no-magic-numbers
-          Object.keys(args.where).length === 1 &&
+          Object.keys(args.where).length ===
+            // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+            1 &&
           `AND` in args.where
         ) {
           if (Array.isArray(args.where.AND)) {

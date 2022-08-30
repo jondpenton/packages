@@ -68,11 +68,6 @@ overrides:
       no-label-var: error
       no-lone-blocks: error
       no-lonely-if: warn
-      no-loop-func: error
-      no-magic-numbers:
-        - error
-        - ignoreArrayIndexes: true
-
       no-mixed-operators: error
       no-multi-assign: error
       no-multi-str: error
@@ -308,6 +303,26 @@ overrides:
       '@typescript-eslint/no-implied-eval': error
       '@typescript-eslint/no-inferrable-types': warn
       '@typescript-eslint/no-invalid-this': error
+      '@typescript-eslint/no-loop-func': error
+      '@typescript-eslint/no-loss-of-precision': error
+      '@typescript-eslint/no-magic-numbers':
+        - error
+        - ignoreArrayIndexes: true
+          ignoreEnums: true
+          ignoreNumericLiteralTypes: true
+          ignoreReadonlyClassProperties: true
+          ignoreTypeIndexes: true
+
+      '@typescript-eslint/no-meaningless-void-operator':
+        - warn
+        - checkNever: true
+
+      '@typescript-eslint/no-misused-new': error
+      '@typescript-eslint/no-misused-promises': error
+      '@typescript-eslint/no-namespace': error
+      '@typescript-eslint/no-non-null-asserted-nullish-coalescing': error
+      '@typescript-eslint/no-non-null-asserted-optional-chain': error
+      '@typescript-eslint/no-non-null-assertion': error
       import/no-duplicates: error
       no-useless-constructor: off
 
@@ -320,6 +335,11 @@ overrides:
       camelcase: error
       dot-notation: warn
       no-duplicate-imports: error
+      no-loop-func: error
+      no-loss-of-precision: error
+      no-magic-numbers:
+        - error
+        - ignoreArrayIndexes: true
 
   - files:
       - '*.js'

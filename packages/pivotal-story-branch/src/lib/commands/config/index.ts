@@ -13,7 +13,7 @@ class Config extends Command {
         config,
         null,
 
-        // eslint-disable-next-line no-magic-numbers
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         2,
       ),
     )

@@ -30,11 +30,11 @@ describe(`DecisionTable`, () => {
       await decisionTable.execute()
 
       expect(fn).toHaveBeenCalledTimes(
-        // eslint-disable-next-line no-magic-numbers
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         1,
       )
       expect(fn2).toHaveBeenCalledTimes(
-        // eslint-disable-next-line no-magic-numbers
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         1,
       )
     })

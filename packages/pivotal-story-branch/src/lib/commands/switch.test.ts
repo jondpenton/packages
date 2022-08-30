@@ -44,7 +44,7 @@ test
     const exec = childProcess.exec as unknown as jest.Mock
 
     expect(exec).toHaveBeenCalledTimes(
-      // eslint-disable-next-line no-magic-numbers
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       2,
     )
     expect(exec.mock.calls[0][0]).toBe(`git checkout ${branchName}`)
@@ -87,7 +87,7 @@ test
     const exec = childProcess.exec as unknown as jest.Mock
 
     expect(exec).toHaveBeenCalledTimes(
-      // eslint-disable-next-line no-magic-numbers
+      // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       1,
     )
     expect(exec.mock.calls[0][0]).toBe(`git checkout ${branchName}`)
