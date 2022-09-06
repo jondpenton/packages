@@ -14,12 +14,13 @@ function createPrismaFindOperationProxy<TFunction extends FindFunction>(
   return new Proxy(fn, {
     apply(target, thisArg, argArray) {
       let [args] = argArray as [
-        {
-          where?: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
-            AND?: unknown
+        | {
+            where?: {
+              // eslint-disable-next-line @typescript-eslint/naming-convention
+              AND?: unknown
+            }
           }
-        },
+        | undefined,
       ]
 
       if (!args) {
